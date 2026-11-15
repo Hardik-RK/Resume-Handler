@@ -1,0 +1,16 @@
+node_modules/
+dist/
+*.log
+.env
+.env.*
+!.env.example
+*.pem
+!**/fixtures/**/*.pem
+coverage/
+.intake-data/
+
+# generated demo data
+demo-fixtures/
+packages/mock-crm/demo-data/
+packages/web/dev/shots/
+*.env
