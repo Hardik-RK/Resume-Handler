@@ -1,0 +1,51 @@
+[
+  {
+    "file": "Rhiannon_Kingsley_Resume.pdf",
+    "kind": "text",
+    "name": "Rhiannon Kingsley",
+    "email": "rhiannon.kingsley@example.com",
+    "phone": "+44 7700 900584"
+  },
+  {
+    "file": "Wren_Dunmore_Resume.pdf",
+    "kind": "text",
+    "name": "Wren Dunmore",
+    "email": "wren.dunmore@example.com",
+    "phone": "+44 7700 900629"
+  },
+  {
+    "file": "Quentin_Birchall_Resume.pdf",
+    "kind": "text",
+    "name": "Quentin Birchall",
+    "email": "quentin.birchall@example.com",
+    "phone": "+44 7700 900885"
+  },
+  {
+    "file": "Mateo_Marlowe_Resume.pdf",
+    "kind": "text",
+    "name": "Mateo Marlowe",
+    "email": "mateo.marlowe@example.com",
+    "phone": "+44 7700 900475"
+  },
+  {
+    "file": "Stellan_Northcott_Resume.pdf",
+    "kind": "text",
+    "name": "Stellan Northcott",
+    "email": "stellan.northcott@example.com",
+    "phone": "+44 7700 900759"
+  },
+  {
+    "file": "Rhiannon_Kingsley_CV_copy1.pdf",
+    "kind": "duplicate",
+    "name": "Rhiannon Kingsley",
+    "email": "rhiannon.kingsley@example.com",
+    "phone": "+44 7700 900584"
+  },
+  {
+    "file": "Wren_Dunmore_CV_copy2.pdf",
+    "kind": "duplicate",
+    "name": "Wren Dunmore",
+    "email": "wren.dunmore@example.com",
+    "phone": "+44 7700 900629"
+  }
+]
