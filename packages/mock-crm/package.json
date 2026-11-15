@@ -1,0 +1,29 @@
+{
+  "name": "@intake/mock-crm",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Stand-in downstream system for Résumé Intake demos: ingestion API, signed session tokens, candidate list, synthetic résumé generator",
+  "license": "MIT",
+  "type": "module",
+  "bin": { "intake-mock-crm": "./src/server.ts" },
+  "scripts": {
+    "start": "tsx src/server.ts",
+    "fixtures": "tsx fixtures/cli.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@hono/node-server": "^1.13.0",
+    "@napi-rs/canvas": "^0.1.60",
+    "fflate": "^0.8.2",
+    "hono": "^4.6.0",
+    "pdf-lib": "^1.17.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}

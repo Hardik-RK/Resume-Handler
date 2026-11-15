@@ -1,0 +1,28 @@
+{
+  "name": "@intake/cli",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Terminal UI for Résumé Intake: intake run, intake serve, intake app",
+  "license": "MIT",
+  "type": "module",
+  "bin": { "intake": "./bin/intake.mjs" },
+  "scripts": {
+    "start": "node bin/intake.mjs",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@intake/core": "file:../core",
+    "@intake/server": "file:../server",
+    "ink": "^5.0.1",
+    "react": "^18.3.1",
+    "tsx": "^4.19.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.0",
+    "typescript": "^7.0.2",
+    "vitest": "^2.1.0"
+  }
+}
