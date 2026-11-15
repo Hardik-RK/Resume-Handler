@@ -1,0 +1,33 @@
+{
+  "name": "@intake/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Browser UI for Résumé Intake: upload résumé zips and PDFs, watch the queue, download the results.",
+  "scripts": {
+    "dev": "vite",
+    "dev:mock": "tsx dev/mock-server.ts",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "shots": "tsx dev/shots.ts"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@fontsource-variable/inter-tight": "^5.1.0",
+    "@fontsource-variable/jetbrains-mono": "^5.1.0",
+    "@types/node": "^22.10.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "jsdom": "^25.0.1",
+    "playwright-core": "^1.49.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "vitest": "^2.1.8"
+  }
+}
