@@ -1,0 +1,62 @@
+{
+ "extract": [
+  {
+   "args": [
+    "abc",
+    "m1/m2",
+    "f1/f2",
+    "TECH"
+   ],
+   "key": "extract|abc|m1/m2|f1/f2|TECH|extract-compact-1"
+  },
+  {
+   "args": [
+    "abc",
+    "m1/m2",
+    "f1/f2",
+    "sales"
+   ],
+   "key": "extract|abc|m1/m2|f1/f2|SALES|extract-compact-1"
+  },
+  {
+   "args": [
+    "def",
+    null,
+    null,
+    null
+   ],
+   "key": "extract|def||||extract-compact-1"
+  },
+  {
+   "args": [
+    "x",
+    "",
+    "",
+    ""
+   ],
+   "key": "extract|x||||extract-compact-1"
+  }
+ ],
+ "score": [
+  {
+   "args": [
+    "abc",
+    "s",
+    "jd1"
+   ],
+   "key": "score|abc|s|jd1|jd-score-1"
+  },
+  {
+   "args": [
+    "abc",
+    null,
+    ""
+   ],
+   "key": "score|abc|||jd-score-1"
+  }
+ ],
+ "versions": [
+  "extract-compact-1",
+  "jd-score-1"
+ ]
+}

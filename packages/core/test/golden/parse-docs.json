@@ -1,0 +1,111 @@
+[
+ {
+  "file": "cv0.pdf",
+  "rawLen": 376,
+  "hasImages": false,
+  "uris": [],
+  "pages": 1,
+  "extractedEmpty": false,
+  "needsVision": false,
+  "useVision": false,
+  "linksText": "",
+  "recover": "",
+  "renderCount": 1
+ },
+ {
+  "file": "priya.pdf",
+  "rawLen": 374,
+  "hasImages": false,
+  "uris": [],
+  "pages": 1,
+  "extractedEmpty": false,
+  "needsVision": false,
+  "useVision": false,
+  "linksText": "",
+  "recover": "",
+  "renderCount": 1
+ },
+ {
+  "file": "links.pdf",
+  "rawLen": 352,
+  "hasImages": false,
+  "uris": [
+   "mailto:meera@example.com",
+   "https://www.linkedin.com/in/meera-example",
+   "https://example.com/other",
+   "https://github.com/meera-example"
+  ],
+  "pages": 1,
+  "extractedEmpty": false,
+  "needsVision": false,
+  "useVision": false,
+  "linksText": "Email: meera@example.com\nhttps://www.linkedin.com/in/meera-example\nhttps://github.com/meera-example",
+  "recover": "",
+  "renderCount": 1
+ },
+ {
+  "file": "spaced.pdf",
+  "rawLen": 372,
+  "hasImages": false,
+  "uris": [],
+  "pages": 1,
+  "extractedEmpty": false,
+  "needsVision": false,
+  "useVision": false,
+  "linksText": "",
+  "recover": "",
+  "renderCount": 1
+ },
+ {
+  "file": "scan.pdf",
+  "rawLen": 0,
+  "hasImages": true,
+  "uris": [],
+  "pages": 1,
+  "extractedEmpty": true,
+  "needsVision": null,
+  "useVision": true,
+  "linksText": "",
+  "recover": "",
+  "renderCount": 1
+ },
+ {
+  "file": "hybrid.pdf",
+  "rawLen": 349,
+  "hasImages": true,
+  "uris": [],
+  "pages": 1,
+  "extractedEmpty": false,
+  "needsVision": true,
+  "useVision": true,
+  "linksText": "",
+  "recover": "",
+  "renderCount": 1
+ },
+ {
+  "file": "short.pdf",
+  "rawLen": 21,
+  "hasImages": false,
+  "uris": [],
+  "pages": 1,
+  "extractedEmpty": true,
+  "needsVision": null,
+  "useVision": true,
+  "linksText": "",
+  "recover": "Email: a@b.co",
+  "renderCount": 1
+ },
+ {
+  "file": "corrupt.pdf",
+  "rawLen": null,
+  "hasImages": false,
+  "uris": [],
+  "pages": 0,
+  "extractedEmpty": true,
+  "needsVision": null,
+  "useVision": true,
+  "linksText": "",
+  "recover": "",
+  "renderCount": 0
+ }
+]

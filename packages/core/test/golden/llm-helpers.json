@@ -1,0 +1,1974 @@
+{
+ "normalise": [
+  {
+   "raw": {
+    "name": "Asha Rao",
+    "email": "asha@example.com",
+    "phone": "+919876543210",
+    "location": "Bengaluru",
+    "graduation": "2024 - B.Tech",
+    "skill_tags": [
+     "Python",
+     "python",
+     "AWS"
+    ],
+    "skill_details": [
+     {
+      "name": "Python",
+      "proficiency": "expert",
+      "years": 4
+     },
+     {
+      "name": "AWS",
+      "proficiency": null,
+      "years": null
+     }
+    ],
+    "certifications": [
+     "AWS SAA"
+    ],
+    "certification_details": []
+   },
+   "ctype": "TECH",
+   "row": {
+    "Name": "Asha Rao",
+    "Email Address": "asha@example.com",
+    "Phone Number": "+919876543210",
+    "Current Location": "Bengaluru",
+    "Graduation": "2024 - B.Tech",
+    "Skills": [
+     {
+      "name": "Python",
+      "proficiency": "expert",
+      "years": 4
+     },
+     {
+      "name": "AWS"
+     }
+    ],
+    "Certifications": [
+     {
+      "name": "AWS SAA"
+     }
+    ],
+    "Resume parsed skill tags": [
+     "Python",
+     "AWS"
+    ]
+   }
+  },
+  {
+   "raw": {
+    "skill_tags": [
+     "Python"
+    ],
+    "skill_details": [
+     {
+      "name": "Python",
+      "years": 2023
+     }
+    ]
+   },
+   "ctype": "TECH",
+   "row": {
+    "Name": "Not Specified",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "Skills": [
+     {
+      "name": "Python"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python"
+    ]
+   }
+  },
+  {
+   "raw": {
+    "skill_details": [
+     {
+      "name": "Python",
+      "years": "2018"
+     }
+    ]
+   },
+   "ctype": "TECH",
+   "row": {
+    "Name": "Not Specified",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "Skills": [
+     {
+      "name": "Python"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python"
+    ]
+   }
+  },
+  {
+   "raw": {
+    "skill_details": [
+     {
+      "name": "Python",
+      "years": -1
+     }
+    ]
+   },
+   "ctype": "TECH",
+   "row": {
+    "Name": "Not Specified",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "Skills": [
+     {
+      "name": "Python"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python"
+    ]
+   }
+  },
+  {
+   "raw": {
+    "skill_details": [
+     {
+      "name": "Python",
+      "years": {
+       "__float__": "nan"
+      }
+     }
+    ]
+   },
+   "ctype": "TECH",
+   "row": {
+    "Name": "Not Specified",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "Skills": [
+     {
+      "name": "Python"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python"
+    ]
+   }
+  },
+  {
+   "raw": {
+    "skill_details": [
+     {
+      "name": "Python",
+      "years": {
+       "__float__": "inf"
+      }
+     }
+    ]
+   },
+   "ctype": "TECH",
+   "row": {
+    "Name": "Not Specified",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "Skills": [
+     {
+      "name": "Python"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python"
+    ]
+   }
+  },
+  {
+   "raw": {
+    "skill_details": [
+     {
+      "name": "Python",
+      "years": 0
+     }
+    ]
+   },
+   "ctype": "TECH",
+   "row": {
+    "Name": "Not Specified",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "Skills": [
+     {
+      "name": "Python",
+      "years": 0
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python"
+    ]
+   }
+  },
+  {
+   "raw": {
+    "skill_details": [
+     {
+      "name": "Python",
+      "years": 2.5
+     }
+    ]
+   },
+   "ctype": "TECH",
+   "row": {
+    "Name": "Not Specified",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "Skills": [
+     {
+      "name": "Python",
+      "years": 2.5
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python"
+    ]
+   }
+  },
+  {
+   "raw": {
+    "skill_details": [
+     {
+      "name": "Python",
+      "years": "4"
+     }
+    ]
+   },
+   "ctype": "TECH",
+   "row": {
+    "Name": "Not Specified",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "Skills": [
+     {
+      "name": "Python",
+      "years": 4
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python"
+    ]
+   }
+  },
+  {
+   "raw": {
+    "skill_details": [
+     {
+      "name": "Python",
+      "years": 100
+     }
+    ]
+   },
+   "ctype": "TECH",
+   "row": {
+    "Name": "Not Specified",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "Skills": [
+     {
+      "name": "Python",
+      "years": 100
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python"
+    ]
+   }
+  },
+  {
+   "raw": {
+    "skill_details": [
+     {
+      "name": "Python",
+      "years": 4.0,
+      "proficiency": "EXPERT"
+     },
+     {
+      "name": "go",
+      "proficiency": "wizard"
+     },
+     {
+      "name": "Rust",
+      "proficiency": "Not Specified"
+     },
+     {
+      "title": "C",
+      "proficiency": "Beginner"
+     },
+     "plain",
+     5,
+     null
+    ]
+   },
+   "ctype": "TECH",
+   "row": {
+    "Name": "Not Specified",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "Skills": [
+     {
+      "name": "Python",
+      "proficiency": "expert",
+      "years": 4
+     },
+     {
+      "name": "go"
+     },
+     {
+      "name": "Rust"
+     },
+     {
+      "name": "C",
+      "proficiency": "beginner"
+     },
+     {
+      "name": "plain"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python",
+     "go",
+     "Rust",
+     "C",
+     "plain"
+    ]
+   }
+  },
+  {
+   "raw": {
+    "Skills": "Python, Java; Go|Rust",
+    "Resume parsed skill tags": "a;b",
+    "Certifications": "AWS"
+   },
+   "ctype": "TECH",
+   "row": {
+    "Name": "Not Specified",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "Skills": [
+     {
+      "name": "Pytho"
+     },
+     {
+      "name": "Java"
+     },
+     {
+      "name": "Go"
+     },
+     {
+      "name": "Rust"
+     },
+     {
+      "name": "a"
+     },
+     {
+      "name": "b"
+     }
+    ],
+    "Certifications": [
+     {
+      "name": "AWS"
+     }
+    ],
+    "Resume parsed skill tags": [
+     "a",
+     "b",
+     "Pytho",
+     "Java",
+     "Go",
+     "Rust"
+    ]
+   }
+  },
+  {
+   "raw": {
+    "skill_tags": "Python Node Angular Linux"
+   },
+   "ctype": "TECH",
+   "row": {
+    "Name": "Not Specified",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "Skills": [
+     {
+      "name": "Pytho"
+     },
+     {
+      "name": "Node A"
+     },
+     {
+      "name": "gular Li"
+     },
+     {
+      "name": "ux"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Pytho",
+     "Node A",
+     "gular Li",
+     "ux"
+    ]
+   }
+  },
+  {
+   "raw": {
+    "skill_tags": "single"
+   },
+   "ctype": "TECH",
+   "row": {
+    "Name": "Not Specified",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "Skills": [
+     {
+      "name": "si"
+     },
+     {
+      "name": "gle"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "si",
+     "gle"
+    ]
+   }
+  },
+  {
+   "raw": {
+    "name": "Not Specified",
+    "Name": "Asha",
+    "email": "N/A",
+    "Email Address": "a@b.co",
+    "phone": "",
+    "location": "-",
+    "graduation": null
+   },
+   "ctype": "TECH",
+   "row": {
+    "Name": "Asha",
+    "Email Address": "a@b.co",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "Skills": [],
+    "Certifications": [],
+    "Resume parsed skill tags": []
+   }
+  },
+  {
+   "raw": {
+    "name": [
+     "x"
+    ],
+    "email": [],
+    "phone": 0,
+    "location": 5
+   },
+   "ctype": "TECH",
+   "row": {
+    "Name": [
+     "x"
+    ],
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": 5,
+    "Graduation": "Not Specified",
+    "Skills": [],
+    "Certifications": [],
+    "Resume parsed skill tags": []
+   }
+  },
+  {
+   "raw": {
+    "atsScore": 80,
+    "atsSummary": "ok"
+   },
+   "ctype": "TECH",
+   "row": {
+    "Name": "Not Specified",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "Skills": [],
+    "Certifications": [],
+    "Resume parsed skill tags": [],
+    "ATS score": 80,
+    "ATS summary": "ok"
+   }
+  },
+  {
+   "raw": {
+    "atsScore": 0,
+    "ATS summary": "",
+    "Summary": "s"
+   },
+   "ctype": "TECH",
+   "row": {
+    "Name": "Not Specified",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "Skills": [],
+    "Certifications": [],
+    "Resume parsed skill tags": [],
+    "ATS score": "Not Specified",
+    "ATS summary": "s"
+   }
+  },
+  {
+   "raw": {
+    "subjects": [
+     "Math",
+     "math"
+    ],
+    "subject_details": [
+     {
+      "name": "Physics",
+      "category": "STEM"
+     }
+    ],
+    "grade_levels": [
+     "9",
+     "10"
+    ],
+    "curricula": "CBSE, ICSE",
+    "organizations": [
+     "Acme School"
+    ],
+    "organization_details": [
+     {
+      "name": "Acme School",
+      "type": "school",
+      "years": 3
+     },
+     {
+      "name": "X",
+      "type": "bad",
+      "years": 200
+     }
+    ]
+   },
+   "ctype": "TEACHER",
+   "row": {
+    "Name": "Not Specified",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "Subjects taught": [
+     {
+      "name": "Physics",
+      "category": "STEM"
+     },
+     {
+      "name": "Math"
+     }
+    ],
+    "Grade levels taught": [
+     "9",
+     "10"
+    ],
+    "Curriculum expertise": [
+     "CBSE",
+     "ICSE"
+    ],
+    "Ed tech names/school name": [
+     {
+      "name": "Acme School",
+      "type": "SCHOOL",
+      "years": 3
+     },
+     {
+      "name": "X"
+     }
+    ]
+   }
+  },
+  {
+   "raw": {
+    "Subjects taught": [
+     {
+      "name": "Chem"
+     }
+    ],
+    "Grade levels taught": "11; 12",
+    "Curriculum expertise": [
+     "IB"
+    ],
+    "Ed tech names/school name": [
+     "Foo"
+    ]
+   },
+   "ctype": "TEACHER",
+   "row": {
+    "Name": "Not Specified",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "Subjects taught": [
+     {
+      "name": "Chem"
+     }
+    ],
+    "Grade levels taught": [
+     "11",
+     "12"
+    ],
+    "Curriculum expertise": [
+     "IB"
+    ],
+    "Ed tech names/school name": [
+     {
+      "name": "Foo"
+     }
+    ]
+   }
+  },
+  {
+   "raw": {
+    "sales_types": [
+     "inside sales",
+     "SMB",
+     "inside sales"
+    ],
+    "industries": "SaaS, Retail",
+    "team_level": "manager",
+    "team_size": 12
+   },
+   "ctype": "SALES",
+   "row": {
+    "Name": "Not Specified",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "CS / Sales type": [
+     "inside sales",
+     "SMB"
+    ],
+    "Industry background": [
+     "SaaS",
+     "Retail"
+    ],
+    "Team level": "manager",
+    "Team size": 12
+   }
+  },
+  {
+   "raw": {
+    "CS / Sales type": [
+     "B2B"
+    ],
+    "Industry background": [
+     "x"
+    ],
+    "Team level": "Not Specified",
+    "Team size": 0
+   },
+   "ctype": "SALES",
+   "row": {
+    "Name": "Not Specified",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "CS / Sales type": [
+     "B2B"
+    ],
+    "Industry background": [
+     "x"
+    ],
+    "Team level": "Not Specified",
+    "Team size": "Not Specified"
+   }
+  },
+  {
+   "raw": {
+    "name": "All Fields",
+    "skill_tags": [
+     "Py"
+    ],
+    "subjects": [
+     "Art"
+    ],
+    "sales_types": [
+     "B2C"
+    ],
+    "team_size": 3.0
+   },
+   "ctype": "",
+   "row": {
+    "Name": "All Fields",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "Skills": [
+     {
+      "name": "Py"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Py"
+    ],
+    "Subjects taught": [
+     {
+      "name": "Art"
+     }
+    ],
+    "Grade levels taught": [],
+    "Curriculum expertise": [],
+    "Ed tech names/school name": [],
+    "CS / Sales type": [
+     "B2C"
+    ],
+    "Industry background": [],
+    "Team level": "Not Specified",
+    "Team size": 3.0
+   }
+  },
+  {
+   "raw": {
+    "name": "No Type"
+   },
+   "ctype": "TECH",
+   "row": {
+    "Name": "No Type",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "Skills": [],
+    "Certifications": [],
+    "Resume parsed skill tags": []
+   }
+  },
+  {
+   "raw": {},
+   "ctype": "SALES",
+   "row": {
+    "Name": "Not Specified",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "CS / Sales type": [],
+    "Industry background": [],
+    "Team level": "Not Specified",
+    "Team size": "Not Specified"
+   }
+  }
+ ],
+ "badRaw": [
+  {
+   "value": null,
+   "error": "model output was not a JSON object"
+  },
+  {
+   "value": [],
+   "error": "model output was not a JSON object"
+  },
+  {
+   "value": "text",
+   "error": "model output was not a JSON object"
+  },
+  {
+   "value": 5,
+   "error": "model output was not a JSON object"
+  }
+ ],
+ "recoverPhone": [
+  {
+   "text": "Contact: sampleperson8076547911@samp.test | 98765 43210\nCity",
+   "out": "9876543210"
+  },
+  {
+   "text": "Address 464046, 7974341200 Bhopal",
+   "out": "7974341200"
+  },
+  {
+   "text": "Mobile: +91-98765-43210 email x@y.com",
+   "out": "9876543210"
+  },
+  {
+   "text": "References: 9123456780 is my manager",
+   "out": "9123456780"
+  },
+  {
+   "text": "no digits here at all",
+   "out": ""
+  },
+  {
+   "text": "Phone 9999999999 and 8123456789",
+   "out": "8123456789"
+  },
+  {
+   "text": "Tel: 0 98765 43210 end",
+   "out": "9876543210"
+  },
+  {
+   "text": "abc9876543210 and 9876543211def",
+   "out": ""
+  },
+  {
+   "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx References: 9123456780",
+   "out": ""
+  },
+  {
+   "text": "Intro text\nyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy\nReferees\nCall 9123456780\n",
+   "out": "9123456780"
+  },
+  {
+   "text": "Home 9876543210, Mobile: 8765432109",
+   "out": "8765432109"
+  },
+  {
+   "text": "contact 98765 43211 then Mobile - 91234 56780",
+   "out": "9876543211"
+  },
+  {
+   "text": "+91 98765 43210 www.example.com/9876543211 end",
+   "out": "9876543210"
+  },
+  {
+   "text": "00919876543210 and 919876543211",
+   "out": "9876543210"
+  },
+  {
+   "text": "12345678901234",
+   "out": ""
+  },
+  {
+   "text": "Ph. 7012345678",
+   "out": "7012345678"
+  },
+  {
+   "text": "tel\n\n\n9876543210",
+   "out": "9876543210"
+  },
+  {
+   "text": "98765.43210 / 98765-43211",
+   "out": "9876543210"
+  },
+  {
+   "text": "",
+   "out": ""
+  }
+ ],
+ "snap": [
+  {
+   "text": "Priya N  priya.nair92@samp.test | +91 98765 43210\nSkills: Java",
+   "row": {
+    "Email Address": "priya.nair82@samp.test",
+    "Phone Number": "+91 98765 43211"
+   },
+   "out": {
+    "Email Address": "priya.nair92@samp.test",
+    "Phone Number": "+91 98765 43210"
+   }
+  },
+  {
+   "text": "Priya N  priya.nair92@samp.test | +91 98765 43210",
+   "row": {
+    "Email Address": "other@x.com",
+    "Phone Number": "+91 55555 55555"
+   },
+   "out": {
+    "Email Address": "other@x.com",
+    "Phone Number": "+91 55555 55555"
+   }
+  },
+  {
+   "text": "",
+   "row": {
+    "Email Address": "a@b.com",
+    "Phone Number": "9876543210"
+   },
+   "out": {
+    "Email Address": "a@b.com",
+    "Phone Number": "9876543210"
+   }
+  },
+  {
+   "text": "priya . nair92 @ samp . test and 98765 43210",
+   "row": {
+    "Email Address": "priya.nair82@samp.test",
+    "Phone Number": ""
+   },
+   "out": {
+    "Email Address": "priya.nair92@samp.test",
+    "Phone Number": ""
+   }
+  },
+  {
+   "text": "a@b.com",
+   "row": {
+    "Email Address": "A@B.com",
+    "Phone Number": "Not Specified"
+   },
+   "out": {
+    "Email Address": "A@B.com",
+    "Phone Number": "Not Specified"
+   }
+  },
+  {
+   "text": "Reach me at asha.rao@example.com  9876543210 www.example.com/9123456789",
+   "row": {
+    "Email Address": "asha.rao@example.org",
+    "Phone Number": "9876543219"
+   },
+   "out": {
+    "Email Address": "asha.rao@example.com",
+    "Phone Number": "9876543210"
+   }
+  }
+ ],
+ "fill": [
+  {
+   "text": "Name\nPhone 98765 43210 mail a@b.com",
+   "row": {
+    "Phone Number": "Not Specified",
+    "Email Address": "a@b.com"
+   },
+   "out": {
+    "Phone Number": "9876543210",
+    "Email Address": "a@b.com"
+   }
+  },
+  {
+   "text": "Name\nno phone here",
+   "row": {
+    "Phone Number": null,
+    "Email Address": "a@b.com"
+   },
+   "out": {
+    "Phone Number": null,
+    "Email Address": "a@b.com"
+   }
+  },
+  {
+   "text": "Name 98765 43210",
+   "row": {
+    "Phone Number": "98765 43210",
+    "Email Address": "Not Specified"
+   },
+   "out": {
+    "Phone Number": "98765 43210",
+    "Email Address": "Not Specified"
+   }
+  }
+ ],
+ "validate": [
+  {
+   "row": {
+    "Name": "Not Specified",
+    "Email Address": "bad-email",
+    "Phone Number": "123"
+   },
+   "text": "a@b.co",
+   "issues": [
+    "name_missing_or_invalid",
+    "email_invalid",
+    "phone_invalid",
+    "email_conflicts_with_text"
+   ]
+  },
+  {
+   "row": {
+    "Name": "Asha Rao",
+    "Email Address": "asha@example.com",
+    "Phone Number": "+91 98765 43210"
+   },
+   "text": "asha@example.com",
+   "issues": []
+  },
+  {
+   "row": {
+    "Name": "Asha Rao",
+    "Email Address": "other@example.com",
+    "Phone Number": "9876543210"
+   },
+   "text": "text asha@example.com",
+   "issues": [
+    "email_conflicts_with_text"
+   ]
+  },
+  {
+   "row": {
+    "Name": "Asha Rao",
+    "Email Address": "other@example.com",
+    "Phone Number": "9876543210"
+   },
+   "text": "a@x.com b@y.com",
+   "issues": []
+  },
+  {
+   "row": {
+    "Name": "A1",
+    "Email Address": "Not Specified",
+    "Phone Number": "Not Specified"
+   },
+   "text": "",
+   "issues": [
+    "name_missing_or_invalid",
+    "both_contacts_missing"
+   ]
+  },
+  {
+   "row": {
+    "Name": "Asha",
+    "Email Address": "a b@ex ample.com",
+    "Phone Number": ""
+   },
+   "text": "",
+   "issues": []
+  },
+  {
+   "row": {
+    "Name": "http://x",
+    "Email Address": "",
+    "Phone Number": "12345"
+   },
+   "text": "",
+   "issues": [
+    "name_missing_or_invalid",
+    "phone_invalid"
+   ]
+  },
+  {
+   "row": {
+    "Name": "Asha"
+   },
+   "text": "",
+   "issues": [
+    "both_contacts_missing"
+   ]
+  },
+  {
+   "row": {
+    "Name": "x@y.z",
+    "Email Address": "a@b.co",
+    "Phone Number": "0123456789012"
+   },
+   "text": "q",
+   "issues": [
+    "name_missing_or_invalid"
+   ]
+  }
+ ],
+ "extractJson": [
+  {
+   "text": "{\"a\": 1}",
+   "ok": true,
+   "value": {
+    "a": 1
+   }
+  },
+  {
+   "text": "```json\n{\"a\": 1}\n```",
+   "ok": true,
+   "value": {
+    "a": 1
+   }
+  },
+  {
+   "text": "Here is it: {\"a\": {\"b\": \"}\"}} thanks",
+   "ok": true,
+   "value": {
+    "a": {
+     "b": "}"
+    }
+   }
+  },
+  {
+   "text": "prefix ```json {\"a\": [1,2]} ```",
+   "ok": true,
+   "value": {
+    "a": [
+     1,
+     2
+    ]
+   }
+  },
+  {
+   "text": "{\"a\": \"unterminated",
+   "ok": false,
+   "message": "reply contained an unterminated JSON object"
+  },
+  {
+   "text": "no object",
+   "ok": false,
+   "message": "reply contained no JSON object"
+  },
+  {
+   "text": "[1, 2]",
+   "ok": true,
+   "value": [
+    1,
+    2
+   ]
+  },
+  {
+   "text": "{\"a\": 1} {\"b\": 2}",
+   "ok": true,
+   "value": {
+    "a": 1
+   }
+  },
+  {
+   "text": "{bad json}",
+   "ok": false,
+   "message": "JSONDecodeError"
+  },
+  {
+   "text": "  {\"nested\": {\"x\": \"a\\\"b}\"}}  ",
+   "ok": true,
+   "value": {
+    "nested": {
+     "x": "a\"b}"
+    }
+   }
+  },
+  {
+   "text": "{\"a\": 1,}",
+   "ok": false,
+   "message": "JSONDecodeError"
+  },
+  {
+   "text": "text {\"a\": \"x\\\\\"} more",
+   "ok": true,
+   "value": {
+    "a": "x\\"
+   }
+  },
+  {
+   "text": "{\"a\": NaN}",
+   "ok": true,
+   "value": {
+    "a": {
+     "__float__": "nan"
+    }
+   }
+  },
+  {
+   "text": "",
+   "ok": false,
+   "message": "reply contained no JSON object"
+  }
+ ],
+ "asList": [
+  {
+   "value": null,
+   "out": []
+  },
+  {
+   "value": "",
+   "out": []
+  },
+  {
+   "value": "a, b;c|d",
+   "out": [
+    "a",
+    "b",
+    "c",
+    "d"
+   ]
+  },
+  {
+   "value": "Python Node",
+   "out": [
+    "Pytho",
+    "Node"
+   ]
+  },
+  {
+   "value": [
+    "x",
+    "y"
+   ],
+   "out": [
+    "x",
+    "y"
+   ]
+  },
+  {
+   "value": [],
+   "out": []
+  },
+  {
+   "value": 5,
+   "out": [
+    5
+   ]
+  },
+  {
+   "value": "Not Specified",
+   "out": []
+  },
+  {
+   "value": "none",
+   "out": []
+  },
+  {
+   "value": " ; ",
+   "out": []
+  },
+  {
+   "value": {
+    "a": 1
+   },
+   "out": [
+    {
+     "a": 1
+    }
+   ]
+  },
+  {
+   "value": [
+    null,
+    "",
+    "q"
+   ],
+   "out": [
+    null,
+    "",
+    "q"
+   ]
+  },
+  {
+   "value": "a\nb",
+   "out": [
+    "a\nb"
+   ]
+  }
+ ],
+ "dedupe": [
+  {
+   "values": [
+    "A",
+    "a",
+    " A  b ",
+    null,
+    "",
+    "n/a",
+    {
+     "name": "Z"
+    },
+    {
+     "x": 1
+    },
+    5,
+    "Not Specified"
+   ],
+   "out": [
+    "A",
+    "A b",
+    "Z",
+    "5"
+   ]
+  },
+  {
+   "values": [],
+   "out": []
+  },
+  {
+   "values": [
+    "é",
+    "É"
+   ],
+   "out": [
+    "é"
+   ]
+  },
+  {
+   "values": [
+    "ß",
+    "SS"
+   ],
+   "out": [
+    "ß"
+   ]
+  }
+ ],
+ "missing": [
+  {
+   "value": null,
+   "out": true
+  },
+  {
+   "value": "",
+   "out": true
+  },
+  {
+   "value": " N/A ",
+   "out": true
+  },
+  {
+   "value": "none",
+   "out": true
+  },
+  {
+   "value": "-",
+   "out": true
+  },
+  {
+   "value": 0,
+   "out": false
+  },
+  {
+   "value": "0",
+   "out": false
+  },
+  {
+   "value": [],
+   "out": false
+  },
+  {
+   "value": [
+    ""
+   ],
+   "out": false
+  },
+  {
+   "value": "x",
+   "out": false
+  },
+  {
+   "value": false,
+   "out": false
+  }
+ ],
+ "ratios": [
+  {
+   "a": "priya.nair82@samp.test",
+   "b": "priya.nair92@samp.test",
+   "ratio": 0.9545454545454546
+  },
+  {
+   "a": "abcdef",
+   "b": "abcdef",
+   "ratio": 1.0
+  },
+  {
+   "a": "",
+   "b": "",
+   "ratio": 1.0
+  },
+  {
+   "a": "a",
+   "b": "",
+   "ratio": 0.0
+  },
+  {
+   "a": "9876543211",
+   "b": "9876543210",
+   "ratio": 0.9
+  },
+  {
+   "a": "kitten",
+   "b": "sitting",
+   "ratio": 0.6153846153846154
+  },
+  {
+   "a": "abcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcde",
+   "b": "abcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdex",
+   "ratio": 0.998003992015968
+  },
+  {
+   "a": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbb",
+   "b": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacccccccccc",
+   "ratio": 0.9615384615384616
+  },
+  {
+   "a": "ababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababq",
+   "b": "qabababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab",
+   "ratio": 0.004149377593360996
+  },
+  {
+   "a": "x@y.com",
+   "b": "z@w.org",
+   "ratio": 0.42857142857142855
+  },
+  {
+   "a": "the quick brown fox",
+   "b": "the quick brown fax",
+   "ratio": 0.9473684210526315
+  },
+  {
+   "a": "ééééé",
+   "b": "eeeee",
+   "ratio": 0.0
+  }
+ ],
+ "closest": [
+  {
+   "value": "priya.nair82@samp.test",
+   "cands": [
+    "priya.nair92@samp.test",
+    "other@x.com"
+   ],
+   "out": "priya.nair92@samp.test"
+  },
+  {
+   "value": "abc",
+   "cands": [
+    "xyz"
+   ],
+   "out": null
+  },
+  {
+   "value": "9876543211",
+   "cands": [
+    "9876543210",
+    "9876543211"
+   ],
+   "out": "9876543211"
+  }
+ ],
+ "usageSteps": [
+  {
+   "payload": {
+    "id": "gen-1",
+    "request_id": "r-1",
+    "provider_name": "P",
+    "model": "m/x",
+    "usage": {
+     "prompt_tokens": 10,
+     "completion_tokens": 5,
+     "total_tokens": 15,
+     "cost": 0.001,
+     "completion_tokens_details": {
+      "reasoning_tokens": 3
+     },
+     "prompt_tokens_details": {
+      "cached_tokens": 4
+     }
+    }
+   },
+   "total": {
+    "prompt_tokens": 10,
+    "completion_tokens": 5,
+    "reasoning_tokens": 3,
+    "cached_tokens": 4,
+    "total_tokens": 15,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-1"
+    ],
+    "request_ids": [
+     "r-1"
+    ],
+    "provider_names": [
+     "P"
+    ]
+   }
+  },
+  {
+   "payload": {
+    "id": "gen-1",
+    "usage": {
+     "prompt_tokens": "7",
+     "completion_tokens": null,
+     "reasoning_tokens": 2,
+     "cached_tokens": 1,
+     "cost": "0.5"
+    }
+   },
+   "total": {
+    "prompt_tokens": 17,
+    "completion_tokens": 5,
+    "reasoning_tokens": 5,
+    "cached_tokens": 5,
+    "total_tokens": 15,
+    "cost": 0.501,
+    "generation_ids": [
+     "gen-1"
+    ],
+    "request_ids": [
+     "r-1"
+    ],
+    "provider_names": [
+     "P"
+    ]
+   }
+  },
+  {
+   "payload": {
+    "usage": "bad"
+   },
+   "total": {
+    "prompt_tokens": 17,
+    "completion_tokens": 5,
+    "reasoning_tokens": 5,
+    "cached_tokens": 5,
+    "total_tokens": 15,
+    "cost": 0.501,
+    "generation_ids": [
+     "gen-1"
+    ],
+    "request_ids": [
+     "r-1"
+    ],
+    "provider_names": [
+     "P"
+    ]
+   }
+  },
+  {
+   "payload": {},
+   "total": {
+    "prompt_tokens": 17,
+    "completion_tokens": 5,
+    "reasoning_tokens": 5,
+    "cached_tokens": 5,
+    "total_tokens": 15,
+    "cost": 0.501,
+    "generation_ids": [
+     "gen-1"
+    ],
+    "request_ids": [
+     "r-1"
+    ],
+    "provider_names": [
+     "P"
+    ]
+   }
+  },
+  {
+   "payload": null,
+   "total": {
+    "prompt_tokens": 17,
+    "completion_tokens": 5,
+    "reasoning_tokens": 5,
+    "cached_tokens": 5,
+    "total_tokens": 15,
+    "cost": 0.501,
+    "generation_ids": [
+     "gen-1"
+    ],
+    "request_ids": [
+     "r-1"
+    ],
+    "provider_names": [
+     "P"
+    ]
+   }
+  },
+  {
+   "payload": {
+    "usage": {
+     "cost": "abc",
+     "total_tokens": 3.9
+    }
+   },
+   "total": {
+    "prompt_tokens": 17,
+    "completion_tokens": 5,
+    "reasoning_tokens": 5,
+    "cached_tokens": 5,
+    "total_tokens": 18,
+    "cost": 0.501,
+    "generation_ids": [
+     "gen-1"
+    ],
+    "request_ids": [
+     "r-1"
+    ],
+    "provider_names": [
+     "P"
+    ]
+   }
+  }
+ ],
+ "usageMeta": {
+  "model": "m/x",
+  "attempts": 2,
+  "retries": 1,
+  "latency_seconds": 1.235,
+  "prompt_tokens": 17,
+  "completion_tokens": 5,
+  "reasoning_tokens": 5,
+  "cached_tokens": 5,
+  "total_tokens": 18,
+  "cost": 0.501,
+  "generation_ids": [
+   "gen-1"
+  ],
+  "request_ids": [
+   "r-1"
+  ],
+  "provider_names": [
+   "P"
+  ]
+ },
+ "mergeMeta": {
+  "merged": {
+   "model": "s",
+   "attempts": 3,
+   "retries": 1,
+   "prompt_tokens": 12,
+   "cost": 0.30000000000000004,
+   "latency_seconds": 1.5,
+   "generation_ids": [
+    "a",
+    "b"
+   ],
+   "request_ids": [],
+   "provider_names": [
+    "x"
+   ],
+   "completion_tokens": 0,
+   "reasoning_tokens": 0,
+   "cached_tokens": 0,
+   "total_tokens": 9,
+   "primary_model": "p",
+   "fallback_model": "s",
+   "fallback_used": true,
+   "run_id": "r",
+   "vision": false
+  },
+  "none": {
+   "model": "p",
+   "attempts": 1,
+   "retries": 0,
+   "prompt_tokens": 5,
+   "cost": 0.1,
+   "latency_seconds": 1.0,
+   "generation_ids": [
+    "a"
+   ],
+   "request_ids": [],
+   "provider_names": [
+    "x"
+   ],
+   "extra": "e"
+  },
+  "empty": {
+   "model": "p",
+   "attempts": 1,
+   "retries": 0,
+   "prompt_tokens": 5,
+   "cost": 0.1,
+   "latency_seconds": 1.0,
+   "generation_ids": [
+    "a"
+   ],
+   "request_ids": [],
+   "provider_names": [
+    "x"
+   ],
+   "extra": "e"
+  }
+ },
+ "classify": [
+  {
+   "status": 429,
+   "body": "requests per day exceeded",
+   "kind": "daily"
+  },
+  {
+   "status": 429,
+   "body": "slow down",
+   "kind": "minute"
+  },
+  {
+   "status": 429,
+   "body": "TPD limit",
+   "kind": "minute"
+  },
+  {
+   "status": 429,
+   "body": "daily",
+   "kind": "daily"
+  },
+  {
+   "status": 500,
+   "body": "",
+   "kind": "transient"
+  },
+  {
+   "status": 502,
+   "body": "",
+   "kind": "transient"
+  },
+  {
+   "status": 503,
+   "body": "",
+   "kind": "transient"
+  },
+  {
+   "status": 504,
+   "body": "",
+   "kind": "transient"
+  },
+  {
+   "status": 400,
+   "body": "",
+   "kind": "fatal"
+  },
+  {
+   "status": 401,
+   "body": "",
+   "kind": "fatal"
+  },
+  {
+   "status": 403,
+   "body": "",
+   "kind": "fatal"
+  },
+  {
+   "status": 404,
+   "body": "",
+   "kind": "fatal"
+  },
+  {
+   "status": 200,
+   "body": "",
+   "kind": "fatal"
+  }
+ ],
+ "retryAfter": [
+  {
+   "headers": {
+    "retry-after": "3"
+   },
+   "text": "",
+   "default": 2,
+   "out": 4.0
+  },
+  {
+   "headers": {
+    "retry-after": "100"
+   },
+   "text": "",
+   "default": 2,
+   "out": 65
+  },
+  {
+   "headers": {
+    "retry-after": "abc"
+   },
+   "text": "try again in 4.5s",
+   "default": 2,
+   "out": 5.5
+  },
+  {
+   "headers": {},
+   "text": "Please try again in 12.5s.",
+   "default": 2,
+   "out": 13.5
+  },
+  {
+   "headers": {},
+   "text": "",
+   "default": 8,
+   "out": 8
+  },
+  {
+   "headers": {
+    "retry-after": "0"
+   },
+   "text": "",
+   "default": 4,
+   "out": 1.0
+  },
+  {
+   "headers": {},
+   "text": "try again in 100s",
+   "default": 1,
+   "out": 65
+  },
+  {
+   "headers": {
+    "retry-after": "1.5"
+   },
+   "text": "",
+   "default": 1,
+   "out": 2.5
+  }
+ ],
+ "contentText": [
+  {
+   "message": {
+    "content": "plain"
+   },
+   "out": "plain"
+  },
+  {
+   "message": {
+    "content": [
+     {
+      "text": "a"
+     },
+     {
+      "text": null
+     },
+     {
+      "type": "x"
+     },
+     "str",
+     {
+      "text": "b"
+     }
+    ]
+   },
+   "out": "ab"
+  },
+  {
+   "message": {
+    "content": {
+     "text": "t"
+    }
+   },
+   "out": "t"
+  },
+  {
+   "message": {
+    "content": {
+     "value": "v"
+    }
+   },
+   "out": "v"
+  },
+  {
+   "message": {
+    "content": null
+   },
+   "out": ""
+  },
+  {
+   "message": {},
+   "out": ""
+  },
+  {
+   "message": "notadict",
+   "out": ""
+  },
+  {
+   "message": {
+    "content": 5
+   },
+   "out": "5"
+  },
+  {
+   "message": {
+    "content": []
+   },
+   "out": ""
+  }
+ ],
+ "isOpenrouter": [
+  {
+   "url": null,
+   "out": false
+  },
+  {
+   "url": "",
+   "out": false
+  },
+  {
+   "url": "https://OpenRouter.ai/api",
+   "out": true
+  },
+  {
+   "url": "https://x.test",
+   "out": false
+  }
+ ],
+ "usable": [
+  {
+   "value": "Asha",
+   "out": true
+  },
+  {
+   "value": "A1",
+   "out": false
+  },
+  {
+   "value": "a@b",
+   "out": false
+  },
+  {
+   "value": "http://x",
+   "out": false
+  },
+  {
+   "value": "N/A",
+   "out": false
+  },
+  {
+   "value": null,
+   "out": false
+  },
+  {
+   "value": " x ",
+   "out": true
+  }
+ ],
+ "portable": {
+  "anyOf": [
+   {
+    "type": "string",
+    "enum": [
+     "a",
+     "b"
+    ]
+   },
+   {
+    "type": "null"
+   }
+  ]
+ }
+}

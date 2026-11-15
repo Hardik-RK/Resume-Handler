@@ -1,0 +1,70 @@
+{
+ "hasPhone": [
+  {
+   "text": "call 98765 43210",
+   "out": true
+  },
+  {
+   "text": "2021-2023 2024",
+   "out": true
+  },
+  {
+   "text": "+91 98765 43210",
+   "out": true
+  },
+  {
+   "text": "",
+   "out": false
+  },
+  {
+   "text": "12345 67890",
+   "out": true
+  }
+ ],
+ "linksText": [
+  {
+   "uris": [
+    "mailto:a@b.co",
+    "MAILTO:A@B.CO",
+    "https://linkedin.com/in/x",
+    "https://linkedin.com/in/x",
+    "http://github.com/y",
+    "https://other.com",
+    "",
+    null
+   ],
+   "out": "Email: a@b.co\nEmail: A@B.CO\nhttps://linkedin.com/in/x\nhttp://github.com/y"
+  },
+  {
+   "uris": [],
+   "out": ""
+  }
+ ],
+ "recover": [
+  {
+   "md": "no contacts",
+   "raw": "a @ samp . test and 98765 43210",
+   "out": "Email: a@samp.test\nPhone: 98765 43210"
+  },
+  {
+   "md": "mail a@b.co phone 98765 43210",
+   "raw": "x",
+   "out": ""
+  },
+  {
+   "md": "a@b.co",
+   "raw": "call 98765-43210",
+   "out": "Phone: 98765-43210"
+  },
+  {
+   "md": "",
+   "raw": "",
+   "out": ""
+  },
+  {
+   "md": "a@b.co",
+   "raw": "2021 2022 2023 and 1234567890",
+   "out": "Phone: 2021 2022 2023"
+  }
+ ]
+}

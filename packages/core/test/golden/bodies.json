@@ -1,0 +1,9427 @@
+{
+ "bodies": [
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1"
+   },
+   "vision": false,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1"
+   },
+   "vision": false,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1"
+   },
+   "vision": true,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1"
+   },
+   "vision": true,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "SALES",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "_LLM_RUN_ID": "run-20260101T000000Z-abcdef12"
+   },
+   "vision": false,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "sales_types": {
+         "type": "array",
+         "items": {
+          "type": "string",
+          "enum": [
+           "inside sales",
+           "field sales",
+           "enterprise",
+           "SMB",
+           "B2B",
+           "B2C",
+           "customer success"
+          ]
+         }
+        },
+        "industries": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "team_level": {
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "individual_contributor",
+            "team_lead",
+            "manager"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "team_size": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "sales_types",
+        "industries",
+        "team_level",
+        "team_size"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    },
+    "user": "resume-intake:run-20260101T000000Z-abcdef12"
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "SALES",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "_LLM_RUN_ID": "run-20260101T000000Z-abcdef12"
+   },
+   "vision": false,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "sales_types": {
+         "type": "array",
+         "items": {
+          "type": "string",
+          "enum": [
+           "inside sales",
+           "field sales",
+           "enterprise",
+           "SMB",
+           "B2B",
+           "B2C",
+           "customer success"
+          ]
+         }
+        },
+        "industries": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "team_level": {
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "individual_contributor",
+            "team_lead",
+            "manager"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "team_size": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "sales_types",
+        "industries",
+        "team_level",
+        "team_size"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    },
+    "user": "resume-intake:run-20260101T000000Z-abcdef12"
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "SALES",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "_LLM_RUN_ID": "run-20260101T000000Z-abcdef12"
+   },
+   "vision": true,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "sales_types": {
+         "type": "array",
+         "items": {
+          "type": "string",
+          "enum": [
+           "inside sales",
+           "field sales",
+           "enterprise",
+           "SMB",
+           "B2B",
+           "B2C",
+           "customer success"
+          ]
+         }
+        },
+        "industries": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "team_level": {
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "individual_contributor",
+            "team_lead",
+            "manager"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "team_size": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "sales_types",
+        "industries",
+        "team_level",
+        "team_size"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    },
+    "user": "resume-intake:run-20260101T000000Z-abcdef12"
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "SALES",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "_LLM_RUN_ID": "run-20260101T000000Z-abcdef12"
+   },
+   "vision": true,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "sales_types": {
+         "type": "array",
+         "items": {
+          "type": "string",
+          "enum": [
+           "inside sales",
+           "field sales",
+           "enterprise",
+           "SMB",
+           "B2B",
+           "B2C",
+           "customer success"
+          ]
+         }
+        },
+        "industries": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "team_level": {
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "individual_contributor",
+            "team_lead",
+            "manager"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "team_size": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "sales_types",
+        "industries",
+        "team_level",
+        "team_size"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    },
+    "user": "resume-intake:run-20260101T000000Z-abcdef12"
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TEACHER",
+    "LLM_BASE_URL": "https://api.example.test/v1"
+   },
+   "vision": false,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "subjects": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "subject_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "category": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "STEM",
+               "languages",
+               "humanities",
+               "arts"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "category"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "grade_levels": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "curricula": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "organizations": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "organization_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "type": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "EDTECH",
+               "SCHOOL",
+               "OTHER"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "type",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "subjects",
+        "subject_details",
+        "grade_levels",
+        "curricula",
+        "organizations",
+        "organization_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TEACHER",
+    "LLM_BASE_URL": "https://api.example.test/v1"
+   },
+   "vision": false,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "subjects": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "subject_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "category": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "STEM",
+               "languages",
+               "humanities",
+               "arts"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "category"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "grade_levels": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "curricula": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "organizations": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "organization_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "type": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "EDTECH",
+               "SCHOOL",
+               "OTHER"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "type",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "subjects",
+        "subject_details",
+        "grade_levels",
+        "curricula",
+        "organizations",
+        "organization_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning_effort": "low"
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TEACHER",
+    "LLM_BASE_URL": "https://api.example.test/v1"
+   },
+   "vision": true,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "subjects": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "subject_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "category": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "STEM",
+               "languages",
+               "humanities",
+               "arts"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "category"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "grade_levels": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "curricula": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "organizations": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "organization_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "type": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "EDTECH",
+               "SCHOOL",
+               "OTHER"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "type",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "subjects",
+        "subject_details",
+        "grade_levels",
+        "curricula",
+        "organizations",
+        "organization_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TEACHER",
+    "LLM_BASE_URL": "https://api.example.test/v1"
+   },
+   "vision": true,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "subjects": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "subject_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "category": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "STEM",
+               "languages",
+               "humanities",
+               "arts"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "category"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "grade_levels": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "curricula": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "organizations": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "organization_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "type": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "EDTECH",
+               "SCHOOL",
+               "OTHER"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "type",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "subjects",
+        "subject_details",
+        "grade_levels",
+        "curricula",
+        "organizations",
+        "organization_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning_effort": "low"
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "EXTRACT_ATS": true
+   },
+   "vision": false,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "atsScore": {
+         "type": [
+          "number",
+          "null"
+         ]
+        },
+        "atsSummary": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "subjects": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "subject_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "category": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "STEM",
+               "languages",
+               "humanities",
+               "arts"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "category"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "grade_levels": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "curricula": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "organizations": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "organization_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "type": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "EDTECH",
+               "SCHOOL",
+               "OTHER"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "type",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "sales_types": {
+         "type": "array",
+         "items": {
+          "type": "string",
+          "enum": [
+           "inside sales",
+           "field sales",
+           "enterprise",
+           "SMB",
+           "B2B",
+           "B2C",
+           "customer success"
+          ]
+         }
+        },
+        "industries": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "team_level": {
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "individual_contributor",
+            "team_lead",
+            "manager"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "team_size": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details",
+        "atsScore",
+        "atsSummary",
+        "subjects",
+        "subject_details",
+        "grade_levels",
+        "curricula",
+        "organizations",
+        "organization_details",
+        "sales_types",
+        "industries",
+        "team_level",
+        "team_size"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "EXTRACT_ATS": true
+   },
+   "vision": false,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "atsScore": {
+         "type": [
+          "number",
+          "null"
+         ]
+        },
+        "atsSummary": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "subjects": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "subject_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "category": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "STEM",
+               "languages",
+               "humanities",
+               "arts"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "category"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "grade_levels": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "curricula": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "organizations": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "organization_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "type": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "EDTECH",
+               "SCHOOL",
+               "OTHER"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "type",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "sales_types": {
+         "type": "array",
+         "items": {
+          "type": "string",
+          "enum": [
+           "inside sales",
+           "field sales",
+           "enterprise",
+           "SMB",
+           "B2B",
+           "B2C",
+           "customer success"
+          ]
+         }
+        },
+        "industries": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "team_level": {
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "individual_contributor",
+            "team_lead",
+            "manager"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "team_size": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details",
+        "atsScore",
+        "atsSummary",
+        "subjects",
+        "subject_details",
+        "grade_levels",
+        "curricula",
+        "organizations",
+        "organization_details",
+        "sales_types",
+        "industries",
+        "team_level",
+        "team_size"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "EXTRACT_ATS": true
+   },
+   "vision": true,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "atsScore": {
+         "type": [
+          "number",
+          "null"
+         ]
+        },
+        "atsSummary": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "subjects": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "subject_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "category": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "STEM",
+               "languages",
+               "humanities",
+               "arts"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "category"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "grade_levels": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "curricula": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "organizations": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "organization_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "type": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "EDTECH",
+               "SCHOOL",
+               "OTHER"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "type",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "sales_types": {
+         "type": "array",
+         "items": {
+          "type": "string",
+          "enum": [
+           "inside sales",
+           "field sales",
+           "enterprise",
+           "SMB",
+           "B2B",
+           "B2C",
+           "customer success"
+          ]
+         }
+        },
+        "industries": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "team_level": {
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "individual_contributor",
+            "team_lead",
+            "manager"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "team_size": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details",
+        "atsScore",
+        "atsSummary",
+        "subjects",
+        "subject_details",
+        "grade_levels",
+        "curricula",
+        "organizations",
+        "organization_details",
+        "sales_types",
+        "industries",
+        "team_level",
+        "team_size"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "EXTRACT_ATS": true
+   },
+   "vision": true,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "atsScore": {
+         "type": [
+          "number",
+          "null"
+         ]
+        },
+        "atsSummary": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "subjects": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "subject_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "category": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "STEM",
+               "languages",
+               "humanities",
+               "arts"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "category"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "grade_levels": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "curricula": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "organizations": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "organization_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "type": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "EDTECH",
+               "SCHOOL",
+               "OTHER"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "type",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "sales_types": {
+         "type": "array",
+         "items": {
+          "type": "string",
+          "enum": [
+           "inside sales",
+           "field sales",
+           "enterprise",
+           "SMB",
+           "B2B",
+           "B2C",
+           "customer success"
+          ]
+         }
+        },
+        "industries": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "team_level": {
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "individual_contributor",
+            "team_lead",
+            "manager"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "team_size": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details",
+        "atsScore",
+        "atsSummary",
+        "subjects",
+        "subject_details",
+        "grade_levels",
+        "curricula",
+        "organizations",
+        "organization_details",
+        "sales_types",
+        "industries",
+        "team_level",
+        "team_size"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_TEMPERATURE": "0.2"
+   },
+   "vision": false,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "temperature": 0.2,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_TEMPERATURE": "0.2"
+   },
+   "vision": false,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "temperature": 0.2,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_TEMPERATURE": "0.2"
+   },
+   "vision": true,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "temperature": 0.2,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_TEMPERATURE": "0.2"
+   },
+   "vision": true,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "temperature": 0.2,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_TEMPERATURE": "hot"
+   },
+   "vision": false,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_TEMPERATURE": "hot"
+   },
+   "vision": false,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_TEMPERATURE": "hot"
+   },
+   "vision": true,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_TEMPERATURE": "hot"
+   },
+   "vision": true,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_RESPONSE_FORMAT": "json_object"
+   },
+   "vision": false,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_object"
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_RESPONSE_FORMAT": "json_object"
+   },
+   "vision": false,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_object"
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_RESPONSE_FORMAT": "json_object"
+   },
+   "vision": true,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_object"
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_RESPONSE_FORMAT": "json_object"
+   },
+   "vision": true,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_object"
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_RESPONSE_FORMAT": "legacy"
+   },
+   "vision": false,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_object"
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_RESPONSE_FORMAT": "legacy"
+   },
+   "vision": false,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_object"
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_RESPONSE_FORMAT": "legacy"
+   },
+   "vision": true,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_object"
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_RESPONSE_FORMAT": "legacy"
+   },
+   "vision": true,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_object"
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_REASONING_EFFORT": "HIGH",
+    "OPENROUTER_ZDR": true,
+    "OPENROUTER_DATA_COLLECTION": "deny",
+    "OPENROUTER_SORT": "price",
+    "OPENROUTER_PROVIDER_ORDER": "a, b ,c",
+    "OPENROUTER_REQUIRE_PARAMETERS": "no",
+    "OPENROUTER_ALLOW_FALLBACKS": false
+   },
+   "vision": false,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "high"
+    },
+    "provider": {
+     "require_parameters": false,
+     "allow_fallbacks": false,
+     "data_collection": "deny",
+     "zdr": true,
+     "sort": "price",
+     "order": [
+      "a",
+      "b",
+      "c"
+     ]
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_REASONING_EFFORT": "HIGH",
+    "OPENROUTER_ZDR": true,
+    "OPENROUTER_DATA_COLLECTION": "deny",
+    "OPENROUTER_SORT": "price",
+    "OPENROUTER_PROVIDER_ORDER": "a, b ,c",
+    "OPENROUTER_REQUIRE_PARAMETERS": "no",
+    "OPENROUTER_ALLOW_FALLBACKS": false
+   },
+   "vision": false,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": false,
+     "allow_fallbacks": false,
+     "data_collection": "deny",
+     "zdr": true,
+     "sort": "price",
+     "order": [
+      "a",
+      "b",
+      "c"
+     ]
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_REASONING_EFFORT": "HIGH",
+    "OPENROUTER_ZDR": true,
+    "OPENROUTER_DATA_COLLECTION": "deny",
+    "OPENROUTER_SORT": "price",
+    "OPENROUTER_PROVIDER_ORDER": "a, b ,c",
+    "OPENROUTER_REQUIRE_PARAMETERS": "no",
+    "OPENROUTER_ALLOW_FALLBACKS": false
+   },
+   "vision": true,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": false,
+     "allow_fallbacks": false,
+     "data_collection": "deny",
+     "zdr": true,
+     "sort": "price",
+     "order": [
+      "a",
+      "b",
+      "c"
+     ]
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_REASONING_EFFORT": "HIGH",
+    "OPENROUTER_ZDR": true,
+    "OPENROUTER_DATA_COLLECTION": "deny",
+    "OPENROUTER_SORT": "price",
+    "OPENROUTER_PROVIDER_ORDER": "a, b ,c",
+    "OPENROUTER_REQUIRE_PARAMETERS": "no",
+    "OPENROUTER_ALLOW_FALLBACKS": false
+   },
+   "vision": true,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": false,
+     "allow_fallbacks": false,
+     "data_collection": "deny",
+     "zdr": true,
+     "sort": "price",
+     "order": [
+      "a",
+      "b",
+      "c"
+     ]
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "OPENROUTER_PROVIDER_ORDER": [
+     "x"
+    ],
+    "OPENROUTER_ZDR": false,
+    "OPENROUTER_DATA_COLLECTION": ""
+   },
+   "vision": false,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true,
+     "zdr": false,
+     "order": [
+      "x"
+     ]
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "OPENROUTER_PROVIDER_ORDER": [
+     "x"
+    ],
+    "OPENROUTER_ZDR": false,
+    "OPENROUTER_DATA_COLLECTION": ""
+   },
+   "vision": false,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true,
+     "zdr": false,
+     "order": [
+      "x"
+     ]
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "OPENROUTER_PROVIDER_ORDER": [
+     "x"
+    ],
+    "OPENROUTER_ZDR": false,
+    "OPENROUTER_DATA_COLLECTION": ""
+   },
+   "vision": true,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true,
+     "zdr": false,
+     "order": [
+      "x"
+     ]
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "OPENROUTER_PROVIDER_ORDER": [
+     "x"
+    ],
+    "OPENROUTER_ZDR": false,
+    "OPENROUTER_DATA_COLLECTION": ""
+   },
+   "vision": true,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true,
+     "zdr": false,
+     "order": [
+      "x"
+     ]
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://api.example.test/v1",
+    "LLM_REASONING_EFFORT": "medium"
+   },
+   "vision": false,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning_effort": "medium"
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://api.example.test/v1",
+    "LLM_REASONING_EFFORT": "medium"
+   },
+   "vision": false,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning_effort": "low"
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://api.example.test/v1",
+    "LLM_REASONING_EFFORT": "medium"
+   },
+   "vision": true,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://api.example.test/v1",
+    "LLM_REASONING_EFFORT": "medium"
+   },
+   "vision": true,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning_effort": "low"
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_MAX_OUTPUT_TOKENS": "100",
+    "LLM_FALLBACK_MAX_OUTPUT_TOKENS": 5000.9
+   },
+   "vision": false,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 256,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_MAX_OUTPUT_TOKENS": "100",
+    "LLM_FALLBACK_MAX_OUTPUT_TOKENS": 5000.9
+   },
+   "vision": false,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 5000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_MAX_OUTPUT_TOKENS": "100",
+    "LLM_FALLBACK_MAX_OUTPUT_TOKENS": 5000.9
+   },
+   "vision": true,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 256,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_MAX_OUTPUT_TOKENS": "100",
+    "LLM_FALLBACK_MAX_OUTPUT_TOKENS": 5000.9
+   },
+   "vision": true,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 5000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_MAX_OUTPUT_TOKENS": "abc"
+   },
+   "vision": false,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_MAX_OUTPUT_TOKENS": "abc"
+   },
+   "vision": false,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_MAX_OUTPUT_TOKENS": "abc"
+   },
+   "vision": true,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_MAX_OUTPUT_TOKENS": "abc"
+   },
+   "vision": true,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_MAX_OUTPUT_TOKENS": null
+   },
+   "vision": false,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_MAX_OUTPUT_TOKENS": null
+   },
+   "vision": false,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_MAX_OUTPUT_TOKENS": null
+   },
+   "vision": true,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_MAX_OUTPUT_TOKENS": null
+   },
+   "vision": true,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "low"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH"
+   },
+   "vision": false,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH"
+   },
+   "vision": false,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning_effort": "low"
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH"
+   },
+   "vision": true,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH"
+   },
+   "vision": true,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning_effort": "low"
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_VISION_REASONING_EFFORT": "bogus",
+    "LLM_FALLBACK_REASONING_EFFORT": "max",
+    "LLM_FALLBACK_VISION_REASONING_EFFORT": "xhigh"
+   },
+   "vision": false,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_VISION_REASONING_EFFORT": "bogus",
+    "LLM_FALLBACK_REASONING_EFFORT": "max",
+    "LLM_FALLBACK_VISION_REASONING_EFFORT": "xhigh"
+   },
+   "vision": false,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "max"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_VISION_REASONING_EFFORT": "bogus",
+    "LLM_FALLBACK_REASONING_EFFORT": "max",
+    "LLM_FALLBACK_VISION_REASONING_EFFORT": "xhigh"
+   },
+   "vision": true,
+   "fallback": false,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 3000,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "none"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_BASE_URL": "https://openrouter.ai/api/v1",
+    "LLM_VISION_REASONING_EFFORT": "bogus",
+    "LLM_FALLBACK_REASONING_EFFORT": "max",
+    "LLM_FALLBACK_VISION_REASONING_EFFORT": "xhigh"
+   },
+   "vision": true,
+   "fallback": true,
+   "body": {
+    "model": "model/x",
+    "messages": [
+     {
+      "role": "user",
+      "content": "hi"
+     }
+    ],
+    "max_tokens": 4096,
+    "response_format": {
+     "type": "json_schema",
+     "json_schema": {
+      "name": "resume_extraction",
+      "strict": true,
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "email": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "phone": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "location": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "graduation": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "skill_tags": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "skill_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "proficiency": {
+            "anyOf": [
+             {
+              "type": "string",
+              "enum": [
+               "beginner",
+               "intermediate",
+               "expert"
+              ]
+             },
+             {
+              "type": "null"
+             }
+            ]
+           },
+           "years": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "proficiency",
+           "years"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "certifications": {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "certification_details": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "issuer": {
+            "type": [
+             "string",
+             "null"
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "issuer"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "name",
+        "email",
+        "phone",
+        "location",
+        "graduation",
+        "skill_tags",
+        "skill_details",
+        "certifications",
+        "certification_details"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "reasoning": {
+     "effort": "xhigh"
+    },
+    "provider": {
+     "require_parameters": true,
+     "allow_fallbacks": true
+    }
+   }
+  }
+ ],
+ "models": [
+  {
+   "cfg": {},
+   "primary": "meta-llama/Llama-3.3-70B-Instruct",
+   "vision": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+   "fallback": "",
+   "fallbackVision": ""
+  },
+  {
+   "cfg": {
+    "LLM_MODEL": "legacy/m",
+    "LLM_VISION_MODEL": "legacy/v"
+   },
+   "primary": "legacy/m",
+   "vision": "legacy/v",
+   "fallback": "",
+   "fallbackVision": ""
+  },
+  {
+   "cfg": {
+    "LLM_PRIMARY_MODEL": " p/m ",
+    "LLM_MODEL": "x"
+   },
+   "primary": "p/m",
+   "vision": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+   "fallback": "",
+   "fallbackVision": ""
+  },
+  {
+   "cfg": {
+    "LLM_FALLBACK_MODEL": " f/m ",
+    "LLM_FALLBACK_VISION_MODEL": null
+   },
+   "primary": "meta-llama/Llama-3.3-70B-Instruct",
+   "vision": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+   "fallback": "f/m",
+   "fallbackVision": ""
+  },
+  {
+   "cfg": {
+    "LLM_PRIMARY_VISION_MODEL": ""
+   },
+   "primary": "meta-llama/Llama-3.3-70B-Instruct",
+   "vision": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+   "fallback": "",
+   "fallbackVision": ""
+  }
+ ]
+}

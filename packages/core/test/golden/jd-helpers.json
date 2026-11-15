@@ -1,0 +1,85 @@
+{
+ "body": {
+  "model": "m",
+  "messages": [
+   {
+    "role": "system",
+    "content": "You are an expert ATS (Applicant Tracking System) and technical recruiter. Screen the candidate's resume against the job description strictly and objectively. Do not assume a skill, qualification, or experience unless it is explicitly supported by the resume text. Do not inflate the score. Prioritize mandatory/must-have requirements over nice-to-have ones. Output only valid JSON."
+   },
+   {
+    "role": "user",
+    "content": "Job Description:\nJD\n\nCandidate Resume:\nRESUME\n\nScore how well this candidate fits the job description above.\n\nReturn a single JSON object with exactly these keys:\n- \"score\": integer 0-100, overall fit (0 = no fit, 100 = perfect fit on every requirement)\n- \"verdict\": one of \"pass\", \"reject\", \"cannot_determine\"\n- \"missing_critical\": array of short strings naming any must-have requirement the resume does\n  not support (empty array if none)\n- \"reason\": one short sentence explaining the score\n\nRules:\n- Be evidence-based. Do not credit a skill, qualification, or years of experience that is not\n  explicitly stated or clearly inferable (e.g. from dated work history) in the resume.\n- Weigh required/must-have requirements far more heavily than nice-to-have ones.\n- If the resume is too sparse, garbled, or ambiguous to judge fairly, use verdict\n  \"cannot_determine\" with a low-confidence score rather than guessing.\n- \"verdict\" should be \"reject\" only when the resume clearly fails one or more must-have\n  requirements or is a poor overall fit; otherwise \"pass\"."
+   }
+  ],
+  "response_format": {
+   "type": "json_object"
+  }
+ },
+ "fieldsToText": [
+  {
+   "fields": null,
+   "out": ""
+  },
+  {
+   "fields": {},
+   "out": ""
+  },
+  {
+   "fields": {
+    "Name": "A",
+    "Skills": "B",
+    "_x": 1
+   },
+   "out": "Name: A\nSkills: B"
+  },
+  {
+   "fields": {
+    "A": "not specified",
+    "B": "  ",
+    "C": 0,
+    "D": [],
+    "E": "ok"
+   },
+   "out": "C: 0\nD: []\nE: ok"
+  }
+ ],
+ "passes": [
+  {
+   "result": {
+    "verdict": "reject",
+    "score": 49
+   },
+   "threshold": 50,
+   "out": false
+  },
+  {
+   "result": {
+    "verdict": "reject",
+    "score": 50
+   },
+   "threshold": 50,
+   "out": true
+  },
+  {
+   "result": {
+    "verdict": "pass",
+    "score": 0
+   },
+   "threshold": 50,
+   "out": true
+  },
+  {
+   "result": {
+    "verdict": "cannot_determine",
+    "score": 0
+   },
+   "threshold": 50,
+   "out": true
+  }
+ ],
+ "constants": [
+  "Qwen/Qwen3-30B-A3B-Instruct",
+  0.3,
+  10
+ ]
+}

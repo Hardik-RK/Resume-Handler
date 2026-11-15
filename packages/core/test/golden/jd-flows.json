@@ -1,0 +1,763 @@
+[
+ {
+  "id": "ok-pass",
+  "flow": {
+   "id": "ok-pass"
+  },
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-17193f\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"score\\\": 80, \\\"verdict\\\": \\\"pass\\\", \\\"missing_critical\\\": [], \\\"reason\\\": \\\"good fit\\\"}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "out": {
+   "ok": true,
+   "result": {
+    "score": 80,
+    "verdict": "pass",
+    "missing_critical": [],
+    "reason": "good fit"
+   },
+   "meta": {
+    "model": "resp/model",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-17193f"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "bodies": [
+    {
+     "model": "s/model",
+     "messages": [
+      {
+       "role": "system",
+       "content": "You are an expert ATS (Applicant Tracking System) and technical recruiter. Screen the candidate's resume against the job description strictly and objectively. Do not assume a skill, qualification, or experience unless it is explicitly supported by the resume text. Do not inflate the score. Prioritize mandatory/must-have requirements over nice-to-have ones. Output only valid JSON."
+      },
+      {
+       "role": "user",
+       "content": "Job Description:\nJD text\n\nCandidate Resume:\nResume text here\n\nScore how well this candidate fits the job description above.\n\nReturn a single JSON object with exactly these keys:\n- \"score\": integer 0-100, overall fit (0 = no fit, 100 = perfect fit on every requirement)\n- \"verdict\": one of \"pass\", \"reject\", \"cannot_determine\"\n- \"missing_critical\": array of short strings naming any must-have requirement the resume does\n  not support (empty array if none)\n- \"reason\": one short sentence explaining the score\n\nRules:\n- Be evidence-based. Do not credit a skill, qualification, or years of experience that is not\n  explicitly stated or clearly inferable (e.g. from dated work history) in the resume.\n- Weigh required/must-have requirements far more heavily than nice-to-have ones.\n- If the resume is too sparse, garbled, or ambiguous to judge fairly, use verdict\n  \"cannot_determine\" with a low-confidence score rather than guessing.\n- \"verdict\" should be \"reject\" only when the resume clearly fails one or more must-have\n  requirements or is a poor overall fit; otherwise \"pass\"."
+      }
+     ],
+     "response_format": {
+      "type": "json_object"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "ok-reject",
+  "flow": {
+   "id": "ok-reject"
+  },
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-39a8a7\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"score\\\": 20, \\\"verdict\\\": \\\"reject\\\", \\\"missing_critical\\\": [\\\"Kubernetes\\\"], \\\"reason\\\": \\\"gap\\\"}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "out": {
+   "ok": true,
+   "result": {
+    "score": 20,
+    "verdict": "reject",
+    "missing_critical": [
+     "Kubernetes"
+    ],
+    "reason": "gap"
+   },
+   "meta": {
+    "model": "resp/model",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-39a8a7"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "bodies": [
+    {
+     "model": "s/model",
+     "messages": [
+      {
+       "role": "system",
+       "content": "You are an expert ATS (Applicant Tracking System) and technical recruiter. Screen the candidate's resume against the job description strictly and objectively. Do not assume a skill, qualification, or experience unless it is explicitly supported by the resume text. Do not inflate the score. Prioritize mandatory/must-have requirements over nice-to-have ones. Output only valid JSON."
+      },
+      {
+       "role": "user",
+       "content": "Job Description:\nJD text\n\nCandidate Resume:\nResume text here\n\nScore how well this candidate fits the job description above.\n\nReturn a single JSON object with exactly these keys:\n- \"score\": integer 0-100, overall fit (0 = no fit, 100 = perfect fit on every requirement)\n- \"verdict\": one of \"pass\", \"reject\", \"cannot_determine\"\n- \"missing_critical\": array of short strings naming any must-have requirement the resume does\n  not support (empty array if none)\n- \"reason\": one short sentence explaining the score\n\nRules:\n- Be evidence-based. Do not credit a skill, qualification, or years of experience that is not\n  explicitly stated or clearly inferable (e.g. from dated work history) in the resume.\n- Weigh required/must-have requirements far more heavily than nice-to-have ones.\n- If the resume is too sparse, garbled, or ambiguous to judge fairly, use verdict\n  \"cannot_determine\" with a low-confidence score rather than guessing.\n- \"verdict\" should be \"reject\" only when the resume clearly fails one or more must-have\n  requirements or is a poor overall fit; otherwise \"pass\"."
+      }
+     ],
+     "response_format": {
+      "type": "json_object"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "score-clamped-high",
+  "flow": {
+   "id": "score-clamped-high"
+  },
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-bd8788\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"score\\\": 250, \\\"verdict\\\": \\\"pass\\\", \\\"reason\\\": \\\"x\\\"}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "out": {
+   "ok": true,
+   "result": {
+    "score": 100,
+    "verdict": "pass",
+    "missing_critical": [],
+    "reason": "x"
+   },
+   "meta": {
+    "model": "resp/model",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-bd8788"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "bodies": [
+    {
+     "model": "s/model",
+     "messages": [
+      {
+       "role": "system",
+       "content": "You are an expert ATS (Applicant Tracking System) and technical recruiter. Screen the candidate's resume against the job description strictly and objectively. Do not assume a skill, qualification, or experience unless it is explicitly supported by the resume text. Do not inflate the score. Prioritize mandatory/must-have requirements over nice-to-have ones. Output only valid JSON."
+      },
+      {
+       "role": "user",
+       "content": "Job Description:\nJD text\n\nCandidate Resume:\nResume text here\n\nScore how well this candidate fits the job description above.\n\nReturn a single JSON object with exactly these keys:\n- \"score\": integer 0-100, overall fit (0 = no fit, 100 = perfect fit on every requirement)\n- \"verdict\": one of \"pass\", \"reject\", \"cannot_determine\"\n- \"missing_critical\": array of short strings naming any must-have requirement the resume does\n  not support (empty array if none)\n- \"reason\": one short sentence explaining the score\n\nRules:\n- Be evidence-based. Do not credit a skill, qualification, or years of experience that is not\n  explicitly stated or clearly inferable (e.g. from dated work history) in the resume.\n- Weigh required/must-have requirements far more heavily than nice-to-have ones.\n- If the resume is too sparse, garbled, or ambiguous to judge fairly, use verdict\n  \"cannot_determine\" with a low-confidence score rather than guessing.\n- \"verdict\" should be \"reject\" only when the resume clearly fails one or more must-have\n  requirements or is a poor overall fit; otherwise \"pass\"."
+      }
+     ],
+     "response_format": {
+      "type": "json_object"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "score-clamped-low",
+  "flow": {
+   "id": "score-clamped-low"
+  },
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-163264\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"score\\\": -5, \\\"verdict\\\": \\\"reject\\\"}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "out": {
+   "ok": true,
+   "result": {
+    "score": 0,
+    "verdict": "reject",
+    "missing_critical": [],
+    "reason": ""
+   },
+   "meta": {
+    "model": "resp/model",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-163264"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "bodies": [
+    {
+     "model": "s/model",
+     "messages": [
+      {
+       "role": "system",
+       "content": "You are an expert ATS (Applicant Tracking System) and technical recruiter. Screen the candidate's resume against the job description strictly and objectively. Do not assume a skill, qualification, or experience unless it is explicitly supported by the resume text. Do not inflate the score. Prioritize mandatory/must-have requirements over nice-to-have ones. Output only valid JSON."
+      },
+      {
+       "role": "user",
+       "content": "Job Description:\nJD text\n\nCandidate Resume:\nResume text here\n\nScore how well this candidate fits the job description above.\n\nReturn a single JSON object with exactly these keys:\n- \"score\": integer 0-100, overall fit (0 = no fit, 100 = perfect fit on every requirement)\n- \"verdict\": one of \"pass\", \"reject\", \"cannot_determine\"\n- \"missing_critical\": array of short strings naming any must-have requirement the resume does\n  not support (empty array if none)\n- \"reason\": one short sentence explaining the score\n\nRules:\n- Be evidence-based. Do not credit a skill, qualification, or years of experience that is not\n  explicitly stated or clearly inferable (e.g. from dated work history) in the resume.\n- Weigh required/must-have requirements far more heavily than nice-to-have ones.\n- If the resume is too sparse, garbled, or ambiguous to judge fairly, use verdict\n  \"cannot_determine\" with a low-confidence score rather than guessing.\n- \"verdict\" should be \"reject\" only when the resume clearly fails one or more must-have\n  requirements or is a poor overall fit; otherwise \"pass\"."
+      }
+     ],
+     "response_format": {
+      "type": "json_object"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "score-string",
+  "flow": {
+   "id": "score-string"
+  },
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-c13ae4\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"score\\\": \\\"70\\\", \\\"verdict\\\": \\\"pass\\\"}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "out": {
+   "ok": true,
+   "result": {
+    "score": 70,
+    "verdict": "pass",
+    "missing_critical": [],
+    "reason": ""
+   },
+   "meta": {
+    "model": "resp/model",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-c13ae4"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "bodies": [
+    {
+     "model": "s/model",
+     "messages": [
+      {
+       "role": "system",
+       "content": "You are an expert ATS (Applicant Tracking System) and technical recruiter. Screen the candidate's resume against the job description strictly and objectively. Do not assume a skill, qualification, or experience unless it is explicitly supported by the resume text. Do not inflate the score. Prioritize mandatory/must-have requirements over nice-to-have ones. Output only valid JSON."
+      },
+      {
+       "role": "user",
+       "content": "Job Description:\nJD text\n\nCandidate Resume:\nResume text here\n\nScore how well this candidate fits the job description above.\n\nReturn a single JSON object with exactly these keys:\n- \"score\": integer 0-100, overall fit (0 = no fit, 100 = perfect fit on every requirement)\n- \"verdict\": one of \"pass\", \"reject\", \"cannot_determine\"\n- \"missing_critical\": array of short strings naming any must-have requirement the resume does\n  not support (empty array if none)\n- \"reason\": one short sentence explaining the score\n\nRules:\n- Be evidence-based. Do not credit a skill, qualification, or years of experience that is not\n  explicitly stated or clearly inferable (e.g. from dated work history) in the resume.\n- Weigh required/must-have requirements far more heavily than nice-to-have ones.\n- If the resume is too sparse, garbled, or ambiguous to judge fairly, use verdict\n  \"cannot_determine\" with a low-confidence score rather than guessing.\n- \"verdict\" should be \"reject\" only when the resume clearly fails one or more must-have\n  requirements or is a poor overall fit; otherwise \"pass\"."
+      }
+     ],
+     "response_format": {
+      "type": "json_object"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "score-bad",
+  "flow": {
+   "id": "score-bad"
+  },
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-8d3bab\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"score\\\": \\\"abc\\\", \\\"verdict\\\": \\\"pass\\\"}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "out": {
+   "ok": true,
+   "result": {
+    "score": 0,
+    "verdict": "cannot_determine",
+    "missing_critical": [],
+    "reason": "malformed scoring response"
+   },
+   "meta": {
+    "model": "resp/model",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-8d3bab"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "bodies": [
+    {
+     "model": "s/model",
+     "messages": [
+      {
+       "role": "system",
+       "content": "You are an expert ATS (Applicant Tracking System) and technical recruiter. Screen the candidate's resume against the job description strictly and objectively. Do not assume a skill, qualification, or experience unless it is explicitly supported by the resume text. Do not inflate the score. Prioritize mandatory/must-have requirements over nice-to-have ones. Output only valid JSON."
+      },
+      {
+       "role": "user",
+       "content": "Job Description:\nJD text\n\nCandidate Resume:\nResume text here\n\nScore how well this candidate fits the job description above.\n\nReturn a single JSON object with exactly these keys:\n- \"score\": integer 0-100, overall fit (0 = no fit, 100 = perfect fit on every requirement)\n- \"verdict\": one of \"pass\", \"reject\", \"cannot_determine\"\n- \"missing_critical\": array of short strings naming any must-have requirement the resume does\n  not support (empty array if none)\n- \"reason\": one short sentence explaining the score\n\nRules:\n- Be evidence-based. Do not credit a skill, qualification, or years of experience that is not\n  explicitly stated or clearly inferable (e.g. from dated work history) in the resume.\n- Weigh required/must-have requirements far more heavily than nice-to-have ones.\n- If the resume is too sparse, garbled, or ambiguous to judge fairly, use verdict\n  \"cannot_determine\" with a low-confidence score rather than guessing.\n- \"verdict\" should be \"reject\" only when the resume clearly fails one or more must-have\n  requirements or is a poor overall fit; otherwise \"pass\"."
+      }
+     ],
+     "response_format": {
+      "type": "json_object"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "score-float-string",
+  "flow": {
+   "id": "score-float-string"
+  },
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-703e10\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"score\\\": \\\"70.5\\\", \\\"verdict\\\": \\\"pass\\\"}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "out": {
+   "ok": true,
+   "result": {
+    "score": 0,
+    "verdict": "cannot_determine",
+    "missing_critical": [],
+    "reason": "malformed scoring response"
+   },
+   "meta": {
+    "model": "resp/model",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-703e10"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "bodies": [
+    {
+     "model": "s/model",
+     "messages": [
+      {
+       "role": "system",
+       "content": "You are an expert ATS (Applicant Tracking System) and technical recruiter. Screen the candidate's resume against the job description strictly and objectively. Do not assume a skill, qualification, or experience unless it is explicitly supported by the resume text. Do not inflate the score. Prioritize mandatory/must-have requirements over nice-to-have ones. Output only valid JSON."
+      },
+      {
+       "role": "user",
+       "content": "Job Description:\nJD text\n\nCandidate Resume:\nResume text here\n\nScore how well this candidate fits the job description above.\n\nReturn a single JSON object with exactly these keys:\n- \"score\": integer 0-100, overall fit (0 = no fit, 100 = perfect fit on every requirement)\n- \"verdict\": one of \"pass\", \"reject\", \"cannot_determine\"\n- \"missing_critical\": array of short strings naming any must-have requirement the resume does\n  not support (empty array if none)\n- \"reason\": one short sentence explaining the score\n\nRules:\n- Be evidence-based. Do not credit a skill, qualification, or years of experience that is not\n  explicitly stated or clearly inferable (e.g. from dated work history) in the resume.\n- Weigh required/must-have requirements far more heavily than nice-to-have ones.\n- If the resume is too sparse, garbled, or ambiguous to judge fairly, use verdict\n  \"cannot_determine\" with a low-confidence score rather than guessing.\n- \"verdict\" should be \"reject\" only when the resume clearly fails one or more must-have\n  requirements or is a poor overall fit; otherwise \"pass\"."
+      }
+     ],
+     "response_format": {
+      "type": "json_object"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "verdict-invalid",
+  "flow": {
+   "id": "verdict-invalid"
+  },
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-54aa22\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"score\\\": 50, \\\"verdict\\\": \\\"maybe\\\", \\\"missing_critical\\\": [\\\"x\\\"], \\\"reason\\\": \\\"rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\\\"}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "out": {
+   "ok": true,
+   "result": {
+    "score": 50,
+    "verdict": "cannot_determine",
+    "missing_critical": [
+     "x"
+    ],
+    "reason": "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"
+   },
+   "meta": {
+    "model": "resp/model",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-54aa22"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "bodies": [
+    {
+     "model": "s/model",
+     "messages": [
+      {
+       "role": "system",
+       "content": "You are an expert ATS (Applicant Tracking System) and technical recruiter. Screen the candidate's resume against the job description strictly and objectively. Do not assume a skill, qualification, or experience unless it is explicitly supported by the resume text. Do not inflate the score. Prioritize mandatory/must-have requirements over nice-to-have ones. Output only valid JSON."
+      },
+      {
+       "role": "user",
+       "content": "Job Description:\nJD text\n\nCandidate Resume:\nResume text here\n\nScore how well this candidate fits the job description above.\n\nReturn a single JSON object with exactly these keys:\n- \"score\": integer 0-100, overall fit (0 = no fit, 100 = perfect fit on every requirement)\n- \"verdict\": one of \"pass\", \"reject\", \"cannot_determine\"\n- \"missing_critical\": array of short strings naming any must-have requirement the resume does\n  not support (empty array if none)\n- \"reason\": one short sentence explaining the score\n\nRules:\n- Be evidence-based. Do not credit a skill, qualification, or years of experience that is not\n  explicitly stated or clearly inferable (e.g. from dated work history) in the resume.\n- Weigh required/must-have requirements far more heavily than nice-to-have ones.\n- If the resume is too sparse, garbled, or ambiguous to judge fairly, use verdict\n  \"cannot_determine\" with a low-confidence score rather than guessing.\n- \"verdict\" should be \"reject\" only when the resume clearly fails one or more must-have\n  requirements or is a poor overall fit; otherwise \"pass\"."
+      }
+     ],
+     "response_format": {
+      "type": "json_object"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "not-an-object",
+  "flow": {
+   "id": "not-an-object"
+  },
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-9ef50c\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"[1,2,3]\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "out": {
+   "ok": true,
+   "result": {
+    "score": 0,
+    "verdict": "cannot_determine",
+    "missing_critical": [],
+    "reason": "malformed scoring response"
+   },
+   "meta": {
+    "model": "resp/model",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-9ef50c"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "bodies": [
+    {
+     "model": "s/model",
+     "messages": [
+      {
+       "role": "system",
+       "content": "You are an expert ATS (Applicant Tracking System) and technical recruiter. Screen the candidate's resume against the job description strictly and objectively. Do not assume a skill, qualification, or experience unless it is explicitly supported by the resume text. Do not inflate the score. Prioritize mandatory/must-have requirements over nice-to-have ones. Output only valid JSON."
+      },
+      {
+       "role": "user",
+       "content": "Job Description:\nJD text\n\nCandidate Resume:\nResume text here\n\nScore how well this candidate fits the job description above.\n\nReturn a single JSON object with exactly these keys:\n- \"score\": integer 0-100, overall fit (0 = no fit, 100 = perfect fit on every requirement)\n- \"verdict\": one of \"pass\", \"reject\", \"cannot_determine\"\n- \"missing_critical\": array of short strings naming any must-have requirement the resume does\n  not support (empty array if none)\n- \"reason\": one short sentence explaining the score\n\nRules:\n- Be evidence-based. Do not credit a skill, qualification, or years of experience that is not\n  explicitly stated or clearly inferable (e.g. from dated work history) in the resume.\n- Weigh required/must-have requirements far more heavily than nice-to-have ones.\n- If the resume is too sparse, garbled, or ambiguous to judge fairly, use verdict\n  \"cannot_determine\" with a low-confidence score rather than guessing.\n- \"verdict\" should be \"reject\" only when the resume clearly fails one or more must-have\n  requirements or is a poor overall fit; otherwise \"pass\"."
+      }
+     ],
+     "response_format": {
+      "type": "json_object"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "http-400",
+  "flow": {
+   "id": "http-400"
+  },
+  "script": [
+   [
+    400,
+    "x",
+    {}
+   ]
+  ],
+  "out": {
+   "ok": true,
+   "result": {
+    "score": 0,
+    "verdict": "cannot_determine",
+    "missing_critical": [],
+    "reason": "scoring failed: RuntimeError"
+   },
+   "meta": {
+    "model": "s/model",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 0,
+    "cost": 0.0,
+    "generation_ids": [],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "bodies": [
+    {
+     "model": "s/model",
+     "messages": [
+      {
+       "role": "system",
+       "content": "You are an expert ATS (Applicant Tracking System) and technical recruiter. Screen the candidate's resume against the job description strictly and objectively. Do not assume a skill, qualification, or experience unless it is explicitly supported by the resume text. Do not inflate the score. Prioritize mandatory/must-have requirements over nice-to-have ones. Output only valid JSON."
+      },
+      {
+       "role": "user",
+       "content": "Job Description:\nJD text\n\nCandidate Resume:\nResume text here\n\nScore how well this candidate fits the job description above.\n\nReturn a single JSON object with exactly these keys:\n- \"score\": integer 0-100, overall fit (0 = no fit, 100 = perfect fit on every requirement)\n- \"verdict\": one of \"pass\", \"reject\", \"cannot_determine\"\n- \"missing_critical\": array of short strings naming any must-have requirement the resume does\n  not support (empty array if none)\n- \"reason\": one short sentence explaining the score\n\nRules:\n- Be evidence-based. Do not credit a skill, qualification, or years of experience that is not\n  explicitly stated or clearly inferable (e.g. from dated work history) in the resume.\n- Weigh required/must-have requirements far more heavily than nice-to-have ones.\n- If the resume is too sparse, garbled, or ambiguous to judge fairly, use verdict\n  \"cannot_determine\" with a low-confidence score rather than guessing.\n- \"verdict\" should be \"reject\" only when the resume clearly fails one or more must-have\n  requirements or is a poor overall fit; otherwise \"pass\"."
+      }
+     ],
+     "response_format": {
+      "type": "json_object"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "daily",
+  "flow": {
+   "id": "daily"
+  },
+  "script": [
+   [
+    429,
+    "requests per day",
+    {}
+   ]
+  ],
+  "out": {
+   "ok": false,
+   "error": "DailyQuotaExceeded",
+   "bodies": [
+    {
+     "model": "s/model",
+     "messages": [
+      {
+       "role": "system",
+       "content": "You are an expert ATS (Applicant Tracking System) and technical recruiter. Screen the candidate's resume against the job description strictly and objectively. Do not assume a skill, qualification, or experience unless it is explicitly supported by the resume text. Do not inflate the score. Prioritize mandatory/must-have requirements over nice-to-have ones. Output only valid JSON."
+      },
+      {
+       "role": "user",
+       "content": "Job Description:\nJD text\n\nCandidate Resume:\nResume text here\n\nScore how well this candidate fits the job description above.\n\nReturn a single JSON object with exactly these keys:\n- \"score\": integer 0-100, overall fit (0 = no fit, 100 = perfect fit on every requirement)\n- \"verdict\": one of \"pass\", \"reject\", \"cannot_determine\"\n- \"missing_critical\": array of short strings naming any must-have requirement the resume does\n  not support (empty array if none)\n- \"reason\": one short sentence explaining the score\n\nRules:\n- Be evidence-based. Do not credit a skill, qualification, or years of experience that is not\n  explicitly stated or clearly inferable (e.g. from dated work history) in the resume.\n- Weigh required/must-have requirements far more heavily than nice-to-have ones.\n- If the resume is too sparse, garbled, or ambiguous to judge fairly, use verdict\n  \"cannot_determine\" with a low-confidence score rather than guessing.\n- \"verdict\" should be \"reject\" only when the resume clearly fails one or more must-have\n  requirements or is a poor overall fit; otherwise \"pass\"."
+      }
+     ],
+     "response_format": {
+      "type": "json_object"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "no-key",
+  "flow": {
+   "id": "no-key",
+   "cfg": {
+    "LLM_API_KEY": ""
+   }
+  },
+  "script": [],
+  "out": {
+   "ok": true,
+   "result": {
+    "score": 0,
+    "verdict": "cannot_determine",
+    "missing_critical": [],
+    "reason": "LLM_API_KEY not set"
+   },
+   "meta": null,
+   "bodies": []
+  }
+ },
+ {
+  "id": "no-text",
+  "flow": {
+   "id": "no-text",
+   "resume": "   "
+  },
+  "script": [],
+  "out": {
+   "ok": true,
+   "result": {
+    "score": 0,
+    "verdict": "cannot_determine",
+    "missing_critical": [],
+    "reason": "no readable resume text to score"
+   },
+   "meta": null,
+   "bodies": []
+  }
+ },
+ {
+  "id": "fields-text",
+  "flow": {
+   "id": "fields-text",
+   "resume": "",
+   "fields": {
+    "Name": "A B",
+    "Email Address": "Not Specified",
+    "_x": "hidden",
+    "Skills": [
+     {
+      "name": "Py"
+     }
+    ],
+    "Phone Number": ""
+   }
+  },
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-77d251\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"score\\\": 61, \\\"verdict\\\": \\\"pass\\\"}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "out": {
+   "ok": true,
+   "result": {
+    "score": 61,
+    "verdict": "pass",
+    "missing_critical": [],
+    "reason": ""
+   },
+   "meta": {
+    "model": "resp/model",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-77d251"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "bodies": [
+    {
+     "model": "s/model",
+     "messages": [
+      {
+       "role": "system",
+       "content": "You are an expert ATS (Applicant Tracking System) and technical recruiter. Screen the candidate's resume against the job description strictly and objectively. Do not assume a skill, qualification, or experience unless it is explicitly supported by the resume text. Do not inflate the score. Prioritize mandatory/must-have requirements over nice-to-have ones. Output only valid JSON."
+      },
+      {
+       "role": "user",
+       "content": "Job Description:\nJD text\n\nCandidate Resume:\nName: A B\nSkills: [{'name': 'Py'}]\n\nScore how well this candidate fits the job description above.\n\nReturn a single JSON object with exactly these keys:\n- \"score\": integer 0-100, overall fit (0 = no fit, 100 = perfect fit on every requirement)\n- \"verdict\": one of \"pass\", \"reject\", \"cannot_determine\"\n- \"missing_critical\": array of short strings naming any must-have requirement the resume does\n  not support (empty array if none)\n- \"reason\": one short sentence explaining the score\n\nRules:\n- Be evidence-based. Do not credit a skill, qualification, or years of experience that is not\n  explicitly stated or clearly inferable (e.g. from dated work history) in the resume.\n- Weigh required/must-have requirements far more heavily than nice-to-have ones.\n- If the resume is too sparse, garbled, or ambiguous to judge fairly, use verdict\n  \"cannot_determine\" with a low-confidence score rather than guessing.\n- \"verdict\" should be \"reject\" only when the resume clearly fails one or more must-have\n  requirements or is a poor overall fit; otherwise \"pass\"."
+      }
+     ],
+     "response_format": {
+      "type": "json_object"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "missing-null",
+  "flow": {
+   "id": "missing-null"
+  },
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-9c263f\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"score\\\": 61, \\\"verdict\\\": \\\"pass\\\", \\\"missing_critical\\\": null}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "out": {
+   "ok": true,
+   "result": {
+    "score": 61,
+    "verdict": "pass",
+    "missing_critical": [],
+    "reason": ""
+   },
+   "meta": {
+    "model": "resp/model",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-9c263f"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "bodies": [
+    {
+     "model": "s/model",
+     "messages": [
+      {
+       "role": "system",
+       "content": "You are an expert ATS (Applicant Tracking System) and technical recruiter. Screen the candidate's resume against the job description strictly and objectively. Do not assume a skill, qualification, or experience unless it is explicitly supported by the resume text. Do not inflate the score. Prioritize mandatory/must-have requirements over nice-to-have ones. Output only valid JSON."
+      },
+      {
+       "role": "user",
+       "content": "Job Description:\nJD text\n\nCandidate Resume:\nResume text here\n\nScore how well this candidate fits the job description above.\n\nReturn a single JSON object with exactly these keys:\n- \"score\": integer 0-100, overall fit (0 = no fit, 100 = perfect fit on every requirement)\n- \"verdict\": one of \"pass\", \"reject\", \"cannot_determine\"\n- \"missing_critical\": array of short strings naming any must-have requirement the resume does\n  not support (empty array if none)\n- \"reason\": one short sentence explaining the score\n\nRules:\n- Be evidence-based. Do not credit a skill, qualification, or years of experience that is not\n  explicitly stated or clearly inferable (e.g. from dated work history) in the resume.\n- Weigh required/must-have requirements far more heavily than nice-to-have ones.\n- If the resume is too sparse, garbled, or ambiguous to judge fairly, use verdict\n  \"cannot_determine\" with a low-confidence score rather than guessing.\n- \"verdict\" should be \"reject\" only when the resume clearly fails one or more must-have\n  requirements or is a poor overall fit; otherwise \"pass\"."
+      }
+     ],
+     "response_format": {
+      "type": "json_object"
+     }
+    }
+   ]
+  }
+ }
+]

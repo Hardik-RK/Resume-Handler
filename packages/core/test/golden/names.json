@@ -1,0 +1,208 @@
+{
+ "fromText": [
+  {
+   "text": "# Ankit Arvind Chaudhari\nIndia | +91 7715030550 | ankit@example.com",
+   "name": "Ankit Arvind Chaudhari"
+  },
+  {
+   "text": "Senior Software Engineer | Bangalore\nMUHAMMED ASHFAQ\nBangalore, India",
+   "name": "Muhammed Ashfaq"
+  },
+  {
+   "text": "# **SHAKIL AHMAD Java Full Stack Developer | Spring Boot**\nSome Technology Pvt Ltd | Software Developer",
+   "name": "Shakil Ahmad"
+  },
+  {
+   "text": "Some Technology Pvt Ltd | Software Developer",
+   "name": "Not Specified"
+  },
+  {
+   "text": "Dr. Priya Nair\npriya@example.com",
+   "name": "Priya Nair"
+  },
+  {
+   "text": "NAME: Rahul Verma\nphone 98765 43210",
+   "name": "Rahul Verma"
+  },
+  {
+   "text": "Résumé\nJosé Álvarez\nMadrid",
+   "name": "José Álvarez"
+  },
+  {
+   "text": "John O'Neil-Smith\nAddress line",
+   "name": "John O'Neil-Smith"
+  },
+  {
+   "text": "Curriculum Vitae\nAnanya Iyer\nBengaluru",
+   "name": "Ananya Iyer"
+  },
+  {
+   "text": "asha@example.com\nAsha Rao",
+   "name": "Asha Rao"
+  },
+  {
+   "text": "B.Tech Computer Science\nKiran Kumar",
+   "name": "Kiran Kumar"
+  },
+  {
+   "text": "[Asha Rao](http://example.com/a)\nSkills",
+   "name": "Asha Rao"
+  },
+  {
+   "text": "![img](a.png)\n# Asha Rao\n",
+   "name": "Asha Rao"
+  },
+  {
+   "text": "ASHA RAO | Senior Engineer | 98765 43210",
+   "name": "Asha Rao"
+  },
+  {
+   "text": "Zoë Müller\nBerlin",
+   "name": "Zoë Müller"
+  },
+  {
+   "text": "One Two Three Four Five Six\nNext",
+   "name": "Next"
+  },
+  {
+   "text": "Mr. Vikram Singh Rathore",
+   "name": "Vikram Singh Rathore"
+  },
+  {
+   "text": "Profile\nSummary\nExperience\nGanesh Pillai",
+   "name": "Ganesh Pillai"
+  },
+  {
+   "text": "12 Main Road\nMeera Joshi",
+   "name": "Meera Joshi"
+  },
+  {
+   "text": "Candidate: Test Person A cand0@example.com",
+   "name": "Not Specified"
+  },
+  {
+   "text": "• Neha Kapoor •\nDelhi",
+   "name": "Neha Kapoor"
+  },
+  {
+   "text": "",
+   "name": "Not Specified"
+  },
+  {
+   "text": "Software Engineer",
+   "name": "Not Specified"
+  },
+  {
+   "text": "Ravi\n",
+   "name": "Ravi"
+  },
+  {
+   "text": "  \n\n  Sanjay Rao Technical Lead\n",
+   "name": "Sanjay Rao"
+  },
+  {
+   "text": "Sales Manager Priya Menon",
+   "name": "Not Specified"
+  },
+  {
+   "text": "Manish K. Gupta\nEngineer",
+   "name": "Manish K. Gupta"
+  },
+  {
+   "text": "ÉMILIE DUPONT\nParis",
+   "name": "Émilie Dupont"
+  },
+  {
+   "text": "Name: \nSomeone Else",
+   "name": "Name"
+  },
+  {
+   "text": "Teacher Anita Desai",
+   "name": "Not Specified"
+  }
+ ],
+ "usable": [
+  {
+   "value": "Asha Rao",
+   "usable": true
+  },
+  {
+   "value": "N/A",
+   "usable": false
+  },
+  {
+   "value": "none",
+   "usable": false
+  },
+  {
+   "value": "",
+   "usable": false
+  },
+  {
+   "value": null,
+   "usable": false
+  },
+  {
+   "value": "a@b.com",
+   "usable": false
+  },
+  {
+   "value": "Asha 2",
+   "usable": false
+  },
+  {
+   "value": "http://x.com",
+   "usable": false
+  },
+  {
+   "value": "Candidate",
+   "usable": false
+  },
+  {
+   "value": " Unknown ",
+   "usable": false
+  },
+  {
+   "value": "Not  Specified",
+   "usable": false
+  },
+  {
+   "value": "Zoë",
+   "usable": true
+  }
+ ],
+ "normalise": [
+  {
+   "value": "SAHIL KASHYAP",
+   "out": "Sahil Kashyap"
+  },
+  {
+   "value": "Sahil Kashyap",
+   "out": "Sahil Kashyap"
+  },
+  {
+   "value": "  mixed   CASE ",
+   "out": "mixed CASE"
+  },
+  {
+   "value": "O'NEIL",
+   "out": "O'Neil"
+  },
+  {
+   "value": "ÉMILIE DUPONT",
+   "out": "Émilie Dupont"
+  },
+  {
+   "value": "123",
+   "out": "123"
+  },
+  {
+   "value": "a-b C",
+   "out": "a-b C"
+  },
+  {
+   "value": "ASHA  RAO",
+   "out": "Asha Rao"
+  }
+ ]
+}

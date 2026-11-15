@@ -1,0 +1,1964 @@
+[
+ {
+  "scenario": "basic",
+  "config": {},
+  "options": {},
+  "error": null,
+  "cancelled": false,
+  "counts": {
+   "parsed": 3,
+   "uploaded": 3,
+   "in_batch_duplicates": 0,
+   "files": 3,
+   "rows": 3,
+   "jd_scored": 0,
+   "jd_cannot_determine": 0
+  },
+  "cost": {
+   "tokens": 450,
+   "usd": 0.003
+  },
+  "failedFiles": [],
+  "csv": {
+   "header": [
+    "Lead ID",
+    "Date",
+    "Name",
+    "Email Address",
+    "Phone Number",
+    "Platform",
+    "Current Location",
+    "Graduation",
+    "Skills",
+    "Certifications",
+    "Resume parsed skill tags",
+    "Resume"
+   ],
+   "rows": [
+    [
+     "1e569f6792a5",
+     "<date>",
+     "Test Person A",
+     "cand0@example.com",
+     "+919876543200",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ],
+    [
+     "eecdf8b39a5e",
+     "<date>",
+     "Test Person B",
+     "cand1@example.com",
+     "+919876543201",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ],
+    [
+     "94ca5a65cf27",
+     "<date>",
+     "Test Person C",
+     "cand2@example.com",
+     "+919876543202",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ]
+   ]
+  },
+  "csvTag": "OpenRouter",
+  "rowsLen": 3,
+  "fileEvents": [
+   [
+    "cv0.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv0.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "cv1.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv1.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "cv2.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv2.pdf",
+    "uploaded",
+    "new"
+   ]
+  ],
+  "phases": [
+   [
+    "preparing",
+    "reading input folder",
+    null
+   ],
+   [
+    "parsing",
+    "",
+    3
+   ],
+   [
+    "uploading",
+    "Drive uploads run alongside parsing",
+    null
+   ],
+   [
+    "done",
+    null,
+    null
+   ]
+  ],
+  "processed": [
+   "cv0.pdf",
+   "cv1.pdf",
+   "cv2.pdf"
+  ],
+  "requests": {
+   "extract": 3,
+   "score": 0,
+   "models": [
+    "test/extractor"
+   ],
+   "visionCalls": 0
+  },
+  "driveFiles": [
+   "cv0.pdf",
+   "cv1.pdf",
+   "cv2.pdf"
+  ],
+  "retry": null,
+  "databaseFiles": [],
+  "databaseIndex": null,
+  "usageRuns": [
+   {
+    "event": "run",
+    "requests": 3,
+    "cost": 0.003,
+    "total_tokens": 450,
+    "rate_limit_trips": 0
+   }
+  ],
+  "cacheLines": 3
+ },
+ {
+  "scenario": "mixed",
+  "config": {},
+  "options": {},
+  "error": null,
+  "cancelled": false,
+  "counts": {
+   "duplicate_content": 2,
+   "zip_rejected": 1,
+   "quarantined": 1,
+   "parsed": 5,
+   "uploaded": 5,
+   "in_batch_duplicates": 1,
+   "files": 6,
+   "rows": 4,
+   "jd_scored": 0,
+   "jd_cannot_determine": 0
+  },
+  "cost": {
+   "tokens": 750,
+   "usd": 0.005
+  },
+  "failedFiles": [
+   {
+    "name": "corrupt.pdf",
+    "reason": "ValueError: no extractable text and could not render page image (corrupt PDF?)"
+   }
+  ],
+  "csv": {
+   "header": [
+    "Lead ID",
+    "Date",
+    "Name",
+    "Email Address",
+    "Phone Number",
+    "Platform",
+    "Current Location",
+    "Graduation",
+    "Skills",
+    "Certifications",
+    "Resume parsed skill tags",
+    "Resume"
+   ],
+   "rows": [
+    [
+     "1e569f6792a5",
+     "<date>",
+     "Test Person A",
+     "cand0@example.com",
+     "+919876543200",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ],
+    [
+     "eecdf8b39a5e",
+     "<date>",
+     "Test Person B",
+     "cand1@example.com",
+     "+919876543201",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ],
+    [
+     "d445b03eafb1",
+     "<date>",
+     "Scan Person",
+     "scan@example.com",
+     "+919876543299",
+     "Unstop",
+     "Pune",
+     "2020 - B.E",
+     "",
+     "",
+     "",
+     "<resume>"
+    ],
+    [
+     "94ca5a65cf27",
+     "<date>",
+     "Test Person C",
+     "cand2@example.com",
+     "+919876543202",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ]
+   ]
+  },
+  "csvTag": "OpenRouter",
+  "rowsLen": 4,
+  "fileEvents": [
+   [
+    "CV.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "CV.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "bad.zip",
+    "skipped",
+    "archive rejected: not a valid zip file"
+   ],
+   [
+    "corrupt.pdf",
+    "quarantined",
+    "ValueError: no extractable text and could not render page image (corrupt PDF?)"
+   ],
+   [
+    "cv0.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv0.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "cv1.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv1.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "cv3.pdf",
+    "duplicate",
+    "same person already in this batch"
+   ],
+   [
+    "cv3.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv3.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "scan.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "scan.pdf",
+    "uploaded",
+    "new"
+   ]
+  ],
+  "phases": [
+   [
+    "preparing",
+    "reading input folder",
+    null
+   ],
+   [
+    "parsing",
+    "",
+    6
+   ],
+   [
+    "uploading",
+    "Drive uploads run alongside parsing",
+    null
+   ],
+   [
+    "done",
+    null,
+    null
+   ]
+  ],
+  "processed": [
+   "bad.zip",
+   "batch.zip",
+   "corrupt.pdf",
+   "cv0.pdf",
+   "cv1.pdf",
+   "cv3.pdf",
+   "scan.pdf",
+   "sub/same-bytes.pdf"
+  ],
+  "requests": {
+   "extract": 5,
+   "score": 0,
+   "models": [
+    "test/extractor",
+    "test/vision"
+   ],
+   "visionCalls": 1
+  },
+  "driveFiles": [
+   "CV.pdf",
+   "cv0.pdf",
+   "cv1.pdf",
+   "cv3.pdf",
+   "scan.pdf"
+  ],
+  "retry": "sha256,file,source,reason\nf6356139d778f3805814a1ed1c624c006dd025d0fd0e2b3b771575c6adc37e3e,corrupt.pdf,input,ValueError: no extractable text and could not render page image (corrupt PDF?)\n",
+  "databaseFiles": [],
+  "databaseIndex": null,
+  "usageRuns": [
+   {
+    "event": "run",
+    "requests": 5,
+    "cost": 0.005,
+    "total_tokens": 750,
+    "rate_limit_trips": 0
+   }
+  ],
+  "cacheLines": 5
+ },
+ {
+  "scenario": "mixed",
+  "config": {},
+  "options": {
+   "campaignType": "SALES"
+  },
+  "error": null,
+  "cancelled": false,
+  "counts": {
+   "duplicate_content": 2,
+   "zip_rejected": 1,
+   "quarantined": 1,
+   "parsed": 5,
+   "uploaded": 5,
+   "in_batch_duplicates": 1,
+   "files": 6,
+   "rows": 4,
+   "jd_scored": 0,
+   "jd_cannot_determine": 0
+  },
+  "cost": {
+   "tokens": 750,
+   "usd": 0.005
+  },
+  "failedFiles": [
+   {
+    "name": "corrupt.pdf",
+    "reason": "ValueError: no extractable text and could not render page image (corrupt PDF?)"
+   }
+  ],
+  "csv": {
+   "header": [
+    "Lead ID",
+    "Date",
+    "Name",
+    "Email Address",
+    "Phone Number",
+    "Platform",
+    "Current Location",
+    "Graduation",
+    "CS / Sales type",
+    "Industry background",
+    "Team level",
+    "Team size",
+    "Resume"
+   ],
+   "rows": [
+    [
+     "1e569f6792a5",
+     "<date>",
+     "Test Person A",
+     "cand0@example.com",
+     "+919876543200",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "",
+     "",
+     "Not Specified",
+     "Not Specified",
+     "<resume>"
+    ],
+    [
+     "eecdf8b39a5e",
+     "<date>",
+     "Test Person B",
+     "cand1@example.com",
+     "+919876543201",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "",
+     "",
+     "Not Specified",
+     "Not Specified",
+     "<resume>"
+    ],
+    [
+     "d445b03eafb1",
+     "<date>",
+     "Scan Person",
+     "scan@example.com",
+     "+919876543299",
+     "Unstop",
+     "Pune",
+     "2020 - B.E",
+     "",
+     "",
+     "Not Specified",
+     "Not Specified",
+     "<resume>"
+    ],
+    [
+     "94ca5a65cf27",
+     "<date>",
+     "Test Person C",
+     "cand2@example.com",
+     "+919876543202",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "",
+     "",
+     "Not Specified",
+     "Not Specified",
+     "<resume>"
+    ]
+   ]
+  },
+  "csvTag": "OpenRouter",
+  "rowsLen": 4,
+  "fileEvents": [
+   [
+    "CV.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "CV.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "bad.zip",
+    "skipped",
+    "archive rejected: not a valid zip file"
+   ],
+   [
+    "corrupt.pdf",
+    "quarantined",
+    "ValueError: no extractable text and could not render page image (corrupt PDF?)"
+   ],
+   [
+    "cv0.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv0.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "cv1.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv1.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "cv3.pdf",
+    "duplicate",
+    "same person already in this batch"
+   ],
+   [
+    "cv3.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv3.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "scan.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "scan.pdf",
+    "uploaded",
+    "new"
+   ]
+  ],
+  "phases": [
+   [
+    "preparing",
+    "reading input folder",
+    null
+   ],
+   [
+    "parsing",
+    "",
+    6
+   ],
+   [
+    "uploading",
+    "Drive uploads run alongside parsing",
+    null
+   ],
+   [
+    "done",
+    null,
+    null
+   ]
+  ],
+  "processed": [
+   "bad.zip",
+   "batch.zip",
+   "corrupt.pdf",
+   "cv0.pdf",
+   "cv1.pdf",
+   "cv3.pdf",
+   "scan.pdf",
+   "sub/same-bytes.pdf"
+  ],
+  "requests": {
+   "extract": 5,
+   "score": 0,
+   "models": [
+    "test/extractor",
+    "test/vision"
+   ],
+   "visionCalls": 1
+  },
+  "driveFiles": [
+   "CV.pdf",
+   "cv0.pdf",
+   "cv1.pdf",
+   "cv3.pdf",
+   "scan.pdf"
+  ],
+  "retry": "sha256,file,source,reason\nf6356139d778f3805814a1ed1c624c006dd025d0fd0e2b3b771575c6adc37e3e,corrupt.pdf,input,ValueError: no extractable text and could not render page image (corrupt PDF?)\n",
+  "databaseFiles": [],
+  "databaseIndex": null,
+  "usageRuns": [
+   {
+    "event": "run",
+    "requests": 5,
+    "cost": 0.005,
+    "total_tokens": 750,
+    "rate_limit_trips": 0
+   }
+  ],
+  "cacheLines": 5
+ },
+ {
+  "scenario": "jd",
+  "config": {},
+  "options": {
+   "jdFilter": true,
+   "jd": "Senior Python developer with Kubernetes experience."
+  },
+  "error": null,
+  "cancelled": false,
+  "counts": {
+   "jd_would_reject": 3,
+   "parsed": 3,
+   "uploaded": 3,
+   "in_batch_duplicates": 0,
+   "files": 3,
+   "rows": 3,
+   "jd_scored": 3,
+   "jd_cannot_determine": 0
+  },
+  "cost": {
+   "tokens": 900,
+   "usd": 0.006
+  },
+  "failedFiles": [],
+  "csv": {
+   "header": [
+    "Lead ID",
+    "Date",
+    "Name",
+    "Email Address",
+    "Phone Number",
+    "Platform",
+    "Current Location",
+    "Graduation",
+    "Skills",
+    "Certifications",
+    "Resume parsed skill tags",
+    "Resume"
+   ],
+   "rows": [
+    [
+     "1e569f6792a5",
+     "<date>",
+     "Test Person A",
+     "cand0@example.com",
+     "+919876543200",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ],
+    [
+     "eecdf8b39a5e",
+     "<date>",
+     "Test Person B",
+     "cand1@example.com",
+     "+919876543201",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ],
+    [
+     "94ca5a65cf27",
+     "<date>",
+     "Test Person C",
+     "cand2@example.com",
+     "+919876543202",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ]
+   ]
+  },
+  "csvTag": "OpenRouter",
+  "rowsLen": 3,
+  "fileEvents": [
+   [
+    "cv0.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv0.pdf",
+    "scored",
+    "JD 20 (dry run, kept)"
+   ],
+   [
+    "cv0.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "cv1.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv1.pdf",
+    "scored",
+    "JD 20 (dry run, kept)"
+   ],
+   [
+    "cv1.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "cv2.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv2.pdf",
+    "scored",
+    "JD 20 (dry run, kept)"
+   ],
+   [
+    "cv2.pdf",
+    "uploaded",
+    "new"
+   ]
+  ],
+  "phases": [
+   [
+    "preparing",
+    "reading input folder",
+    null
+   ],
+   [
+    "screening",
+    "parsing and JD screening",
+    3
+   ],
+   [
+    "uploading",
+    "Drive uploads run alongside parsing",
+    null
+   ],
+   [
+    "done",
+    null,
+    null
+   ]
+  ],
+  "processed": [
+   "cv0.pdf",
+   "cv1.pdf",
+   "cv2.pdf"
+  ],
+  "requests": {
+   "extract": 3,
+   "score": 3,
+   "models": [
+    "test/extractor"
+   ],
+   "visionCalls": 0
+  },
+  "driveFiles": [
+   "cv0.pdf",
+   "cv1.pdf",
+   "cv2.pdf"
+  ],
+  "retry": null,
+  "databaseFiles": [],
+  "databaseIndex": null,
+  "usageRuns": [
+   {
+    "event": "run",
+    "requests": 6,
+    "cost": 0.006,
+    "total_tokens": 900,
+    "rate_limit_trips": 0
+   }
+  ],
+  "cacheLines": 6
+ },
+ {
+  "scenario": "jd",
+  "config": {
+   "jdDryRun": false
+  },
+  "options": {
+   "jdFilter": true,
+   "jd": "Rust Go developer.",
+   "dryRun": false
+  },
+  "error": null,
+  "cancelled": false,
+  "counts": {
+   "jd_rejected": 3,
+   "in_batch_duplicates": 0,
+   "files": 3,
+   "rows": 0,
+   "jd_scored": 3,
+   "jd_cannot_determine": 0
+  },
+  "cost": {
+   "tokens": 900,
+   "usd": 0.006
+  },
+  "failedFiles": [],
+  "csv": null,
+  "csvTag": null,
+  "rowsLen": 0,
+  "fileEvents": [
+   [
+    "cv0.pdf",
+    "rejected",
+    "JD score 20"
+   ],
+   [
+    "cv1.pdf",
+    "rejected",
+    "JD score 20"
+   ],
+   [
+    "cv2.pdf",
+    "rejected",
+    "JD score 20"
+   ]
+  ],
+  "phases": [
+   [
+    "preparing",
+    "reading input folder",
+    null
+   ],
+   [
+    "screening",
+    "parsing and JD screening",
+    3
+   ],
+   [
+    "done",
+    null,
+    null
+   ]
+  ],
+  "processed": [
+   "cv0.pdf",
+   "cv1.pdf",
+   "cv2.pdf"
+  ],
+  "requests": {
+   "extract": 3,
+   "score": 3,
+   "models": [
+    "test/extractor"
+   ],
+   "visionCalls": 0
+  },
+  "driveFiles": [],
+  "retry": null,
+  "databaseFiles": [
+   "cv0.pdf",
+   "cv1.pdf",
+   "cv2.pdf",
+   "index.csv"
+  ],
+  "databaseIndex": "Date,Filename,Run,Campaign,Score,Missing Critical,Reason\n2026-11-14 06:31,cv0.pdf,run-20261114T010153Z-cc6eddcb,TECH,20,Kubernetes,gap\n2026-11-14 06:31,cv2.pdf,run-20261114T010153Z-cc6eddcb,TECH,20,Kubernetes,gap\n2026-11-14 06:31,cv1.pdf,run-20261114T010153Z-cc6eddcb,TECH,20,Kubernetes,gap\n",
+  "usageRuns": [
+   {
+    "event": "run",
+    "requests": 6,
+    "cost": 0.006,
+    "total_tokens": 900,
+    "rate_limit_trips": 0
+   }
+  ],
+  "cacheLines": 6
+ },
+ {
+  "scenario": "basic",
+  "config": {},
+  "options": {
+   "inputs": [
+    "cv1.pdf"
+   ]
+  },
+  "error": null,
+  "cancelled": false,
+  "counts": {
+   "parsed": 1,
+   "uploaded": 1,
+   "in_batch_duplicates": 0,
+   "files": 1,
+   "rows": 1,
+   "jd_scored": 0,
+   "jd_cannot_determine": 0
+  },
+  "cost": {
+   "tokens": 150,
+   "usd": 0.001
+  },
+  "failedFiles": [],
+  "csv": {
+   "header": [
+    "Lead ID",
+    "Date",
+    "Name",
+    "Email Address",
+    "Phone Number",
+    "Platform",
+    "Current Location",
+    "Graduation",
+    "Skills",
+    "Certifications",
+    "Resume parsed skill tags",
+    "Resume"
+   ],
+   "rows": [
+    [
+     "eecdf8b39a5e",
+     "<date>",
+     "Test Person B",
+     "cand1@example.com",
+     "+919876543201",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ]
+   ]
+  },
+  "csvTag": "OpenRouter",
+  "rowsLen": 1,
+  "fileEvents": [
+   [
+    "cv1.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv1.pdf",
+    "uploaded",
+    "new"
+   ]
+  ],
+  "phases": [
+   [
+    "preparing",
+    "reading input folder",
+    null
+   ],
+   [
+    "parsing",
+    "",
+    1
+   ],
+   [
+    "uploading",
+    "Drive uploads run alongside parsing",
+    null
+   ],
+   [
+    "done",
+    null,
+    null
+   ]
+  ],
+  "processed": [
+   "cv1.pdf"
+  ],
+  "requests": {
+   "extract": 1,
+   "score": 0,
+   "models": [
+    "test/extractor"
+   ],
+   "visionCalls": 0
+  },
+  "driveFiles": [
+   "cv1.pdf"
+  ],
+  "retry": null,
+  "databaseFiles": [],
+  "databaseIndex": null,
+  "usageRuns": [
+   {
+    "event": "run",
+    "requests": 1,
+    "cost": 0.001,
+    "total_tokens": 150,
+    "rate_limit_trips": 0
+   }
+  ],
+  "cacheLines": 1
+ },
+ {
+  "scenario": "basic",
+  "config": {},
+  "options": {
+   "driveFolderId": ""
+  },
+  "error": "Choose a Drive folder for this run",
+  "cancelled": false,
+  "counts": {},
+  "cost": {
+   "tokens": 0,
+   "usd": 0.0
+  },
+  "failedFiles": [],
+  "csv": null,
+  "csvTag": null,
+  "rowsLen": 0,
+  "fileEvents": [],
+  "phases": [
+   [
+    "failed",
+    "Choose a Drive folder for this run",
+    null
+   ]
+  ],
+  "processed": [],
+  "requests": {
+   "extract": 0,
+   "score": 0,
+   "models": [],
+   "visionCalls": 0
+  },
+  "driveFiles": [],
+  "retry": null,
+  "databaseFiles": [],
+  "databaseIndex": null,
+  "usageRuns": [],
+  "cacheLines": 0
+ },
+ {
+  "scenario": "basic",
+  "config": {
+   "driveFolders": [
+    {
+     "name": "tech",
+     "id": "F-TECH"
+    }
+   ]
+  },
+  "options": {
+   "driveFolderId": ""
+  },
+  "error": null,
+  "cancelled": false,
+  "counts": {
+   "parsed": 3,
+   "uploaded": 3,
+   "in_batch_duplicates": 0,
+   "files": 3,
+   "rows": 3,
+   "jd_scored": 0,
+   "jd_cannot_determine": 0
+  },
+  "cost": {
+   "tokens": 450,
+   "usd": 0.003
+  },
+  "failedFiles": [],
+  "csv": {
+   "header": [
+    "Lead ID",
+    "Date",
+    "Name",
+    "Email Address",
+    "Phone Number",
+    "Platform",
+    "Current Location",
+    "Graduation",
+    "Skills",
+    "Certifications",
+    "Resume parsed skill tags",
+    "Resume"
+   ],
+   "rows": [
+    [
+     "1e569f6792a5",
+     "<date>",
+     "Test Person A",
+     "cand0@example.com",
+     "+919876543200",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ],
+    [
+     "eecdf8b39a5e",
+     "<date>",
+     "Test Person B",
+     "cand1@example.com",
+     "+919876543201",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ],
+    [
+     "94ca5a65cf27",
+     "<date>",
+     "Test Person C",
+     "cand2@example.com",
+     "+919876543202",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ]
+   ]
+  },
+  "csvTag": "OpenRouter",
+  "rowsLen": 3,
+  "fileEvents": [
+   [
+    "cv0.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv0.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "cv1.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv1.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "cv2.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv2.pdf",
+    "uploaded",
+    "new"
+   ]
+  ],
+  "phases": [
+   [
+    "preparing",
+    "reading input folder",
+    null
+   ],
+   [
+    "parsing",
+    "",
+    3
+   ],
+   [
+    "uploading",
+    "Drive uploads run alongside parsing",
+    null
+   ],
+   [
+    "done",
+    null,
+    null
+   ]
+  ],
+  "processed": [
+   "cv0.pdf",
+   "cv1.pdf",
+   "cv2.pdf"
+  ],
+  "requests": {
+   "extract": 3,
+   "score": 0,
+   "models": [
+    "test/extractor"
+   ],
+   "visionCalls": 0
+  },
+  "driveFiles": [
+   "cv0.pdf",
+   "cv1.pdf",
+   "cv2.pdf"
+  ],
+  "retry": null,
+  "databaseFiles": [],
+  "databaseIndex": null,
+  "usageRuns": [
+   {
+    "event": "run",
+    "requests": 3,
+    "cost": 0.003,
+    "total_tokens": 450,
+    "rate_limit_trips": 0
+   }
+  ],
+  "cacheLines": 3
+ },
+ {
+  "scenario": "basic",
+  "config": {
+   "driveFolders": {
+    "TECH": "F-DICT"
+   }
+  },
+  "options": {
+   "driveFolderId": ""
+  },
+  "error": null,
+  "cancelled": false,
+  "counts": {
+   "parsed": 3,
+   "uploaded": 3,
+   "in_batch_duplicates": 0,
+   "files": 3,
+   "rows": 3,
+   "jd_scored": 0,
+   "jd_cannot_determine": 0
+  },
+  "cost": {
+   "tokens": 450,
+   "usd": 0.003
+  },
+  "failedFiles": [],
+  "csv": {
+   "header": [
+    "Lead ID",
+    "Date",
+    "Name",
+    "Email Address",
+    "Phone Number",
+    "Platform",
+    "Current Location",
+    "Graduation",
+    "Skills",
+    "Certifications",
+    "Resume parsed skill tags",
+    "Resume"
+   ],
+   "rows": [
+    [
+     "1e569f6792a5",
+     "<date>",
+     "Test Person A",
+     "cand0@example.com",
+     "+919876543200",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ],
+    [
+     "eecdf8b39a5e",
+     "<date>",
+     "Test Person B",
+     "cand1@example.com",
+     "+919876543201",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ],
+    [
+     "94ca5a65cf27",
+     "<date>",
+     "Test Person C",
+     "cand2@example.com",
+     "+919876543202",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ]
+   ]
+  },
+  "csvTag": "OpenRouter",
+  "rowsLen": 3,
+  "fileEvents": [
+   [
+    "cv0.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv0.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "cv1.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv1.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "cv2.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv2.pdf",
+    "uploaded",
+    "new"
+   ]
+  ],
+  "phases": [
+   [
+    "preparing",
+    "reading input folder",
+    null
+   ],
+   [
+    "parsing",
+    "",
+    3
+   ],
+   [
+    "uploading",
+    "Drive uploads run alongside parsing",
+    null
+   ],
+   [
+    "done",
+    null,
+    null
+   ]
+  ],
+  "processed": [
+   "cv0.pdf",
+   "cv1.pdf",
+   "cv2.pdf"
+  ],
+  "requests": {
+   "extract": 3,
+   "score": 0,
+   "models": [
+    "test/extractor"
+   ],
+   "visionCalls": 0
+  },
+  "driveFiles": [
+   "cv0.pdf",
+   "cv1.pdf",
+   "cv2.pdf"
+  ],
+  "retry": null,
+  "databaseFiles": [],
+  "databaseIndex": null,
+  "usageRuns": [
+   {
+    "event": "run",
+    "requests": 3,
+    "cost": 0.003,
+    "total_tokens": 450,
+    "rate_limit_trips": 0
+   }
+  ],
+  "cacheLines": 3
+ },
+ {
+  "scenario": "basic",
+  "config": {},
+  "options": {
+   "jdFilter": true,
+   "jd": ""
+  },
+  "error": null,
+  "cancelled": false,
+  "counts": {
+   "parsed": 3,
+   "uploaded": 3,
+   "in_batch_duplicates": 0,
+   "files": 3,
+   "rows": 3,
+   "jd_scored": 0,
+   "jd_cannot_determine": 0
+  },
+  "cost": {
+   "tokens": 450,
+   "usd": 0.003
+  },
+  "failedFiles": [],
+  "csv": {
+   "header": [
+    "Lead ID",
+    "Date",
+    "Name",
+    "Email Address",
+    "Phone Number",
+    "Platform",
+    "Current Location",
+    "Graduation",
+    "Skills",
+    "Certifications",
+    "Resume parsed skill tags",
+    "Resume"
+   ],
+   "rows": [
+    [
+     "1e569f6792a5",
+     "<date>",
+     "Test Person A",
+     "cand0@example.com",
+     "+919876543200",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ],
+    [
+     "eecdf8b39a5e",
+     "<date>",
+     "Test Person B",
+     "cand1@example.com",
+     "+919876543201",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ],
+    [
+     "94ca5a65cf27",
+     "<date>",
+     "Test Person C",
+     "cand2@example.com",
+     "+919876543202",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ]
+   ]
+  },
+  "csvTag": "OpenRouter",
+  "rowsLen": 3,
+  "fileEvents": [
+   [
+    "cv0.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv0.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "cv1.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv1.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "cv2.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv2.pdf",
+    "uploaded",
+    "new"
+   ]
+  ],
+  "phases": [
+   [
+    "preparing",
+    "reading input folder",
+    null
+   ],
+   [
+    "parsing",
+    "",
+    3
+   ],
+   [
+    "uploading",
+    "Drive uploads run alongside parsing",
+    null
+   ],
+   [
+    "done",
+    null,
+    null
+   ]
+  ],
+  "processed": [
+   "cv0.pdf",
+   "cv1.pdf",
+   "cv2.pdf"
+  ],
+  "requests": {
+   "extract": 3,
+   "score": 0,
+   "models": [
+    "test/extractor"
+   ],
+   "visionCalls": 0
+  },
+  "driveFiles": [
+   "cv0.pdf",
+   "cv1.pdf",
+   "cv2.pdf"
+  ],
+  "retry": null,
+  "databaseFiles": [],
+  "databaseIndex": null,
+  "usageRuns": [
+   {
+    "event": "run",
+    "requests": 3,
+    "cost": 0.003,
+    "total_tokens": 450,
+    "rate_limit_trips": 0
+   }
+  ],
+  "cacheLines": 3
+ },
+ {
+  "scenario": "basic",
+  "config": {},
+  "options": {
+   "jdFilter": true,
+   "jd": "Senior Python developer with Kubernetes experience.",
+   "jdThreshold": 0
+  },
+  "error": null,
+  "cancelled": false,
+  "counts": {
+   "jd_would_reject": 3,
+   "parsed": 3,
+   "uploaded": 3,
+   "in_batch_duplicates": 0,
+   "files": 3,
+   "rows": 3,
+   "jd_scored": 3,
+   "jd_cannot_determine": 0
+  },
+  "cost": {
+   "tokens": 900,
+   "usd": 0.006
+  },
+  "failedFiles": [],
+  "csv": {
+   "header": [
+    "Lead ID",
+    "Date",
+    "Name",
+    "Email Address",
+    "Phone Number",
+    "Platform",
+    "Current Location",
+    "Graduation",
+    "Skills",
+    "Certifications",
+    "Resume parsed skill tags",
+    "Resume"
+   ],
+   "rows": [
+    [
+     "1e569f6792a5",
+     "<date>",
+     "Test Person A",
+     "cand0@example.com",
+     "+919876543200",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ],
+    [
+     "eecdf8b39a5e",
+     "<date>",
+     "Test Person B",
+     "cand1@example.com",
+     "+919876543201",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ],
+    [
+     "94ca5a65cf27",
+     "<date>",
+     "Test Person C",
+     "cand2@example.com",
+     "+919876543202",
+     "Unstop",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ]
+   ]
+  },
+  "csvTag": "OpenRouter",
+  "rowsLen": 3,
+  "fileEvents": [
+   [
+    "cv0.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv0.pdf",
+    "scored",
+    "JD 20 (dry run, kept)"
+   ],
+   [
+    "cv0.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "cv1.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv1.pdf",
+    "scored",
+    "JD 20 (dry run, kept)"
+   ],
+   [
+    "cv1.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "cv2.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv2.pdf",
+    "scored",
+    "JD 20 (dry run, kept)"
+   ],
+   [
+    "cv2.pdf",
+    "uploaded",
+    "new"
+   ]
+  ],
+  "phases": [
+   [
+    "preparing",
+    "reading input folder",
+    null
+   ],
+   [
+    "screening",
+    "parsing and JD screening",
+    3
+   ],
+   [
+    "uploading",
+    "Drive uploads run alongside parsing",
+    null
+   ],
+   [
+    "done",
+    null,
+    null
+   ]
+  ],
+  "processed": [
+   "cv0.pdf",
+   "cv1.pdf",
+   "cv2.pdf"
+  ],
+  "requests": {
+   "extract": 3,
+   "score": 3,
+   "models": [
+    "test/extractor"
+   ],
+   "visionCalls": 0
+  },
+  "driveFiles": [
+   "cv0.pdf",
+   "cv1.pdf",
+   "cv2.pdf"
+  ],
+  "retry": null,
+  "databaseFiles": [],
+  "databaseIndex": null,
+  "usageRuns": [
+   {
+    "event": "run",
+    "requests": 6,
+    "cost": 0.006,
+    "total_tokens": 900,
+    "rate_limit_trips": 0
+   }
+  ],
+  "cacheLines": 6
+ },
+ {
+  "scenario": "basic",
+  "config": {},
+  "options": {
+   "platform": "LinkedIn"
+  },
+  "error": null,
+  "cancelled": false,
+  "counts": {
+   "parsed": 3,
+   "uploaded": 3,
+   "in_batch_duplicates": 0,
+   "files": 3,
+   "rows": 3,
+   "jd_scored": 0,
+   "jd_cannot_determine": 0
+  },
+  "cost": {
+   "tokens": 450,
+   "usd": 0.003
+  },
+  "failedFiles": [],
+  "csv": {
+   "header": [
+    "Lead ID",
+    "Date",
+    "Name",
+    "Email Address",
+    "Phone Number",
+    "Platform",
+    "Current Location",
+    "Graduation",
+    "Skills",
+    "Certifications",
+    "Resume parsed skill tags",
+    "Resume"
+   ],
+   "rows": [
+    [
+     "1e569f6792a5",
+     "<date>",
+     "Test Person A",
+     "cand0@example.com",
+     "+919876543200",
+     "LinkedIn",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ],
+    [
+     "eecdf8b39a5e",
+     "<date>",
+     "Test Person B",
+     "cand1@example.com",
+     "+919876543201",
+     "LinkedIn",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ],
+    [
+     "94ca5a65cf27",
+     "<date>",
+     "Test Person C",
+     "cand2@example.com",
+     "+919876543202",
+     "LinkedIn",
+     "Bengaluru, India",
+     "2021 - B.Tech",
+     "[{\"name\": \"Python\"}]",
+     "",
+     "Python",
+     "<resume>"
+    ]
+   ]
+  },
+  "csvTag": "OpenRouter",
+  "rowsLen": 3,
+  "fileEvents": [
+   [
+    "cv0.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv0.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "cv1.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv1.pdf",
+    "uploaded",
+    "new"
+   ],
+   [
+    "cv2.pdf",
+    "parsed",
+    ""
+   ],
+   [
+    "cv2.pdf",
+    "uploaded",
+    "new"
+   ]
+  ],
+  "phases": [
+   [
+    "preparing",
+    "reading input folder",
+    null
+   ],
+   [
+    "parsing",
+    "",
+    3
+   ],
+   [
+    "uploading",
+    "Drive uploads run alongside parsing",
+    null
+   ],
+   [
+    "done",
+    null,
+    null
+   ]
+  ],
+  "processed": [
+   "cv0.pdf",
+   "cv1.pdf",
+   "cv2.pdf"
+  ],
+  "requests": {
+   "extract": 3,
+   "score": 0,
+   "models": [
+    "test/extractor"
+   ],
+   "visionCalls": 0
+  },
+  "driveFiles": [
+   "cv0.pdf",
+   "cv1.pdf",
+   "cv2.pdf"
+  ],
+  "retry": null,
+  "databaseFiles": [],
+  "databaseIndex": null,
+  "usageRuns": [
+   {
+    "event": "run",
+    "requests": 3,
+    "cost": 0.003,
+    "total_tokens": 450,
+    "rate_limit_trips": 0
+   }
+  ],
+  "cacheLines": 3
+ }
+]

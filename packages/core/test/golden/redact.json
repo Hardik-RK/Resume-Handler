@@ -1,0 +1,118 @@
+{
+ "pipeline": [
+  {
+   "text": "key sk-secret-123456 Bearer abc.def mail a@b.com phone +91 98765 43210 ok 12",
+   "secrets": [
+    "sk-secret-123456"
+   ],
+   "out": "key [redacted] Bearer [redacted] mail [email] phone [number] ok 12"
+  },
+  {
+   "text": "short secret abc123 and abcdefgh long",
+   "secrets": [
+    "abc123",
+    "abcdefgh"
+   ],
+   "out": "short secret abc123 and [redacted] long"
+  },
+  {
+   "text": "call 98765 43210 or 2021-2023 or 12 34",
+   "secrets": [],
+   "out": "call [number] or 2021-2023 or 12 34"
+  },
+  {
+   "text": "Bearer   tok.en/with=chars and x@y.zz, z@w.com.",
+   "secrets": [],
+   "out": "Bearer [redacted] and [email], [email]"
+  },
+  {
+   "text": "plain text",
+   "secrets": [],
+   "out": "plain text"
+  },
+  {
+   "text": "+1 (650) 253-0000 and 1234567890 and 123456789",
+   "secrets": [],
+   "out": "[number] and [number] and 123456789"
+  }
+ ],
+ "events": [
+  {
+   "text": "key sk-or-v1-abcdef0123456789xyz and AIzaSyD-example-google-key-0123456789 Bearer abc.def-token ; token=abc123def password: hunter2 hunter-two-secret-value",
+   "out": "key [redacted-key] and [redacted-key] Bearer [redacted] ; token=[redacted] password: [redacted] [redacted]"
+  },
+  {
+   "text": "Processed 12 files for Asha Rao, 3 tokens used, cost 0.02 USD",
+   "out": "Processed 12 files for Asha Rao, 3 tokens used, cost 0.02 USD"
+  },
+  {
+   "text": "{\"api_key\": \"abc\", \"refresh_token\":\"zzz\", \"x\": 1}",
+   "out": "{\"api_key\": \"[redacted]\", \"refresh_token\":\"[redacted]\", \"x\": 1}"
+  },
+  {
+   "text": "eyJhbGciOiJFZERTQSJ9abcdef.AbCdEfGhIjKlMnOpQrStUvWxYz0123456789abcd",
+   "out": "[redacted-token]"
+  },
+  {
+   "text": "client-secret = hush; ID_TOKEN: aaa; passwd=bbb&x=1",
+   "out": "client-secret = [redacted]; ID_TOKEN: [redacted]; passwd=[redacted]&x=1"
+  }
+ ],
+ "scrub": [
+  {
+   "value": {
+    "a": "sk-live-abcdefgh123",
+    "b": [
+     1,
+     "Bearer zzz",
+     {
+      "c": null
+     }
+    ],
+    "d": 2.5
+   },
+   "out": {
+    "a": "[redacted-key]",
+    "b": [
+     1,
+     "Bearer [redacted]",
+     {
+      "c": null
+     }
+    ],
+    "d": 2.5
+   }
+  },
+  {
+   "value": [
+    "x",
+    true
+   ],
+   "out": [
+    "x",
+    true
+   ]
+  },
+  {
+   "value": "plain",
+   "out": "plain"
+  },
+  {
+   "value": null,
+   "out": null
+  },
+  {
+   "value": 5,
+   "out": 5
+  }
+ ],
+ "extractedSecretValues": [
+  "sk-test-key-0123456789",
+  "{\"refresh_token\": \"r-tok-1\", \"client_secret\": \"c-sec-1\", \"access_token\": \"a-tok-1\"}",
+  "r-tok-1",
+  "c-sec-1",
+  "a-tok-1",
+  "{\"installed\": {\"client_secret\": \"inst-sec\"}}",
+  "inst-sec"
+ ]
+}

@@ -1,0 +1,2356 @@
+{
+ "fields": [
+  {
+   "name": "Name",
+   "description": "Candidate full name"
+  },
+  {
+   "name": "Skills",
+   "description": "List of skills",
+   "campaign_types": [
+    "TECH"
+   ]
+  },
+  {
+   "name": "Subjects taught",
+   "description": "Subjects",
+   "campaignTypes": [
+    "TEACHER"
+   ]
+  },
+  {
+   "name": "Date",
+   "description": "supplied",
+   "source": "pipeline"
+  },
+  {
+   "name": "ATS score",
+   "description": "ats",
+   "extractor": "ats",
+   "campaign_types": [
+    "TECH"
+   ]
+  }
+ ],
+ "cases": [
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH"
+   },
+   "instructions": "Extract explicit facts from this resume for the TECH campaign.\nReturn one JSON object matching the supplied schema. No markdown, explanation, or extra keys.\n\nAlways inspect these common fields: name, email, phone, current location, graduation.\nRole fields in scope: TECH: \"Skills\", \"Certifications\", \"Resume parsed skill tags\".\n\nRules:\n- Missing scalar = null; missing list = []. Never output placeholders such as \"Not Specified\".\n- Do not infer, estimate, classify, or use the filename, path, email username, or general knowledge.\n- Name must be the complete name printed in the resume. Email and phone must belong to the candidate,\n  not a reference, employer, URL, ID, date, salary, or postal code. Preserve phone digits and country code.\n- Current location means present residence. Graduation means the most recent degree completed or being pursued,\n  with its stated/expected year when available.\n- Keep skill proficiency/years only when explicitly tied to that skill. Do not copy overall experience to skills.\n- Keep certifications, subjects, curricula, organizations, industries, and sales types only when explicitly named;\n  remove duplicates. Use enum values only when the resume provides the corresponding evidence.\n- Role-specific fields are campaign-scoped. Do not return recruiter-entered fields\n  such as experience, CTC, preferred location, reason for leaving, or source/platform.\n",
+   "schema": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "email": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "phone": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "location": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "graduation": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "skill_tags": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "skill_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "proficiency": {
+         "type": [
+          "string",
+          "null"
+         ],
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "beginner",
+            "intermediate",
+            "expert"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "years": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "proficiency",
+        "years"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "certifications": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "certification_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "issuer": {
+         "type": [
+          "string",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "issuer"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "required": [
+     "name",
+     "email",
+     "phone",
+     "location",
+     "graduation",
+     "skill_tags",
+     "skill_details",
+     "certifications",
+     "certification_details"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TEACHER"
+   },
+   "instructions": "Extract explicit facts from this resume for the TEACHER campaign.\nReturn one JSON object matching the supplied schema. No markdown, explanation, or extra keys.\n\nAlways inspect these common fields: name, email, phone, current location, graduation.\nRole fields in scope: TEACHER: \"Subjects taught\", \"Grade levels taught\", \"Curriculum expertise\", \"Ed tech names/school name\".\n\nRules:\n- Missing scalar = null; missing list = []. Never output placeholders such as \"Not Specified\".\n- Do not infer, estimate, classify, or use the filename, path, email username, or general knowledge.\n- Name must be the complete name printed in the resume. Email and phone must belong to the candidate,\n  not a reference, employer, URL, ID, date, salary, or postal code. Preserve phone digits and country code.\n- Current location means present residence. Graduation means the most recent degree completed or being pursued,\n  with its stated/expected year when available.\n- Keep skill proficiency/years only when explicitly tied to that skill. Do not copy overall experience to skills.\n- Keep certifications, subjects, curricula, organizations, industries, and sales types only when explicitly named;\n  remove duplicates. Use enum values only when the resume provides the corresponding evidence.\n- Role-specific fields are campaign-scoped. Do not return recruiter-entered fields\n  such as experience, CTC, preferred location, reason for leaving, or source/platform.\n",
+   "schema": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "email": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "phone": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "location": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "graduation": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "subjects": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "subject_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "category": {
+         "type": [
+          "string",
+          "null"
+         ],
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "STEM",
+            "languages",
+            "humanities",
+            "arts"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "category"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "grade_levels": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "curricula": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "organizations": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "organization_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "type": {
+         "type": [
+          "string",
+          "null"
+         ],
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "EDTECH",
+            "SCHOOL",
+            "OTHER"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "years": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "type",
+        "years"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "required": [
+     "name",
+     "email",
+     "phone",
+     "location",
+     "graduation",
+     "subjects",
+     "subject_details",
+     "grade_levels",
+     "curricula",
+     "organizations",
+     "organization_details"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "SALES"
+   },
+   "instructions": "Extract explicit facts from this resume for the SALES campaign.\nReturn one JSON object matching the supplied schema. No markdown, explanation, or extra keys.\n\nAlways inspect these common fields: name, email, phone, current location, graduation.\nRole fields in scope: SALES: \"CS / Sales type\", \"Industry background\", \"Team level\", \"Team size\".\n\nRules:\n- Missing scalar = null; missing list = []. Never output placeholders such as \"Not Specified\".\n- Do not infer, estimate, classify, or use the filename, path, email username, or general knowledge.\n- Name must be the complete name printed in the resume. Email and phone must belong to the candidate,\n  not a reference, employer, URL, ID, date, salary, or postal code. Preserve phone digits and country code.\n- Current location means present residence. Graduation means the most recent degree completed or being pursued,\n  with its stated/expected year when available.\n- Keep skill proficiency/years only when explicitly tied to that skill. Do not copy overall experience to skills.\n- Keep certifications, subjects, curricula, organizations, industries, and sales types only when explicitly named;\n  remove duplicates. Use enum values only when the resume provides the corresponding evidence.\n- Role-specific fields are campaign-scoped. Do not return recruiter-entered fields\n  such as experience, CTC, preferred location, reason for leaving, or source/platform.\n",
+   "schema": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "email": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "phone": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "location": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "graduation": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "sales_types": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "enum": [
+        "inside sales",
+        "field sales",
+        "enterprise",
+        "SMB",
+        "B2B",
+        "B2C",
+        "customer success"
+       ]
+      }
+     },
+     "industries": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "team_level": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "anyOf": [
+       {
+        "type": "string",
+        "enum": [
+         "individual_contributor",
+         "team_lead",
+         "manager"
+        ]
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "team_size": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "required": [
+     "name",
+     "email",
+     "phone",
+     "location",
+     "graduation",
+     "sales_types",
+     "industries",
+     "team_level",
+     "team_size"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": ""
+   },
+   "instructions": "Extract explicit facts from this resume for the the selected campaign campaign.\nReturn one JSON object matching the supplied schema. No markdown, explanation, or extra keys.\n\nAlways inspect these common fields: name, email, phone, current location, graduation.\nRole fields in scope: .\n\nRules:\n- Missing scalar = null; missing list = []. Never output placeholders such as \"Not Specified\".\n- Do not infer, estimate, classify, or use the filename, path, email username, or general knowledge.\n- Name must be the complete name printed in the resume. Email and phone must belong to the candidate,\n  not a reference, employer, URL, ID, date, salary, or postal code. Preserve phone digits and country code.\n- Current location means present residence. Graduation means the most recent degree completed or being pursued,\n  with its stated/expected year when available.\n- Keep skill proficiency/years only when explicitly tied to that skill. Do not copy overall experience to skills.\n- Keep certifications, subjects, curricula, organizations, industries, and sales types only when explicitly named;\n  remove duplicates. Use enum values only when the resume provides the corresponding evidence.\n- Role-specific fields are campaign-scoped. Do not return recruiter-entered fields\n  such as experience, CTC, preferred location, reason for leaving, or source/platform.\n",
+   "schema": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "email": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "phone": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "location": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "graduation": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "skill_tags": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "skill_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "proficiency": {
+         "type": [
+          "string",
+          "null"
+         ],
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "beginner",
+            "intermediate",
+            "expert"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "years": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "proficiency",
+        "years"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "certifications": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "certification_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "issuer": {
+         "type": [
+          "string",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "issuer"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "subjects": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "subject_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "category": {
+         "type": [
+          "string",
+          "null"
+         ],
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "STEM",
+            "languages",
+            "humanities",
+            "arts"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "category"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "grade_levels": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "curricula": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "organizations": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "organization_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "type": {
+         "type": [
+          "string",
+          "null"
+         ],
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "EDTECH",
+            "SCHOOL",
+            "OTHER"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "years": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "type",
+        "years"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "sales_types": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "enum": [
+        "inside sales",
+        "field sales",
+        "enterprise",
+        "SMB",
+        "B2B",
+        "B2C",
+        "customer success"
+       ]
+      }
+     },
+     "industries": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "team_level": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "anyOf": [
+       {
+        "type": "string",
+        "enum": [
+         "individual_contributor",
+         "team_lead",
+         "manager"
+        ]
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "team_size": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "required": [
+     "name",
+     "email",
+     "phone",
+     "location",
+     "graduation",
+     "skill_tags",
+     "skill_details",
+     "certifications",
+     "certification_details",
+     "subjects",
+     "subject_details",
+     "grade_levels",
+     "curricula",
+     "organizations",
+     "organization_details",
+     "sales_types",
+     "industries",
+     "team_level",
+     "team_size"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "cfg": {},
+   "instructions": "Extract explicit facts from this resume for the the selected campaign campaign.\nReturn one JSON object matching the supplied schema. No markdown, explanation, or extra keys.\n\nAlways inspect these common fields: name, email, phone, current location, graduation.\nRole fields in scope: .\n\nRules:\n- Missing scalar = null; missing list = []. Never output placeholders such as \"Not Specified\".\n- Do not infer, estimate, classify, or use the filename, path, email username, or general knowledge.\n- Name must be the complete name printed in the resume. Email and phone must belong to the candidate,\n  not a reference, employer, URL, ID, date, salary, or postal code. Preserve phone digits and country code.\n- Current location means present residence. Graduation means the most recent degree completed or being pursued,\n  with its stated/expected year when available.\n- Keep skill proficiency/years only when explicitly tied to that skill. Do not copy overall experience to skills.\n- Keep certifications, subjects, curricula, organizations, industries, and sales types only when explicitly named;\n  remove duplicates. Use enum values only when the resume provides the corresponding evidence.\n- Role-specific fields are campaign-scoped. Do not return recruiter-entered fields\n  such as experience, CTC, preferred location, reason for leaving, or source/platform.\n",
+   "schema": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "email": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "phone": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "location": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "graduation": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "skill_tags": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "skill_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "proficiency": {
+         "type": [
+          "string",
+          "null"
+         ],
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "beginner",
+            "intermediate",
+            "expert"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "years": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "proficiency",
+        "years"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "certifications": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "certification_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "issuer": {
+         "type": [
+          "string",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "issuer"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "subjects": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "subject_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "category": {
+         "type": [
+          "string",
+          "null"
+         ],
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "STEM",
+            "languages",
+            "humanities",
+            "arts"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "category"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "grade_levels": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "curricula": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "organizations": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "organization_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "type": {
+         "type": [
+          "string",
+          "null"
+         ],
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "EDTECH",
+            "SCHOOL",
+            "OTHER"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "years": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "type",
+        "years"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "sales_types": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "enum": [
+        "inside sales",
+        "field sales",
+        "enterprise",
+        "SMB",
+        "B2B",
+        "B2C",
+        "customer success"
+       ]
+      }
+     },
+     "industries": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "team_level": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "anyOf": [
+       {
+        "type": "string",
+        "enum": [
+         "individual_contributor",
+         "team_lead",
+         "manager"
+        ]
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "team_size": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "required": [
+     "name",
+     "email",
+     "phone",
+     "location",
+     "graduation",
+     "skill_tags",
+     "skill_details",
+     "certifications",
+     "certification_details",
+     "subjects",
+     "subject_details",
+     "grade_levels",
+     "curricula",
+     "organizations",
+     "organization_details",
+     "sales_types",
+     "industries",
+     "team_level",
+     "team_size"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "EXTRACT_ATS": true
+   },
+   "instructions": "Extract explicit facts from this resume for the TECH campaign.\nReturn one JSON object matching the supplied schema. No markdown, explanation, or extra keys.\n\nAlways inspect these common fields: name, email, phone, current location, graduation.\nRole fields in scope: TECH: \"Skills\", \"Certifications\", \"Resume parsed skill tags\"; ATS (only when enabled): \"ATS score\", \"ATS summary\".\n\nRules:\n- Missing scalar = null; missing list = []. Never output placeholders such as \"Not Specified\".\n- Do not infer, estimate, classify, or use the filename, path, email username, or general knowledge.\n- Name must be the complete name printed in the resume. Email and phone must belong to the candidate,\n  not a reference, employer, URL, ID, date, salary, or postal code. Preserve phone digits and country code.\n- Current location means present residence. Graduation means the most recent degree completed or being pursued,\n  with its stated/expected year when available.\n- Keep skill proficiency/years only when explicitly tied to that skill. Do not copy overall experience to skills.\n- Keep certifications, subjects, curricula, organizations, industries, and sales types only when explicitly named;\n  remove duplicates. Use enum values only when the resume provides the corresponding evidence.\n- Role-specific fields are campaign-scoped. Do not return recruiter-entered fields\n  such as experience, CTC, preferred location, reason for leaving, or source/platform.\n",
+   "schema": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "email": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "phone": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "location": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "graduation": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "skill_tags": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "skill_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "proficiency": {
+         "type": [
+          "string",
+          "null"
+         ],
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "beginner",
+            "intermediate",
+            "expert"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "years": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "proficiency",
+        "years"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "certifications": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "certification_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "issuer": {
+         "type": [
+          "string",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "issuer"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "atsScore": {
+      "type": [
+       "number",
+       "null"
+      ]
+     },
+     "atsSummary": {
+      "type": [
+       "string",
+       "null"
+      ]
+     }
+    },
+    "required": [
+     "name",
+     "email",
+     "phone",
+     "location",
+     "graduation",
+     "skill_tags",
+     "skill_details",
+     "certifications",
+     "certification_details",
+     "atsScore",
+     "atsSummary"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "cfg": {
+    "campaignType": "sales"
+   },
+   "instructions": "Extract explicit facts from this resume for the SALES campaign.\nReturn one JSON object matching the supplied schema. No markdown, explanation, or extra keys.\n\nAlways inspect these common fields: name, email, phone, current location, graduation.\nRole fields in scope: SALES: \"CS / Sales type\", \"Industry background\", \"Team level\", \"Team size\".\n\nRules:\n- Missing scalar = null; missing list = []. Never output placeholders such as \"Not Specified\".\n- Do not infer, estimate, classify, or use the filename, path, email username, or general knowledge.\n- Name must be the complete name printed in the resume. Email and phone must belong to the candidate,\n  not a reference, employer, URL, ID, date, salary, or postal code. Preserve phone digits and country code.\n- Current location means present residence. Graduation means the most recent degree completed or being pursued,\n  with its stated/expected year when available.\n- Keep skill proficiency/years only when explicitly tied to that skill. Do not copy overall experience to skills.\n- Keep certifications, subjects, curricula, organizations, industries, and sales types only when explicitly named;\n  remove duplicates. Use enum values only when the resume provides the corresponding evidence.\n- Role-specific fields are campaign-scoped. Do not return recruiter-entered fields\n  such as experience, CTC, preferred location, reason for leaving, or source/platform.\n",
+   "schema": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "email": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "phone": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "location": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "graduation": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "sales_types": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "enum": [
+        "inside sales",
+        "field sales",
+        "enterprise",
+        "SMB",
+        "B2B",
+        "B2C",
+        "customer success"
+       ]
+      }
+     },
+     "industries": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "team_level": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "anyOf": [
+       {
+        "type": "string",
+        "enum": [
+         "individual_contributor",
+         "team_lead",
+         "manager"
+        ]
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "team_size": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "required": [
+     "name",
+     "email",
+     "phone",
+     "location",
+     "graduation",
+     "sales_types",
+     "industries",
+     "team_level",
+     "team_size"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_PROMPT_MODE": "legacy"
+   },
+   "instructions": "Extract the following information from this resume for the TECH campaign and return it as a single JSON object.\nReturn only the JSON object — no explanation, no markdown, and no extra keys.\n\nFields to extract:\n- \"Name\": Candidate full name\n- \"Skills\": List of skills\n\nRules:\n- Return every listed key, even when its value is unavailable. Use exactly \"Not Specified\" for an unavailable scalar and [] for an unavailable list.\n- Extract only information explicitly stated in the resume. Do not infer, estimate, or use general knowledge to fill a gap.\n- Preserve the requested JSON shape. For lists, return a JSON array; for list items, use only the properties described for that field.\n- Do not copy a value into a different field because the requested field is missing. Do not include recruiter-owned, manual, ATS, or other unlisted fields.\n- Name: read the candidate's complete name from the resume itself, normally from the document header. Never use the filename, file path, email username, or a guessed expansion. Convert an ALL-CAPS name to normal Title Case, but do not drop, abbreviate, reorder, or invent name parts.\n- Email Address: return the candidate's primary email exactly as written, or \"Not Specified\". Do not treat an email-like string in a filename, URL username, or another person's contact block as the candidate's email.\n- Phone Number: return the candidate's primary phone exactly as written. An Indian mobile is normally 10 digits starting with 6–9 and may have a +91 prefix. It may be unlabelled and appear inline beside an address, postal code, or email. Never return a postal code, date, year, age, salary, candidate ID, Aadhaar/enrolment number, or a number belonging to a reference/emergency contact. Keep a leading + and country code only when present; never add, remove, or alter digits.\n- Current Location: use the candidate's present residence/location, not a preferred, past, employer, or job location unless the resume clearly identifies it as current.\n- Graduation: report one most recent completed or currently pursuing degree and institution/year when stated; if still studying, use the expected graduation year. When several education entries exist, choose the degree rather than a diploma, short course, or certification, and use that degree's completion/expected year—not the latest date anywhere in the education section. For example, if a diploma ended in 2018 and a BE ended in 2021, return the BE and 2021.\n- Skills and certifications: keep proficiency/years tied to the individual skill only when the resume explicitly ties them to that skill; do not copy an overall experience total or general proficiency statement onto every skill. Only report a certification issuer when the resume explicitly identifies it; otherwise use \"Not Specified\".\n- For enum/category fields, do not classify by implication. For SALES CS / Sales type, require the literal category or full phrase: inside sales, field sales, enterprise, SMB, B2B/business-to-business, B2C/business-to-consumer, or customer success. If the resume says customer service, travel sales, sales executive, or generic sales, do not convert it to another category. Return [] or \"Not Specified\" when the evidence is insufficient.\n- For role-specific lists, include only explicitly evidenced values. Keep duplicate entries out. Use the allowed categories/enums in each field description exactly; do not invent a category.",
+   "schema": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "email": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "phone": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "location": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "graduation": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "skill_tags": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "skill_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "proficiency": {
+         "type": [
+          "string",
+          "null"
+         ],
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "beginner",
+            "intermediate",
+            "expert"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "years": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "proficiency",
+        "years"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "certifications": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "certification_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "issuer": {
+         "type": [
+          "string",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "issuer"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "required": [
+     "name",
+     "email",
+     "phone",
+     "location",
+     "graduation",
+     "skill_tags",
+     "skill_details",
+     "certifications",
+     "certification_details"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "SALES",
+    "LLM_PROMPT_MODE": "legacy"
+   },
+   "instructions": "Extract the following information from this resume for the SALES campaign and return it as a single JSON object.\nReturn only the JSON object — no explanation, no markdown, and no extra keys.\n\nFields to extract:\n- \"Name\": Candidate full name\n\nRules:\n- Return every listed key, even when its value is unavailable. Use exactly \"Not Specified\" for an unavailable scalar and [] for an unavailable list.\n- Extract only information explicitly stated in the resume. Do not infer, estimate, or use general knowledge to fill a gap.\n- Preserve the requested JSON shape. For lists, return a JSON array; for list items, use only the properties described for that field.\n- Do not copy a value into a different field because the requested field is missing. Do not include recruiter-owned, manual, ATS, or other unlisted fields.\n- Name: read the candidate's complete name from the resume itself, normally from the document header. Never use the filename, file path, email username, or a guessed expansion. Convert an ALL-CAPS name to normal Title Case, but do not drop, abbreviate, reorder, or invent name parts.\n- Email Address: return the candidate's primary email exactly as written, or \"Not Specified\". Do not treat an email-like string in a filename, URL username, or another person's contact block as the candidate's email.\n- Phone Number: return the candidate's primary phone exactly as written. An Indian mobile is normally 10 digits starting with 6–9 and may have a +91 prefix. It may be unlabelled and appear inline beside an address, postal code, or email. Never return a postal code, date, year, age, salary, candidate ID, Aadhaar/enrolment number, or a number belonging to a reference/emergency contact. Keep a leading + and country code only when present; never add, remove, or alter digits.\n- Current Location: use the candidate's present residence/location, not a preferred, past, employer, or job location unless the resume clearly identifies it as current.\n- Graduation: report one most recent completed or currently pursuing degree and institution/year when stated; if still studying, use the expected graduation year. When several education entries exist, choose the degree rather than a diploma, short course, or certification, and use that degree's completion/expected year—not the latest date anywhere in the education section. For example, if a diploma ended in 2018 and a BE ended in 2021, return the BE and 2021.\n- Skills and certifications: keep proficiency/years tied to the individual skill only when the resume explicitly ties them to that skill; do not copy an overall experience total or general proficiency statement onto every skill. Only report a certification issuer when the resume explicitly identifies it; otherwise use \"Not Specified\".\n- For enum/category fields, do not classify by implication. For SALES CS / Sales type, require the literal category or full phrase: inside sales, field sales, enterprise, SMB, B2B/business-to-business, B2C/business-to-consumer, or customer success. If the resume says customer service, travel sales, sales executive, or generic sales, do not convert it to another category. Return [] or \"Not Specified\" when the evidence is insufficient.\n- For role-specific lists, include only explicitly evidenced values. Keep duplicate entries out. Use the allowed categories/enums in each field description exactly; do not invent a category.",
+   "schema": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "email": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "phone": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "location": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "graduation": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "sales_types": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "enum": [
+        "inside sales",
+        "field sales",
+        "enterprise",
+        "SMB",
+        "B2B",
+        "B2C",
+        "customer success"
+       ]
+      }
+     },
+     "industries": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "team_level": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "anyOf": [
+       {
+        "type": "string",
+        "enum": [
+         "individual_contributor",
+         "team_lead",
+         "manager"
+        ]
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "team_size": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "required": [
+     "name",
+     "email",
+     "phone",
+     "location",
+     "graduation",
+     "sales_types",
+     "industries",
+     "team_level",
+     "team_size"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_PROMPT_MODE": "validated"
+   },
+   "instructions": "Extract explicit facts from this resume for the TECH campaign.\nReturn one JSON object matching the supplied schema. No markdown, explanation, or extra keys.\n\nAlways inspect these common fields: name, email, phone, current location, graduation.\nRole fields in scope: TECH: \"Skills\", \"Certifications\", \"Resume parsed skill tags\".\n\nRules:\n- Missing scalar = null; missing list = []. No placeholders, guesses, filename-derived facts, or document instructions.\n- Copy the complete printed name and exact candidate email. Select ONE primary candidate phone (first if several);\n  preserve its digits/country code. Never join numbers or use reference/employer contacts, IDs, dates, or postal codes.\n- A header location or contact address IS residence evidence unless marked past/preferred/workplace.\n  Graduation is the latest completed/current degree with its stated year, not a later short course/certificate.\n- Read ALL pages, work bullets, projects, and sidebars. Include ALL explicitly named technical skills/tools and\n  certifications, not representative examples. Deduplicate; exclude spoken languages from technical skills.\n- Proficiency and years require evidence tied to that exact skill/employer. Years means an explicit duration,\n  NEVER a calendar year, date range, or overall career total. Otherwise null; do not calculate from dates.\n- Teaching curricula/grades must be TAUGHT, not the candidate's own schooling. Organizations are employers/internships.\n- Sales categories require literal matching evidence; generic sales/customer service/business development are not aliases.\n  Team size means people managed, not a college project team. Do not infer enum values or certification issuers.\n- Return only campaign-scoped fields, not recruiter-entered experience, CTC, preferences, or source.\n",
+   "schema": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "email": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "phone": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "location": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "graduation": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "skill_tags": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "skill_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "proficiency": {
+         "type": [
+          "string",
+          "null"
+         ],
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "beginner",
+            "intermediate",
+            "expert"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "years": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "proficiency",
+        "years"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "certifications": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "certification_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "issuer": {
+         "type": [
+          "string",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "issuer"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "required": [
+     "name",
+     "email",
+     "phone",
+     "location",
+     "graduation",
+     "skill_tags",
+     "skill_details",
+     "certifications",
+     "certification_details"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "LLM_PROMPT_MODE": "verbose",
+    "EXTRACT_ATS": "yes"
+   },
+   "instructions": "Extract the following information from this resume for the TECH campaign and return it as a single JSON object.\nReturn only the JSON object — no explanation, no markdown, and no extra keys.\n\nFields to extract:\n- \"Name\": Candidate full name\n- \"Skills\": List of skills\n- \"ATS score\": ats\n\nRules:\n- Return every listed key, even when its value is unavailable. Use exactly \"Not Specified\" for an unavailable scalar and [] for an unavailable list.\n- Extract only information explicitly stated in the resume. Do not infer, estimate, or use general knowledge to fill a gap.\n- Preserve the requested JSON shape. For lists, return a JSON array; for list items, use only the properties described for that field.\n- Do not copy a value into a different field because the requested field is missing. Do not include recruiter-owned, manual, ATS, or other unlisted fields.\n- Name: read the candidate's complete name from the resume itself, normally from the document header. Never use the filename, file path, email username, or a guessed expansion. Convert an ALL-CAPS name to normal Title Case, but do not drop, abbreviate, reorder, or invent name parts.\n- Email Address: return the candidate's primary email exactly as written, or \"Not Specified\". Do not treat an email-like string in a filename, URL username, or another person's contact block as the candidate's email.\n- Phone Number: return the candidate's primary phone exactly as written. An Indian mobile is normally 10 digits starting with 6–9 and may have a +91 prefix. It may be unlabelled and appear inline beside an address, postal code, or email. Never return a postal code, date, year, age, salary, candidate ID, Aadhaar/enrolment number, or a number belonging to a reference/emergency contact. Keep a leading + and country code only when present; never add, remove, or alter digits.\n- Current Location: use the candidate's present residence/location, not a preferred, past, employer, or job location unless the resume clearly identifies it as current.\n- Graduation: report one most recent completed or currently pursuing degree and institution/year when stated; if still studying, use the expected graduation year. When several education entries exist, choose the degree rather than a diploma, short course, or certification, and use that degree's completion/expected year—not the latest date anywhere in the education section. For example, if a diploma ended in 2018 and a BE ended in 2021, return the BE and 2021.\n- Skills and certifications: keep proficiency/years tied to the individual skill only when the resume explicitly ties them to that skill; do not copy an overall experience total or general proficiency statement onto every skill. Only report a certification issuer when the resume explicitly identifies it; otherwise use \"Not Specified\".\n- For enum/category fields, do not classify by implication. For SALES CS / Sales type, require the literal category or full phrase: inside sales, field sales, enterprise, SMB, B2B/business-to-business, B2C/business-to-consumer, or customer success. If the resume says customer service, travel sales, sales executive, or generic sales, do not convert it to another category. Return [] or \"Not Specified\" when the evidence is insufficient.\n- For role-specific lists, include only explicitly evidenced values. Keep duplicate entries out. Use the allowed categories/enums in each field description exactly; do not invent a category.",
+   "schema": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "email": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "phone": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "location": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "graduation": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "skill_tags": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "skill_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "proficiency": {
+         "type": [
+          "string",
+          "null"
+         ],
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "beginner",
+            "intermediate",
+            "expert"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "years": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "proficiency",
+        "years"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "certifications": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "certification_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "issuer": {
+         "type": [
+          "string",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "issuer"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "atsScore": {
+      "type": [
+       "number",
+       "null"
+      ]
+     },
+     "atsSummary": {
+      "type": [
+       "string",
+       "null"
+      ]
+     }
+    },
+    "required": [
+     "name",
+     "email",
+     "phone",
+     "location",
+     "graduation",
+     "skill_tags",
+     "skill_details",
+     "certifications",
+     "certification_details",
+     "atsScore",
+     "atsSummary"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "teacher",
+    "LLM_PROMPT_MODE": " Legacy "
+   },
+   "instructions": "Extract the following information from this resume for the TEACHER campaign and return it as a single JSON object.\nReturn only the JSON object — no explanation, no markdown, and no extra keys.\n\nFields to extract:\n- \"Name\": Candidate full name\n- \"Subjects taught\": Subjects\n\nRules:\n- Return every listed key, even when its value is unavailable. Use exactly \"Not Specified\" for an unavailable scalar and [] for an unavailable list.\n- Extract only information explicitly stated in the resume. Do not infer, estimate, or use general knowledge to fill a gap.\n- Preserve the requested JSON shape. For lists, return a JSON array; for list items, use only the properties described for that field.\n- Do not copy a value into a different field because the requested field is missing. Do not include recruiter-owned, manual, ATS, or other unlisted fields.\n- Name: read the candidate's complete name from the resume itself, normally from the document header. Never use the filename, file path, email username, or a guessed expansion. Convert an ALL-CAPS name to normal Title Case, but do not drop, abbreviate, reorder, or invent name parts.\n- Email Address: return the candidate's primary email exactly as written, or \"Not Specified\". Do not treat an email-like string in a filename, URL username, or another person's contact block as the candidate's email.\n- Phone Number: return the candidate's primary phone exactly as written. An Indian mobile is normally 10 digits starting with 6–9 and may have a +91 prefix. It may be unlabelled and appear inline beside an address, postal code, or email. Never return a postal code, date, year, age, salary, candidate ID, Aadhaar/enrolment number, or a number belonging to a reference/emergency contact. Keep a leading + and country code only when present; never add, remove, or alter digits.\n- Current Location: use the candidate's present residence/location, not a preferred, past, employer, or job location unless the resume clearly identifies it as current.\n- Graduation: report one most recent completed or currently pursuing degree and institution/year when stated; if still studying, use the expected graduation year. When several education entries exist, choose the degree rather than a diploma, short course, or certification, and use that degree's completion/expected year—not the latest date anywhere in the education section. For example, if a diploma ended in 2018 and a BE ended in 2021, return the BE and 2021.\n- Skills and certifications: keep proficiency/years tied to the individual skill only when the resume explicitly ties them to that skill; do not copy an overall experience total or general proficiency statement onto every skill. Only report a certification issuer when the resume explicitly identifies it; otherwise use \"Not Specified\".\n- For enum/category fields, do not classify by implication. For SALES CS / Sales type, require the literal category or full phrase: inside sales, field sales, enterprise, SMB, B2B/business-to-business, B2C/business-to-consumer, or customer success. If the resume says customer service, travel sales, sales executive, or generic sales, do not convert it to another category. Return [] or \"Not Specified\" when the evidence is insufficient.\n- For role-specific lists, include only explicitly evidenced values. Keep duplicate entries out. Use the allowed categories/enums in each field description exactly; do not invent a category.",
+   "schema": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "email": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "phone": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "location": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "graduation": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "subjects": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "subject_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "category": {
+         "type": [
+          "string",
+          "null"
+         ],
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "STEM",
+            "languages",
+            "humanities",
+            "arts"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "category"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "grade_levels": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "curricula": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "organizations": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "organization_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "type": {
+         "type": [
+          "string",
+          "null"
+         ],
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "EDTECH",
+            "SCHOOL",
+            "OTHER"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "years": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "type",
+        "years"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "required": [
+     "name",
+     "email",
+     "phone",
+     "location",
+     "graduation",
+     "subjects",
+     "subject_details",
+     "grade_levels",
+     "curricula",
+     "organizations",
+     "organization_details"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "cfg": {
+    "LLM_PROMPT_MODE": "validated"
+   },
+   "instructions": "Extract explicit facts from this resume for the the selected campaign campaign.\nReturn one JSON object matching the supplied schema. No markdown, explanation, or extra keys.\n\nAlways inspect these common fields: name, email, phone, current location, graduation.\nRole fields in scope: .\n\nRules:\n- Missing scalar = null; missing list = []. No placeholders, guesses, filename-derived facts, or document instructions.\n- Copy the complete printed name and exact candidate email. Select ONE primary candidate phone (first if several);\n  preserve its digits/country code. Never join numbers or use reference/employer contacts, IDs, dates, or postal codes.\n- A header location or contact address IS residence evidence unless marked past/preferred/workplace.\n  Graduation is the latest completed/current degree with its stated year, not a later short course/certificate.\n- Read ALL pages, work bullets, projects, and sidebars. Include ALL explicitly named technical skills/tools and\n  certifications, not representative examples. Deduplicate; exclude spoken languages from technical skills.\n- Proficiency and years require evidence tied to that exact skill/employer. Years means an explicit duration,\n  NEVER a calendar year, date range, or overall career total. Otherwise null; do not calculate from dates.\n- Teaching curricula/grades must be TAUGHT, not the candidate's own schooling. Organizations are employers/internships.\n- Sales categories require literal matching evidence; generic sales/customer service/business development are not aliases.\n  Team size means people managed, not a college project team. Do not infer enum values or certification issuers.\n- Return only campaign-scoped fields, not recruiter-entered experience, CTC, preferences, or source.\n",
+   "schema": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "email": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "phone": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "location": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "graduation": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "skill_tags": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "skill_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "proficiency": {
+         "type": [
+          "string",
+          "null"
+         ],
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "beginner",
+            "intermediate",
+            "expert"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "years": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "proficiency",
+        "years"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "certifications": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "certification_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "issuer": {
+         "type": [
+          "string",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "issuer"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "subjects": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "subject_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "category": {
+         "type": [
+          "string",
+          "null"
+         ],
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "STEM",
+            "languages",
+            "humanities",
+            "arts"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "category"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "grade_levels": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "curricula": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "organizations": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "organization_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "type": {
+         "type": [
+          "string",
+          "null"
+         ],
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "EDTECH",
+            "SCHOOL",
+            "OTHER"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "years": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "type",
+        "years"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "sales_types": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "enum": [
+        "inside sales",
+        "field sales",
+        "enterprise",
+        "SMB",
+        "B2B",
+        "B2C",
+        "customer success"
+       ]
+      }
+     },
+     "industries": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "team_level": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "anyOf": [
+       {
+        "type": "string",
+        "enum": [
+         "individual_contributor",
+         "team_lead",
+         "manager"
+        ]
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "team_size": {
+      "type": [
+       "number",
+       "null"
+      ]
+     }
+    },
+    "required": [
+     "name",
+     "email",
+     "phone",
+     "location",
+     "graduation",
+     "skill_tags",
+     "skill_details",
+     "certifications",
+     "certification_details",
+     "subjects",
+     "subject_details",
+     "grade_levels",
+     "curricula",
+     "organizations",
+     "organization_details",
+     "sales_types",
+     "industries",
+     "team_level",
+     "team_size"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "cfg": {
+    "CRM_CAMPAIGN_TYPE": "TECH",
+    "EXTRACT_ATS": "0"
+   },
+   "instructions": "Extract explicit facts from this resume for the TECH campaign.\nReturn one JSON object matching the supplied schema. No markdown, explanation, or extra keys.\n\nAlways inspect these common fields: name, email, phone, current location, graduation.\nRole fields in scope: TECH: \"Skills\", \"Certifications\", \"Resume parsed skill tags\".\n\nRules:\n- Missing scalar = null; missing list = []. Never output placeholders such as \"Not Specified\".\n- Do not infer, estimate, classify, or use the filename, path, email username, or general knowledge.\n- Name must be the complete name printed in the resume. Email and phone must belong to the candidate,\n  not a reference, employer, URL, ID, date, salary, or postal code. Preserve phone digits and country code.\n- Current location means present residence. Graduation means the most recent degree completed or being pursued,\n  with its stated/expected year when available.\n- Keep skill proficiency/years only when explicitly tied to that skill. Do not copy overall experience to skills.\n- Keep certifications, subjects, curricula, organizations, industries, and sales types only when explicitly named;\n  remove duplicates. Use enum values only when the resume provides the corresponding evidence.\n- Role-specific fields are campaign-scoped. Do not return recruiter-entered fields\n  such as experience, CTC, preferred location, reason for leaving, or source/platform.\n",
+   "schema": {
+    "type": "object",
+    "properties": {
+     "name": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "email": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "phone": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "location": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "graduation": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "skill_tags": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "skill_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "proficiency": {
+         "type": [
+          "string",
+          "null"
+         ],
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "beginner",
+            "intermediate",
+            "expert"
+           ]
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "years": {
+         "type": [
+          "number",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "proficiency",
+        "years"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "certifications": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "certification_details": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "issuer": {
+         "type": [
+          "string",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "issuer"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "required": [
+     "name",
+     "email",
+     "phone",
+     "location",
+     "graduation",
+     "skill_tags",
+     "skill_details",
+     "certifications",
+     "certification_details"
+    ],
+    "additionalProperties": false
+   }
+  }
+ ],
+ "messages": {
+  "text": [
+   {
+    "role": "system",
+    "content": "Extract resume facts as JSON only."
+   },
+   {
+    "role": "user",
+    "content": "INSTR\n\nResume:\nCandidate: A\nb@c.de"
+   }
+  ],
+  "vision": [
+   {
+    "role": "system",
+    "content": "Read the attached resume image(s) and extract facts as JSON only."
+   },
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "INSTR\n\nThe resume is attached as image(s)."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "data:image/png;base64,AAAA"
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "url": "data:image/png;base64,BBBB"
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

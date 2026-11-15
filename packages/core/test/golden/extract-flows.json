@@ -1,0 +1,1887 @@
+[
+ {
+  "id": "text-ok",
+  "file": "priya.pdf",
+  "cfg": {},
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-e47036\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Priya Nair\\\", \\\"email\\\": \\\"priya.nair92@example.com\\\", \\\"phone\\\": \\\"+91 98765 43210\\\", \\\"location\\\": \\\"Bengaluru\\\", \\\"graduation\\\": \\\"2021 - B.Tech\\\", \\\"skill_tags\\\": [\\\"Python\\\", \\\"SQL\\\"], \\\"skill_details\\\": [{\\\"name\\\": \\\"Python\\\", \\\"proficiency\\\": \\\"expert\\\", \\\"years\\\": 3}], \\\"certifications\\\": [], \\\"certification_details\\\": []}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "row": {
+    "Name": "Priya Nair",
+    "Email Address": "priya.nair92@example.com",
+    "Phone Number": "+91 98765 43210",
+    "Current Location": "Bengaluru",
+    "Graduation": "2021 - B.Tech",
+    "Skills": [
+     {
+      "name": "Python",
+      "proficiency": "expert",
+      "years": 3
+     },
+     {
+      "name": "SQL"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python",
+     "SQL"
+    ],
+    "_resume_text": "# PRIYA NAIR \n\npriya.nair92@example.com | +91 98765 43210 | Bengaluru, India Education: B.Tech 2021, Example Institute of Technology Skills: Python, SQL, data analysis and reporting with dashboards and automation. Experience: built ETL pipelines and automated weekly reports for the operations team. Projects: inventory forecasting service and an internal resume screening tool. \n\n",
+    "_use_vision": false
+   },
+   "meta": {
+    "model": "p/text",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-e47036"
+    ],
+    "request_ids": [],
+    "provider_names": [],
+    "primary_model": "p/text",
+    "fallback_model": "f/text",
+    "fallback_attempted": false,
+    "fallback_used": false,
+    "vision": false,
+    "run_id": "run-test",
+    "issues": [],
+    "primary_issues": [],
+    "fallback_issues": [],
+    "primary_error": null,
+    "fallback_error": null
+   }
+  },
+  "bodies": [
+   {
+    "model": "p/text",
+    "max_tokens": 3000,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "none"
+    }
+   }
+  ],
+  "notes": []
+ },
+ {
+  "id": "email-slip-snapped",
+  "file": "priya.pdf",
+  "cfg": {},
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-488806\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Priya Nair\\\", \\\"email\\\": \\\"priya.nair82@example.com\\\", \\\"phone\\\": \\\"+91 98765 43210\\\", \\\"location\\\": \\\"Bengaluru\\\", \\\"graduation\\\": \\\"2021 - B.Tech\\\", \\\"skill_tags\\\": [\\\"Python\\\", \\\"SQL\\\"], \\\"skill_details\\\": [{\\\"name\\\": \\\"Python\\\", \\\"proficiency\\\": \\\"expert\\\", \\\"years\\\": 3}], \\\"certifications\\\": [], \\\"certification_details\\\": []}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "row": {
+    "Name": "Priya Nair",
+    "Email Address": "priya.nair92@example.com",
+    "Phone Number": "+91 98765 43210",
+    "Current Location": "Bengaluru",
+    "Graduation": "2021 - B.Tech",
+    "Skills": [
+     {
+      "name": "Python",
+      "proficiency": "expert",
+      "years": 3
+     },
+     {
+      "name": "SQL"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python",
+     "SQL"
+    ],
+    "_resume_text": "# PRIYA NAIR \n\npriya.nair92@example.com | +91 98765 43210 | Bengaluru, India Education: B.Tech 2021, Example Institute of Technology Skills: Python, SQL, data analysis and reporting with dashboards and automation. Experience: built ETL pipelines and automated weekly reports for the operations team. Projects: inventory forecasting service and an internal resume screening tool. \n\n",
+    "_use_vision": false
+   },
+   "meta": {
+    "model": "p/text",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-488806"
+    ],
+    "request_ids": [],
+    "provider_names": [],
+    "primary_model": "p/text",
+    "fallback_model": "f/text",
+    "fallback_attempted": false,
+    "fallback_used": false,
+    "vision": false,
+    "run_id": "run-test",
+    "issues": [],
+    "primary_issues": [],
+    "fallback_issues": [],
+    "primary_error": null,
+    "fallback_error": null
+   }
+  },
+  "bodies": [
+   {
+    "model": "p/text",
+    "max_tokens": 3000,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "none"
+    }
+   }
+  ],
+  "notes": []
+ },
+ {
+  "id": "invalid-email-falls-back",
+  "file": "priya.pdf",
+  "cfg": {},
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-76c208\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Priya Nair\\\", \\\"email\\\": \\\"not-an-email\\\", \\\"phone\\\": \\\"+91 98765 43210\\\", \\\"location\\\": \\\"Bengaluru\\\", \\\"graduation\\\": \\\"2021 - B.Tech\\\", \\\"skill_tags\\\": [\\\"Python\\\", \\\"SQL\\\"], \\\"skill_details\\\": [{\\\"name\\\": \\\"Python\\\", \\\"proficiency\\\": \\\"expert\\\", \\\"years\\\": 3}], \\\"certifications\\\": [], \\\"certification_details\\\": []}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ],
+   [
+    200,
+    "{\"id\": \"gen-e47036\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Priya Nair\\\", \\\"email\\\": \\\"priya.nair92@example.com\\\", \\\"phone\\\": \\\"+91 98765 43210\\\", \\\"location\\\": \\\"Bengaluru\\\", \\\"graduation\\\": \\\"2021 - B.Tech\\\", \\\"skill_tags\\\": [\\\"Python\\\", \\\"SQL\\\"], \\\"skill_details\\\": [{\\\"name\\\": \\\"Python\\\", \\\"proficiency\\\": \\\"expert\\\", \\\"years\\\": 3}], \\\"certifications\\\": [], \\\"certification_details\\\": []}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "row": {
+    "Name": "Priya Nair",
+    "Email Address": "priya.nair92@example.com",
+    "Phone Number": "+91 98765 43210",
+    "Current Location": "Bengaluru",
+    "Graduation": "2021 - B.Tech",
+    "Skills": [
+     {
+      "name": "Python",
+      "proficiency": "expert",
+      "years": 3
+     },
+     {
+      "name": "SQL"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python",
+     "SQL"
+    ],
+    "_resume_text": "# PRIYA NAIR \n\npriya.nair92@example.com | +91 98765 43210 | Bengaluru, India Education: B.Tech 2021, Example Institute of Technology Skills: Python, SQL, data analysis and reporting with dashboards and automation. Experience: built ETL pipelines and automated weekly reports for the operations team. Projects: inventory forecasting service and an internal resume screening tool. \n\n",
+    "_use_vision": false
+   },
+   "meta": {
+    "model": "f/text",
+    "attempts": 2,
+    "retries": 0,
+    "prompt_tokens": 200,
+    "completion_tokens": 100,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 300,
+    "cost": 0.002,
+    "generation_ids": [
+     "gen-76c208",
+     "gen-e47036"
+    ],
+    "request_ids": [],
+    "provider_names": [],
+    "primary_model": "p/text",
+    "fallback_model": "f/text",
+    "fallback_used": true,
+    "fallback_attempted": true,
+    "vision": false,
+    "run_id": "run-test",
+    "issues": [],
+    "primary_issues": [
+     "email_invalid",
+     "email_conflicts_with_text"
+    ],
+    "fallback_issues": [],
+    "primary_error": null,
+    "fallback_error": null
+   }
+  },
+  "bodies": [
+   {
+    "model": "p/text",
+    "max_tokens": 3000,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "none"
+    }
+   },
+   {
+    "model": "f/text",
+    "max_tokens": 4096,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "low"
+    }
+   }
+  ],
+  "notes": []
+ },
+ {
+  "id": "fallback-worse-keeps-primary",
+  "file": "priya.pdf",
+  "cfg": {},
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-76c208\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Priya Nair\\\", \\\"email\\\": \\\"not-an-email\\\", \\\"phone\\\": \\\"+91 98765 43210\\\", \\\"location\\\": \\\"Bengaluru\\\", \\\"graduation\\\": \\\"2021 - B.Tech\\\", \\\"skill_tags\\\": [\\\"Python\\\", \\\"SQL\\\"], \\\"skill_details\\\": [{\\\"name\\\": \\\"Python\\\", \\\"proficiency\\\": \\\"expert\\\", \\\"years\\\": 3}], \\\"certifications\\\": [], \\\"certification_details\\\": []}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ],
+   [
+    200,
+    "{\"id\": \"gen-598dd5\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Priya Nair\\\", \\\"email\\\": \\\"x\\\", \\\"phone\\\": \\\"1\\\", \\\"location\\\": \\\"Bengaluru\\\", \\\"graduation\\\": \\\"2021 - B.Tech\\\", \\\"skill_tags\\\": [\\\"Python\\\", \\\"SQL\\\"], \\\"skill_details\\\": [{\\\"name\\\": \\\"Python\\\", \\\"proficiency\\\": \\\"expert\\\", \\\"years\\\": 3}], \\\"certifications\\\": [], \\\"certification_details\\\": []}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "row": {
+    "Name": "Priya Nair",
+    "Email Address": "not-an-email",
+    "Phone Number": "+91 98765 43210",
+    "Current Location": "Bengaluru",
+    "Graduation": "2021 - B.Tech",
+    "Skills": [
+     {
+      "name": "Python",
+      "proficiency": "expert",
+      "years": 3
+     },
+     {
+      "name": "SQL"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python",
+     "SQL"
+    ],
+    "_resume_text": "# PRIYA NAIR \n\npriya.nair92@example.com | +91 98765 43210 | Bengaluru, India Education: B.Tech 2021, Example Institute of Technology Skills: Python, SQL, data analysis and reporting with dashboards and automation. Experience: built ETL pipelines and automated weekly reports for the operations team. Projects: inventory forecasting service and an internal resume screening tool. \n\n",
+    "_use_vision": false
+   },
+   "meta": {
+    "model": "p/text",
+    "attempts": 2,
+    "retries": 0,
+    "prompt_tokens": 200,
+    "completion_tokens": 100,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 300,
+    "cost": 0.002,
+    "generation_ids": [
+     "gen-76c208",
+     "gen-598dd5"
+    ],
+    "request_ids": [],
+    "provider_names": [],
+    "primary_model": "p/text",
+    "fallback_model": "f/text",
+    "fallback_used": false,
+    "fallback_attempted": true,
+    "vision": false,
+    "run_id": "run-test",
+    "issues": [
+     "email_invalid",
+     "email_conflicts_with_text"
+    ],
+    "primary_issues": [
+     "email_invalid",
+     "email_conflicts_with_text"
+    ],
+    "fallback_issues": [
+     "email_invalid",
+     "phone_invalid",
+     "email_conflicts_with_text"
+    ],
+    "primary_error": null,
+    "fallback_error": null
+   }
+  },
+  "bodies": [
+   {
+    "model": "p/text",
+    "max_tokens": 3000,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "none"
+    }
+   },
+   {
+    "model": "f/text",
+    "max_tokens": 4096,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "low"
+    }
+   }
+  ],
+  "notes": []
+ },
+ {
+  "id": "name-only-fixed-by-heuristic",
+  "file": "priya.pdf",
+  "cfg": {},
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-ed8624\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Not Specified\\\", \\\"email\\\": \\\"priya.nair92@example.com\\\", \\\"phone\\\": \\\"+91 98765 43210\\\", \\\"location\\\": \\\"Bengaluru\\\", \\\"graduation\\\": \\\"2021 - B.Tech\\\", \\\"skill_tags\\\": [\\\"Python\\\", \\\"SQL\\\"], \\\"skill_details\\\": [{\\\"name\\\": \\\"Python\\\", \\\"proficiency\\\": \\\"expert\\\", \\\"years\\\": 3}], \\\"certifications\\\": [], \\\"certification_details\\\": []}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "row": {
+    "Name": "Priya Nair",
+    "Email Address": "priya.nair92@example.com",
+    "Phone Number": "+91 98765 43210",
+    "Current Location": "Bengaluru",
+    "Graduation": "2021 - B.Tech",
+    "Skills": [
+     {
+      "name": "Python",
+      "proficiency": "expert",
+      "years": 3
+     },
+     {
+      "name": "SQL"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python",
+     "SQL"
+    ],
+    "_resume_text": "# PRIYA NAIR \n\npriya.nair92@example.com | +91 98765 43210 | Bengaluru, India Education: B.Tech 2021, Example Institute of Technology Skills: Python, SQL, data analysis and reporting with dashboards and automation. Experience: built ETL pipelines and automated weekly reports for the operations team. Projects: inventory forecasting service and an internal resume screening tool. \n\n",
+    "_use_vision": false
+   },
+   "meta": {
+    "model": "p/text",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-ed8624"
+    ],
+    "request_ids": [],
+    "provider_names": [],
+    "primary_model": "p/text",
+    "fallback_model": "f/text",
+    "fallback_attempted": false,
+    "fallback_used": false,
+    "vision": false,
+    "run_id": "run-test",
+    "issues": [],
+    "primary_issues": [],
+    "fallback_issues": [],
+    "primary_error": null,
+    "fallback_error": null
+   }
+  },
+  "bodies": [
+   {
+    "model": "p/text",
+    "max_tokens": 3000,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "none"
+    }
+   }
+  ],
+  "notes": []
+ },
+ {
+  "id": "name-bad-heuristic-fails-then-fallback",
+  "file": "short.pdf",
+  "cfg": {},
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-8bf3a8\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"N/A\\\", \\\"email\\\": \\\"priya.nair92@example.com\\\", \\\"phone\\\": \\\"+91 98765 43210\\\", \\\"location\\\": \\\"Bengaluru\\\", \\\"graduation\\\": \\\"2021 - B.Tech\\\", \\\"skill_tags\\\": [\\\"Python\\\", \\\"SQL\\\"], \\\"skill_details\\\": [{\\\"name\\\": \\\"Python\\\", \\\"proficiency\\\": \\\"expert\\\", \\\"years\\\": 3}], \\\"certifications\\\": [], \\\"certification_details\\\": []}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ],
+   [
+    200,
+    "{\"id\": \"gen-e254ef\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Fallback Name\\\", \\\"email\\\": \\\"priya.nair92@example.com\\\", \\\"phone\\\": \\\"+91 98765 43210\\\", \\\"location\\\": \\\"Bengaluru\\\", \\\"graduation\\\": \\\"2021 - B.Tech\\\", \\\"skill_tags\\\": [\\\"Python\\\", \\\"SQL\\\"], \\\"skill_details\\\": [{\\\"name\\\": \\\"Python\\\", \\\"proficiency\\\": \\\"expert\\\", \\\"years\\\": 3}], \\\"certifications\\\": [], \\\"certification_details\\\": []}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "row": {
+    "Name": "Fallback Name",
+    "Email Address": "priya.nair92@example.com",
+    "Phone Number": "+91 98765 43210",
+    "Current Location": "Bengaluru",
+    "Graduation": "2021 - B.Tech",
+    "Skills": [
+     {
+      "name": "Python",
+      "proficiency": "expert",
+      "years": 3
+     },
+     {
+      "name": "SQL"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python",
+     "SQL"
+    ],
+    "_resume_text": "",
+    "_use_vision": true
+   },
+   "meta": {
+    "model": "f/vision",
+    "attempts": 2,
+    "retries": 0,
+    "prompt_tokens": 200,
+    "completion_tokens": 100,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 300,
+    "cost": 0.002,
+    "generation_ids": [
+     "gen-8bf3a8",
+     "gen-e254ef"
+    ],
+    "request_ids": [],
+    "provider_names": [],
+    "primary_model": "p/vision",
+    "fallback_model": "f/vision",
+    "fallback_used": true,
+    "fallback_attempted": true,
+    "vision": true,
+    "run_id": "run-test",
+    "issues": [],
+    "primary_issues": [
+     "name_missing_or_invalid"
+    ],
+    "fallback_issues": [],
+    "primary_error": null,
+    "fallback_error": null
+   }
+  },
+  "bodies": [
+   {
+    "model": "p/vision",
+    "max_tokens": 3000,
+    "vision": true,
+    "images": 1,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Read the attached resume image(s) and extract facts as JSON only.",
+    "reasoning": {
+     "effort": "none"
+    }
+   },
+   {
+    "model": "f/vision",
+    "max_tokens": 4096,
+    "vision": true,
+    "images": 1,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Read the attached resume image(s) and extract facts as JSON only.",
+    "reasoning": {
+     "effort": "low"
+    }
+   }
+  ],
+  "notes": []
+ },
+ {
+  "id": "primary-500-fallback-ok",
+  "file": "priya.pdf",
+  "cfg": {},
+  "script": [
+   [
+    500,
+    "x",
+    {}
+   ],
+   [
+    200,
+    "{\"id\": \"gen-e47036\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Priya Nair\\\", \\\"email\\\": \\\"priya.nair92@example.com\\\", \\\"phone\\\": \\\"+91 98765 43210\\\", \\\"location\\\": \\\"Bengaluru\\\", \\\"graduation\\\": \\\"2021 - B.Tech\\\", \\\"skill_tags\\\": [\\\"Python\\\", \\\"SQL\\\"], \\\"skill_details\\\": [{\\\"name\\\": \\\"Python\\\", \\\"proficiency\\\": \\\"expert\\\", \\\"years\\\": 3}], \\\"certifications\\\": [], \\\"certification_details\\\": []}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "row": {
+    "Name": "Priya Nair",
+    "Email Address": "priya.nair92@example.com",
+    "Phone Number": "+91 98765 43210",
+    "Current Location": "Bengaluru",
+    "Graduation": "2021 - B.Tech",
+    "Skills": [
+     {
+      "name": "Python",
+      "proficiency": "expert",
+      "years": 3
+     },
+     {
+      "name": "SQL"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python",
+     "SQL"
+    ],
+    "_resume_text": "# PRIYA NAIR \n\npriya.nair92@example.com | +91 98765 43210 | Bengaluru, India Education: B.Tech 2021, Example Institute of Technology Skills: Python, SQL, data analysis and reporting with dashboards and automation. Experience: built ETL pipelines and automated weekly reports for the operations team. Projects: inventory forecasting service and an internal resume screening tool. \n\n",
+    "_use_vision": false
+   },
+   "meta": {
+    "model": "f/text",
+    "attempts": 2,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-e47036"
+    ],
+    "request_ids": [],
+    "provider_names": [],
+    "primary_model": "p/text",
+    "fallback_model": "f/text",
+    "fallback_used": true,
+    "fallback_attempted": true,
+    "vision": false,
+    "run_id": "run-test",
+    "issues": [],
+    "primary_issues": [],
+    "fallback_issues": [],
+    "primary_error": "RuntimeError",
+    "fallback_error": null
+   }
+  },
+  "bodies": [
+   {
+    "model": "p/text",
+    "max_tokens": 3000,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "none"
+    }
+   },
+   {
+    "model": "f/text",
+    "max_tokens": 4096,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "low"
+    }
+   }
+  ],
+  "notes": []
+ },
+ {
+  "id": "both-fail",
+  "file": "priya.pdf",
+  "cfg": {},
+  "script": [
+   [
+    400,
+    "x",
+    {}
+   ],
+   [
+    400,
+    "y",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": false,
+   "error": "RuntimeError",
+   "message": "HTTP 400",
+   "meta": {
+    "model": "f/text",
+    "attempts": 2,
+    "retries": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 0,
+    "cost": 0,
+    "generation_ids": [],
+    "request_ids": [],
+    "provider_names": [],
+    "primary_model": "p/text",
+    "fallback_model": "f/text",
+    "fallback_used": false,
+    "run_id": "run-test",
+    "fallback_attempted": true,
+    "vision": false
+   }
+  },
+  "bodies": [
+   {
+    "model": "p/text",
+    "max_tokens": 3000,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "none"
+    }
+   },
+   {
+    "model": "f/text",
+    "max_tokens": 4096,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "low"
+    }
+   }
+  ],
+  "notes": []
+ },
+ {
+  "id": "primary-fail-fallback-fail-network",
+  "file": "priya.pdf",
+  "cfg": {},
+  "script": [
+   [
+    400,
+    "x",
+    {}
+   ],
+   {
+    "throw": "ConnectionError"
+   },
+   {
+    "throw": "ConnectionError"
+   }
+  ],
+  "result": {
+   "ok": false,
+   "error": "RuntimeError",
+   "message": "HTTP 400",
+   "meta": {
+    "model": "f/text",
+    "attempts": 2,
+    "retries": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 0,
+    "cost": 0,
+    "generation_ids": [],
+    "request_ids": [],
+    "provider_names": [],
+    "primary_model": "p/text",
+    "fallback_model": "f/text",
+    "fallback_used": false,
+    "run_id": "run-test",
+    "fallback_attempted": true,
+    "vision": false
+   }
+  },
+  "bodies": [
+   {
+    "model": "p/text",
+    "max_tokens": 3000,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "none"
+    }
+   },
+   {
+    "model": "f/text",
+    "max_tokens": 4096,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "low"
+    }
+   }
+  ],
+  "notes": []
+ },
+ {
+  "id": "daily-quota",
+  "file": "priya.pdf",
+  "cfg": {},
+  "script": [
+   [
+    429,
+    "requests per day exceeded",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": false,
+   "error": "DailyQuotaExceeded",
+   "message": "provider daily quota exhausted",
+   "meta": {}
+  },
+  "bodies": [
+   {
+    "model": "p/text",
+    "max_tokens": 3000,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "none"
+    }
+   }
+  ],
+  "notes": []
+ },
+ {
+  "id": "daily-quota-on-fallback",
+  "file": "priya.pdf",
+  "cfg": {},
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-f9b8b5\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Priya Nair\\\", \\\"email\\\": \\\"bad\\\", \\\"phone\\\": \\\"+91 98765 43210\\\", \\\"location\\\": \\\"Bengaluru\\\", \\\"graduation\\\": \\\"2021 - B.Tech\\\", \\\"skill_tags\\\": [\\\"Python\\\", \\\"SQL\\\"], \\\"skill_details\\\": [{\\\"name\\\": \\\"Python\\\", \\\"proficiency\\\": \\\"expert\\\", \\\"years\\\": 3}], \\\"certifications\\\": [], \\\"certification_details\\\": []}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ],
+   [
+    429,
+    "daily",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": false,
+   "error": "DailyQuotaExceeded",
+   "message": "provider daily quota exhausted",
+   "meta": {}
+  },
+  "bodies": [
+   {
+    "model": "p/text",
+    "max_tokens": 3000,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "none"
+    }
+   },
+   {
+    "model": "f/text",
+    "max_tokens": 4096,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "low"
+    }
+   }
+  ],
+  "notes": []
+ },
+ {
+  "id": "scan-vision",
+  "file": "scan.pdf",
+  "cfg": {},
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-a54874\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"SCAN PERSON\\\", \\\"email\\\": \\\"priya.nair92@example.com\\\", \\\"phone\\\": \\\"+91 98765 43210\\\", \\\"location\\\": \\\"Bengaluru\\\", \\\"graduation\\\": \\\"2021 - B.Tech\\\", \\\"skill_tags\\\": [\\\"Python\\\", \\\"SQL\\\"], \\\"skill_details\\\": [{\\\"name\\\": \\\"Python\\\", \\\"proficiency\\\": \\\"expert\\\", \\\"years\\\": 3}], \\\"certifications\\\": [], \\\"certification_details\\\": []}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "row": {
+    "Name": "Scan Person",
+    "Email Address": "priya.nair92@example.com",
+    "Phone Number": "+91 98765 43210",
+    "Current Location": "Bengaluru",
+    "Graduation": "2021 - B.Tech",
+    "Skills": [
+     {
+      "name": "Python",
+      "proficiency": "expert",
+      "years": 3
+     },
+     {
+      "name": "SQL"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python",
+     "SQL"
+    ],
+    "_resume_text": "",
+    "_use_vision": true
+   },
+   "meta": {
+    "model": "p/vision",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-a54874"
+    ],
+    "request_ids": [],
+    "provider_names": [],
+    "primary_model": "p/vision",
+    "fallback_model": "f/vision",
+    "fallback_attempted": false,
+    "fallback_used": false,
+    "vision": true,
+    "run_id": "run-test",
+    "issues": [],
+    "primary_issues": [],
+    "fallback_issues": [],
+    "primary_error": null,
+    "fallback_error": null
+   }
+  },
+  "bodies": [
+   {
+    "model": "p/vision",
+    "max_tokens": 3000,
+    "vision": true,
+    "images": 1,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Read the attached resume image(s) and extract facts as JSON only.",
+    "reasoning": {
+     "effort": "none"
+    }
+   }
+  ],
+  "notes": []
+ },
+ {
+  "id": "hybrid-vision",
+  "file": "hybrid.pdf",
+  "cfg": {},
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-aa64fb\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Hybrid Person\\\", \\\"email\\\": \\\"priya.nair92@example.com\\\", \\\"phone\\\": \\\"+91 98765 43210\\\", \\\"location\\\": \\\"Bengaluru\\\", \\\"graduation\\\": \\\"2021 - B.Tech\\\", \\\"skill_tags\\\": [\\\"Python\\\", \\\"SQL\\\"], \\\"skill_details\\\": [{\\\"name\\\": \\\"Python\\\", \\\"proficiency\\\": \\\"expert\\\", \\\"years\\\": 3}], \\\"certifications\\\": [], \\\"certification_details\\\": []}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "row": {
+    "Name": "Hybrid Person",
+    "Email Address": "priya.nair92@example.com",
+    "Phone Number": "+91 98765 43210",
+    "Current Location": "Bengaluru",
+    "Graduation": "2021 - B.Tech",
+    "Skills": [
+     {
+      "name": "Python",
+      "proficiency": "expert",
+      "years": 3
+     },
+     {
+      "name": "SQL"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python",
+     "SQL"
+    ],
+    "_resume_text": "",
+    "_use_vision": true
+   },
+   "meta": {
+    "model": "p/vision",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-aa64fb"
+    ],
+    "request_ids": [],
+    "provider_names": [],
+    "primary_model": "p/vision",
+    "fallback_model": "f/vision",
+    "fallback_attempted": false,
+    "fallback_used": false,
+    "vision": true,
+    "run_id": "run-test",
+    "issues": [],
+    "primary_issues": [],
+    "fallback_issues": [],
+    "primary_error": null,
+    "fallback_error": null
+   }
+  },
+  "bodies": [
+   {
+    "model": "p/vision",
+    "max_tokens": 3000,
+    "vision": true,
+    "images": 1,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Read the attached resume image(s) and extract facts as JSON only.",
+    "reasoning": {
+     "effort": "none"
+    }
+   }
+  ],
+  "notes": []
+ },
+ {
+  "id": "links-merged",
+  "file": "links.pdf",
+  "cfg": {},
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-5b753a\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Meera Joshi\\\", \\\"email\\\": \\\"meera@example.com\\\", \\\"phone\\\": null, \\\"location\\\": \\\"Bengaluru\\\", \\\"graduation\\\": \\\"2021 - B.Tech\\\", \\\"skill_tags\\\": [\\\"Python\\\", \\\"SQL\\\"], \\\"skill_details\\\": [{\\\"name\\\": \\\"Python\\\", \\\"proficiency\\\": \\\"expert\\\", \\\"years\\\": 3}], \\\"certifications\\\": [], \\\"certification_details\\\": []}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "row": {
+    "Name": "Meera Joshi",
+    "Email Address": "meera@example.com",
+    "Phone Number": "Not Specified",
+    "Current Location": "Bengaluru",
+    "Graduation": "2021 - B.Tech",
+    "Skills": [
+     {
+      "name": "Python",
+      "proficiency": "expert",
+      "years": 3
+     },
+     {
+      "name": "SQL"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python",
+     "SQL"
+    ],
+    "_resume_text": "Meera Joshi  Bengaluru, India  Education: B.Tech 2021, Example Institute of Technology Skills: Python, SQL, data analysis and reporting with dashboards and automation. Experience: built ETL pipelines and automated weekly reports for the operations team. Projects: inventory forecasting service and an internal resume screening tool and more words here.\n\nEmail: meera@example.com\nhttps://www.linkedin.com/in/meera-example\nhttps://github.com/meera-example",
+    "_use_vision": false
+   },
+   "meta": {
+    "model": "p/text",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-5b753a"
+    ],
+    "request_ids": [],
+    "provider_names": [],
+    "primary_model": "p/text",
+    "fallback_model": "f/text",
+    "fallback_attempted": false,
+    "fallback_used": false,
+    "vision": false,
+    "run_id": "run-test",
+    "issues": [],
+    "primary_issues": [],
+    "fallback_issues": [],
+    "primary_error": null,
+    "fallback_error": null
+   }
+  },
+  "bodies": [
+   {
+    "model": "p/text",
+    "max_tokens": 3000,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "none"
+    }
+   }
+  ],
+  "notes": []
+ },
+ {
+  "id": "spaced-email-recovered",
+  "file": "spaced.pdf",
+  "cfg": {},
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-3c28a7\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Kiran Rao\\\", \\\"email\\\": null, \\\"phone\\\": null, \\\"location\\\": \\\"Bengaluru\\\", \\\"graduation\\\": \\\"2021 - B.Tech\\\", \\\"skill_tags\\\": [\\\"Python\\\", \\\"SQL\\\"], \\\"skill_details\\\": [{\\\"name\\\": \\\"Python\\\", \\\"proficiency\\\": \\\"expert\\\", \\\"years\\\": 3}], \\\"certifications\\\": [], \\\"certification_details\\\": []}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ],
+   [
+    200,
+    "{\"id\": \"gen-368c7d\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Kiran Rao\\\", \\\"email\\\": \\\"kiran.rao@example.com\\\", \\\"phone\\\": \\\"+91 98765 43210\\\", \\\"location\\\": \\\"Bengaluru\\\", \\\"graduation\\\": \\\"2021 - B.Tech\\\", \\\"skill_tags\\\": [\\\"Python\\\", \\\"SQL\\\"], \\\"skill_details\\\": [{\\\"name\\\": \\\"Python\\\", \\\"proficiency\\\": \\\"expert\\\", \\\"years\\\": 3}], \\\"certifications\\\": [], \\\"certification_details\\\": []}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "row": {
+    "Name": "Kiran Rao",
+    "Email Address": "kiran.rao@example.com",
+    "Phone Number": "+91 98765 43210",
+    "Current Location": "Bengaluru",
+    "Graduation": "2021 - B.Tech",
+    "Skills": [
+     {
+      "name": "Python",
+      "proficiency": "expert",
+      "years": 3
+     },
+     {
+      "name": "SQL"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python",
+     "SQL"
+    ],
+    "_resume_text": "Kiran Rao  kiran . rao @ example . com  +91 98765 43210 Education: B.Tech 2021, Example Institute of Technology Skills: Python, SQL, data analysis and reporting with dashboards and automation. Experience: built ETL pipelines and automated weekly reports for the operations team. Projects: inventory forecasting service and an internal resume screening tool and more words.\n\nEmail: kiran.rao@example.com",
+    "_use_vision": false
+   },
+   "meta": {
+    "model": "f/text",
+    "attempts": 2,
+    "retries": 0,
+    "prompt_tokens": 200,
+    "completion_tokens": 100,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 300,
+    "cost": 0.002,
+    "generation_ids": [
+     "gen-3c28a7",
+     "gen-368c7d"
+    ],
+    "request_ids": [],
+    "provider_names": [],
+    "primary_model": "p/text",
+    "fallback_model": "f/text",
+    "fallback_used": true,
+    "fallback_attempted": true,
+    "vision": false,
+    "run_id": "run-test",
+    "issues": [],
+    "primary_issues": [
+     "email_conflicts_with_text"
+    ],
+    "fallback_issues": [],
+    "primary_error": null,
+    "fallback_error": null
+   }
+  },
+  "bodies": [
+   {
+    "model": "p/text",
+    "max_tokens": 3000,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "none"
+    }
+   },
+   {
+    "model": "f/text",
+    "max_tokens": 4096,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "low"
+    }
+   }
+  ],
+  "notes": []
+ },
+ {
+  "id": "corrupt",
+  "file": "corrupt.pdf",
+  "cfg": {},
+  "script": [],
+  "result": {
+   "ok": false,
+   "error": "ValueError",
+   "message": "no extractable text and could not render page image (corrupt PDF?)",
+   "meta": {}
+  },
+  "bodies": [],
+  "notes": []
+ },
+ {
+  "id": "no-key",
+  "file": "priya.pdf",
+  "cfg": {
+   "LLM_API_KEY": ""
+  },
+  "script": [],
+  "result": {
+   "ok": false,
+   "error": "ValueError",
+   "message": "LLM_API_KEY is not set",
+   "meta": {}
+  },
+  "bodies": [],
+  "notes": []
+ },
+ {
+  "id": "same-model-no-fallback",
+  "file": "priya.pdf",
+  "cfg": {
+   "LLM_FALLBACK_MODEL": "p/text"
+  },
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-f9b8b5\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Priya Nair\\\", \\\"email\\\": \\\"bad\\\", \\\"phone\\\": \\\"+91 98765 43210\\\", \\\"location\\\": \\\"Bengaluru\\\", \\\"graduation\\\": \\\"2021 - B.Tech\\\", \\\"skill_tags\\\": [\\\"Python\\\", \\\"SQL\\\"], \\\"skill_details\\\": [{\\\"name\\\": \\\"Python\\\", \\\"proficiency\\\": \\\"expert\\\", \\\"years\\\": 3}], \\\"certifications\\\": [], \\\"certification_details\\\": []}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "row": {
+    "Name": "Priya Nair",
+    "Email Address": "bad",
+    "Phone Number": "+91 98765 43210",
+    "Current Location": "Bengaluru",
+    "Graduation": "2021 - B.Tech",
+    "Skills": [
+     {
+      "name": "Python",
+      "proficiency": "expert",
+      "years": 3
+     },
+     {
+      "name": "SQL"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python",
+     "SQL"
+    ],
+    "_resume_text": "# PRIYA NAIR \n\npriya.nair92@example.com | +91 98765 43210 | Bengaluru, India Education: B.Tech 2021, Example Institute of Technology Skills: Python, SQL, data analysis and reporting with dashboards and automation. Experience: built ETL pipelines and automated weekly reports for the operations team. Projects: inventory forecasting service and an internal resume screening tool. \n\n",
+    "_use_vision": false
+   },
+   "meta": {
+    "model": "p/text",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-f9b8b5"
+    ],
+    "request_ids": [],
+    "provider_names": [],
+    "primary_model": "p/text",
+    "fallback_model": "p/text",
+    "fallback_attempted": false,
+    "fallback_used": false,
+    "vision": false,
+    "run_id": "run-test",
+    "issues": [
+     "email_invalid",
+     "email_conflicts_with_text"
+    ],
+    "primary_issues": [
+     "email_invalid",
+     "email_conflicts_with_text"
+    ],
+    "fallback_issues": [],
+    "primary_error": null,
+    "fallback_error": null
+   }
+  },
+  "bodies": [
+   {
+    "model": "p/text",
+    "max_tokens": 3000,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "none"
+    }
+   }
+  ],
+  "notes": []
+ },
+ {
+  "id": "no-fallback-configured",
+  "file": "priya.pdf",
+  "cfg": {
+   "LLM_FALLBACK_MODEL": ""
+  },
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-f9b8b5\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Priya Nair\\\", \\\"email\\\": \\\"bad\\\", \\\"phone\\\": \\\"+91 98765 43210\\\", \\\"location\\\": \\\"Bengaluru\\\", \\\"graduation\\\": \\\"2021 - B.Tech\\\", \\\"skill_tags\\\": [\\\"Python\\\", \\\"SQL\\\"], \\\"skill_details\\\": [{\\\"name\\\": \\\"Python\\\", \\\"proficiency\\\": \\\"expert\\\", \\\"years\\\": 3}], \\\"certifications\\\": [], \\\"certification_details\\\": []}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "row": {
+    "Name": "Priya Nair",
+    "Email Address": "bad",
+    "Phone Number": "+91 98765 43210",
+    "Current Location": "Bengaluru",
+    "Graduation": "2021 - B.Tech",
+    "Skills": [
+     {
+      "name": "Python",
+      "proficiency": "expert",
+      "years": 3
+     },
+     {
+      "name": "SQL"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python",
+     "SQL"
+    ],
+    "_resume_text": "# PRIYA NAIR \n\npriya.nair92@example.com | +91 98765 43210 | Bengaluru, India Education: B.Tech 2021, Example Institute of Technology Skills: Python, SQL, data analysis and reporting with dashboards and automation. Experience: built ETL pipelines and automated weekly reports for the operations team. Projects: inventory forecasting service and an internal resume screening tool. \n\n",
+    "_use_vision": false
+   },
+   "meta": {
+    "model": "p/text",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-f9b8b5"
+    ],
+    "request_ids": [],
+    "provider_names": [],
+    "primary_model": "p/text",
+    "fallback_model": null,
+    "fallback_attempted": false,
+    "fallback_used": false,
+    "vision": false,
+    "run_id": "run-test",
+    "issues": [
+     "email_invalid",
+     "email_conflicts_with_text"
+    ],
+    "primary_issues": [
+     "email_invalid",
+     "email_conflicts_with_text"
+    ],
+    "fallback_issues": [],
+    "primary_error": null,
+    "fallback_error": null
+   }
+  },
+  "bodies": [
+   {
+    "model": "p/text",
+    "max_tokens": 3000,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "none"
+    }
+   }
+  ],
+  "notes": []
+ },
+ {
+  "id": "all-caps-name",
+  "file": "priya.pdf",
+  "cfg": {},
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-74a3d9\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"PRIYA  NAIR\\\", \\\"email\\\": \\\"priya.nair92@example.com\\\", \\\"phone\\\": \\\"+91 98765 43210\\\", \\\"location\\\": \\\"Bengaluru\\\", \\\"graduation\\\": \\\"2021 - B.Tech\\\", \\\"skill_tags\\\": [\\\"Python\\\", \\\"SQL\\\"], \\\"skill_details\\\": [{\\\"name\\\": \\\"Python\\\", \\\"proficiency\\\": \\\"expert\\\", \\\"years\\\": 3}], \\\"certifications\\\": [], \\\"certification_details\\\": []}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "row": {
+    "Name": "Priya Nair",
+    "Email Address": "priya.nair92@example.com",
+    "Phone Number": "+91 98765 43210",
+    "Current Location": "Bengaluru",
+    "Graduation": "2021 - B.Tech",
+    "Skills": [
+     {
+      "name": "Python",
+      "proficiency": "expert",
+      "years": 3
+     },
+     {
+      "name": "SQL"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python",
+     "SQL"
+    ],
+    "_resume_text": "# PRIYA NAIR \n\npriya.nair92@example.com | +91 98765 43210 | Bengaluru, India Education: B.Tech 2021, Example Institute of Technology Skills: Python, SQL, data analysis and reporting with dashboards and automation. Experience: built ETL pipelines and automated weekly reports for the operations team. Projects: inventory forecasting service and an internal resume screening tool. \n\n",
+    "_use_vision": false
+   },
+   "meta": {
+    "model": "p/text",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-74a3d9"
+    ],
+    "request_ids": [],
+    "provider_names": [],
+    "primary_model": "p/text",
+    "fallback_model": "f/text",
+    "fallback_attempted": false,
+    "fallback_used": false,
+    "vision": false,
+    "run_id": "run-test",
+    "issues": [],
+    "primary_issues": [],
+    "fallback_issues": [],
+    "primary_error": null,
+    "fallback_error": null
+   }
+  },
+  "bodies": [
+   {
+    "model": "p/text",
+    "max_tokens": 3000,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "none"
+    }
+   }
+  ],
+  "notes": []
+ },
+ {
+  "id": "non-object-reply",
+  "file": "priya.pdf",
+  "cfg": {},
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-b874a9\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"[1,2]\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ],
+   [
+    200,
+    "{\"id\": \"gen-e47036\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Priya Nair\\\", \\\"email\\\": \\\"priya.nair92@example.com\\\", \\\"phone\\\": \\\"+91 98765 43210\\\", \\\"location\\\": \\\"Bengaluru\\\", \\\"graduation\\\": \\\"2021 - B.Tech\\\", \\\"skill_tags\\\": [\\\"Python\\\", \\\"SQL\\\"], \\\"skill_details\\\": [{\\\"name\\\": \\\"Python\\\", \\\"proficiency\\\": \\\"expert\\\", \\\"years\\\": 3}], \\\"certifications\\\": [], \\\"certification_details\\\": []}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "row": {
+    "Name": "Priya Nair",
+    "Email Address": "priya.nair92@example.com",
+    "Phone Number": "+91 98765 43210",
+    "Current Location": "Bengaluru",
+    "Graduation": "2021 - B.Tech",
+    "Skills": [
+     {
+      "name": "Python",
+      "proficiency": "expert",
+      "years": 3
+     },
+     {
+      "name": "SQL"
+     }
+    ],
+    "Certifications": [],
+    "Resume parsed skill tags": [
+     "Python",
+     "SQL"
+    ],
+    "_resume_text": "# PRIYA NAIR \n\npriya.nair92@example.com | +91 98765 43210 | Bengaluru, India Education: B.Tech 2021, Example Institute of Technology Skills: Python, SQL, data analysis and reporting with dashboards and automation. Experience: built ETL pipelines and automated weekly reports for the operations team. Projects: inventory forecasting service and an internal resume screening tool. \n\n",
+    "_use_vision": false
+   },
+   "meta": {
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "attempts": 1,
+    "retries": 0,
+    "model": "f/text",
+    "primary_model": "p/text",
+    "fallback_model": "f/text",
+    "fallback_used": true,
+    "generation_ids": [
+     "gen-e47036"
+    ],
+    "request_ids": [],
+    "provider_names": [],
+    "fallback_attempted": true,
+    "vision": false,
+    "run_id": "run-test",
+    "issues": [],
+    "primary_issues": [],
+    "fallback_issues": [],
+    "primary_error": "ValueError",
+    "fallback_error": null
+   }
+  },
+  "bodies": [
+   {
+    "model": "p/text",
+    "max_tokens": 3000,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "none"
+    }
+   },
+   {
+    "model": "f/text",
+    "max_tokens": 4096,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "low"
+    }
+   }
+  ],
+  "notes": []
+ },
+ {
+  "id": "sales-campaign",
+  "file": "priya.pdf",
+  "cfg": {
+   "CRM_CAMPAIGN_TYPE": "SALES"
+  },
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-14f30d\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Priya Nair\\\", \\\"email\\\": \\\"priya.nair92@example.com\\\", \\\"phone\\\": \\\"98765 43210\\\", \\\"sales_types\\\": [\\\"B2B\\\"], \\\"industries\\\": [\\\"SaaS\\\"], \\\"team_level\\\": \\\"manager\\\", \\\"team_size\\\": 4}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "row": {
+    "Name": "Priya Nair",
+    "Email Address": "priya.nair92@example.com",
+    "Phone Number": "98765 43210",
+    "Current Location": "Not Specified",
+    "Graduation": "Not Specified",
+    "CS / Sales type": [
+     "B2B"
+    ],
+    "Industry background": [
+     "SaaS"
+    ],
+    "Team level": "manager",
+    "Team size": 4,
+    "_resume_text": "# PRIYA NAIR \n\npriya.nair92@example.com | +91 98765 43210 | Bengaluru, India Education: B.Tech 2021, Example Institute of Technology Skills: Python, SQL, data analysis and reporting with dashboards and automation. Experience: built ETL pipelines and automated weekly reports for the operations team. Projects: inventory forecasting service and an internal resume screening tool. \n\n",
+    "_use_vision": false
+   },
+   "meta": {
+    "model": "p/text",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-14f30d"
+    ],
+    "request_ids": [],
+    "provider_names": [],
+    "primary_model": "p/text",
+    "fallback_model": "f/text",
+    "fallback_attempted": false,
+    "fallback_used": false,
+    "vision": false,
+    "run_id": "run-test",
+    "issues": [],
+    "primary_issues": [],
+    "fallback_issues": [],
+    "primary_error": null,
+    "fallback_error": null
+   }
+  },
+  "bodies": [
+   {
+    "model": "p/text",
+    "max_tokens": 3000,
+    "vision": false,
+    "images": 0,
+    "keys": [
+     "max_tokens",
+     "messages",
+     "model",
+     "provider",
+     "reasoning",
+     "response_format",
+     "user"
+    ],
+    "system": "Extract resume facts as JSON only.",
+    "reasoning": {
+     "effort": "none"
+    }
+   }
+  ],
+  "notes": []
+ }
+]

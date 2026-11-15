@@ -1,0 +1,678 @@
+{
+ "ok": {
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-929c75\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Asha Rao\\\", \\\"email\\\": \\\"asha@example.com\\\", \\\"phone\\\": \\\"+919876543210\\\"}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "parsed": {
+    "name": "Asha Rao",
+    "email": "asha@example.com",
+    "phone": "+919876543210"
+   },
+   "meta": {
+    "model": "resp/model",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-929c75"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "notes": [],
+   "maxTokens": [
+    1000
+   ],
+   "calls": 1,
+   "trips": 0
+  }
+ },
+ "fenced": {
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-adf6ef\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"```json\\n{\\\"name\\\": \\\"F\\\"}\\n```\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "parsed": {
+    "name": "F"
+   },
+   "meta": {
+    "model": "resp/model",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-adf6ef"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "notes": [],
+   "maxTokens": [
+    1000
+   ],
+   "calls": 1,
+   "trips": 0
+  }
+ },
+ "emptyThenOk": {
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-da39a3\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ],
+   [
+    200,
+    "{\"id\": \"gen-929c75\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Asha Rao\\\", \\\"email\\\": \\\"asha@example.com\\\", \\\"phone\\\": \\\"+919876543210\\\"}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "parsed": {
+    "name": "Asha Rao",
+    "email": "asha@example.com",
+    "phone": "+919876543210"
+   },
+   "meta": {
+    "model": "resp/model",
+    "attempts": 2,
+    "retries": 1,
+    "prompt_tokens": 200,
+    "completion_tokens": 100,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 300,
+    "cost": 0.002,
+    "generation_ids": [
+     "gen-da39a3",
+     "gen-929c75"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "notes": [
+    "[retry] lbl: empty response"
+   ],
+   "maxTokens": [
+    1000,
+    1000
+   ],
+   "calls": 2,
+   "trips": 0
+  }
+ },
+ "badShapeThenOk": {
+  "script": [
+   [
+    200,
+    "{\"choices\": []}",
+    {}
+   ],
+   [
+    200,
+    "{\"id\": \"gen-929c75\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Asha Rao\\\", \\\"email\\\": \\\"asha@example.com\\\", \\\"phone\\\": \\\"+919876543210\\\"}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "parsed": {
+    "name": "Asha Rao",
+    "email": "asha@example.com",
+    "phone": "+919876543210"
+   },
+   "meta": {
+    "model": "resp/model",
+    "attempts": 2,
+    "retries": 1,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-929c75"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "notes": [
+    "[retry] lbl: empty response"
+   ],
+   "maxTokens": [
+    1000,
+    1000
+   ],
+   "calls": 2,
+   "trips": 0
+  }
+ },
+ "unparseableThenOk": {
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-5cd99a\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"no json here\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ],
+   [
+    200,
+    "{\"id\": \"gen-929c75\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Asha Rao\\\", \\\"email\\\": \\\"asha@example.com\\\", \\\"phone\\\": \\\"+919876543210\\\"}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "parsed": {
+    "name": "Asha Rao",
+    "email": "asha@example.com",
+    "phone": "+919876543210"
+   },
+   "meta": {
+    "model": "resp/model",
+    "attempts": 2,
+    "retries": 1,
+    "prompt_tokens": 200,
+    "completion_tokens": 100,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 300,
+    "cost": 0.002,
+    "generation_ids": [
+     "gen-5cd99a",
+     "gen-929c75"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "notes": [
+    "[retry] lbl: unparseable reply"
+   ],
+   "maxTokens": [
+    1000,
+    1000
+   ],
+   "calls": 2,
+   "trips": 0
+  }
+ },
+ "truncatedThenOk": {
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-22855f\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Asha Rao\\\", \\\"skill_tags\\\": [\\\"Py\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ],
+   [
+    200,
+    "{\"id\": \"gen-929c75\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Asha Rao\\\", \\\"email\\\": \\\"asha@example.com\\\", \\\"phone\\\": \\\"+919876543210\\\"}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "parsed": {
+    "name": "Asha Rao",
+    "email": "asha@example.com",
+    "phone": "+919876543210"
+   },
+   "meta": {
+    "model": "resp/model",
+    "attempts": 2,
+    "retries": 1,
+    "prompt_tokens": 200,
+    "completion_tokens": 100,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 300,
+    "cost": 0.002,
+    "generation_ids": [
+     "gen-22855f",
+     "gen-929c75"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "notes": [
+    "[retry] lbl: unparseable reply"
+   ],
+   "maxTokens": [
+    1000,
+    2000
+   ],
+   "calls": 2,
+   "trips": 0
+  }
+ },
+ "transientThenOk": {
+  "script": [
+   [
+    503,
+    "busy",
+    {}
+   ],
+   [
+    200,
+    "{\"id\": \"gen-929c75\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Asha Rao\\\", \\\"email\\\": \\\"asha@example.com\\\", \\\"phone\\\": \\\"+919876543210\\\"}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "parsed": {
+    "name": "Asha Rao",
+    "email": "asha@example.com",
+    "phone": "+919876543210"
+   },
+   "meta": {
+    "model": "resp/model",
+    "attempts": 2,
+    "retries": 1,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-929c75"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "notes": [
+    "[retry] lbl: server busy (503)"
+   ],
+   "maxTokens": [
+    1000,
+    1000
+   ],
+   "calls": 2,
+   "trips": 0
+  }
+ },
+ "minuteThenOk": {
+  "script": [
+   [
+    429,
+    "slow",
+    {
+     "retry-after": "0"
+    }
+   ],
+   [
+    200,
+    "{\"id\": \"gen-929c75\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Asha Rao\\\", \\\"email\\\": \\\"asha@example.com\\\", \\\"phone\\\": \\\"+919876543210\\\"}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "parsed": {
+    "name": "Asha Rao",
+    "email": "asha@example.com",
+    "phone": "+919876543210"
+   },
+   "meta": {
+    "model": "resp/model",
+    "attempts": 2,
+    "retries": 1,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-929c75"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "notes": [
+    "[retry] lbl: rate limited (429)"
+   ],
+   "maxTokens": [
+    1000,
+    1000
+   ],
+   "calls": 2,
+   "trips": 1
+  }
+ },
+ "daily": {
+  "script": [
+   [
+    429,
+    "requests per day exceeded",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": false,
+   "error": "DailyQuotaExceeded",
+   "message": "provider daily quota exhausted",
+   "meta": null,
+   "notes": [],
+   "maxTokens": [
+    1000
+   ],
+   "calls": 1,
+   "trips": 0
+  }
+ },
+ "fatal": {
+  "script": [
+   [
+    400,
+    "bad request",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": false,
+   "error": "RuntimeError",
+   "message": "HTTP 400",
+   "meta": {
+    "model": "req/model",
+    "attempts": 1,
+    "retries": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 0,
+    "cost": 0.0,
+    "generation_ids": [],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "notes": [],
+   "maxTokens": [
+    1000
+   ],
+   "calls": 1,
+   "trips": 0
+  }
+ },
+ "networkThenOk": {
+  "script": [
+   {
+    "throw": "ConnectionError"
+   },
+   [
+    200,
+    "{\"id\": \"gen-929c75\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Asha Rao\\\", \\\"email\\\": \\\"asha@example.com\\\", \\\"phone\\\": \\\"+919876543210\\\"}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "parsed": {
+    "name": "Asha Rao",
+    "email": "asha@example.com",
+    "phone": "+919876543210"
+   },
+   "meta": {
+    "model": "resp/model",
+    "attempts": 2,
+    "retries": 1,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-929c75"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "notes": [
+    "[retry] lbl: ConnectionError"
+   ],
+   "maxTokens": [
+    1000,
+    1000
+   ],
+   "calls": 2,
+   "trips": 0
+  }
+ },
+ "timeoutThenOk": {
+  "script": [
+   {
+    "throw": "ReadTimeout"
+   },
+   [
+    200,
+    "{\"id\": \"gen-929c75\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"{\\\"name\\\": \\\"Asha Rao\\\", \\\"email\\\": \\\"asha@example.com\\\", \\\"phone\\\": \\\"+919876543210\\\"}\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": true,
+   "parsed": {
+    "name": "Asha Rao",
+    "email": "asha@example.com",
+    "phone": "+919876543210"
+   },
+   "meta": {
+    "model": "resp/model",
+    "attempts": 2,
+    "retries": 1,
+    "prompt_tokens": 100,
+    "completion_tokens": 50,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 150,
+    "cost": 0.001,
+    "generation_ids": [
+     "gen-929c75"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "notes": [
+    "[retry] lbl: ReadTimeout"
+   ],
+   "maxTokens": [
+    1000,
+    1000
+   ],
+   "calls": 2,
+   "trips": 0
+  }
+ },
+ "allTransient": {
+  "script": [
+   [
+    500,
+    "x",
+    {}
+   ],
+   [
+    500,
+    "x",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": false,
+   "error": "RuntimeError",
+   "message": "HTTP 500",
+   "meta": {
+    "model": "req/model",
+    "attempts": 2,
+    "retries": 1,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 0,
+    "cost": 0.0,
+    "generation_ids": [],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "notes": [
+    "[retry] lbl: server busy (500)"
+   ],
+   "maxTokens": [
+    1000,
+    1000
+   ],
+   "calls": 2,
+   "trips": 0
+  }
+ },
+ "allNetwork": {
+  "script": [
+   {
+    "throw": "ConnectionError"
+   },
+   {
+    "throw": "ConnectionError"
+   }
+  ],
+  "result": {
+   "ok": false,
+   "error": "RuntimeError",
+   "message": "network error after 2 attempts (ConnectionError)",
+   "meta": {
+    "model": "req/model",
+    "attempts": 2,
+    "retries": 1,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 0,
+    "cost": 0.0,
+    "generation_ids": [],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "notes": [
+    "[retry] lbl: ConnectionError"
+   ],
+   "maxTokens": [
+    1000,
+    1000
+   ],
+   "calls": 2,
+   "trips": 0
+  }
+ },
+ "allEmpty": {
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-da39a3\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ],
+   [
+    200,
+    "{\"id\": \"gen-da39a3\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": false,
+   "error": "RuntimeError",
+   "message": "model returned an empty response after 2 attempts",
+   "meta": {
+    "model": "req/model",
+    "attempts": 2,
+    "retries": 1,
+    "prompt_tokens": 200,
+    "completion_tokens": 100,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 300,
+    "cost": 0.002,
+    "generation_ids": [
+     "gen-da39a3"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "notes": [
+    "[retry] lbl: empty response"
+   ],
+   "maxTokens": [
+    1000,
+    1000
+   ],
+   "calls": 2,
+   "trips": 0
+  }
+ },
+ "allUnparseable": {
+  "script": [
+   [
+    200,
+    "{\"id\": \"gen-40fa37\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"zzz\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ],
+   [
+    200,
+    "{\"id\": \"gen-40fa37\", \"model\": \"resp/model\", \"choices\": [{\"message\": {\"content\": \"zzz\"}}], \"usage\": {\"prompt_tokens\": 100, \"completion_tokens\": 50, \"total_tokens\": 150, \"cost\": 0.001}}",
+    {}
+   ]
+  ],
+  "result": {
+   "ok": false,
+   "error": "RuntimeError",
+   "message": "model reply was not JSON after 2 attempts",
+   "meta": {
+    "model": "req/model",
+    "attempts": 2,
+    "retries": 1,
+    "prompt_tokens": 200,
+    "completion_tokens": 100,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "total_tokens": 300,
+    "cost": 0.002,
+    "generation_ids": [
+     "gen-40fa37"
+    ],
+    "request_ids": [],
+    "provider_names": []
+   },
+   "notes": [
+    "[retry] lbl: unparseable reply"
+   ],
+   "maxTokens": [
+    1000,
+    1000
+   ],
+   "calls": 2,
+   "trips": 0
+  }
+ }
+}
