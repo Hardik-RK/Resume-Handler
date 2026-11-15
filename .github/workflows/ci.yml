@@ -1,0 +1,38 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  package:
+    name: ${{ matrix.package }} (node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [20, 24]
+        package: [core, server, mock-crm, web, cli]
+    defaults:
+      run:
+        working-directory: packages/${{ matrix.package }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      # server, cli and web link to ../core and ../server with file: dependencies, so install those first.
+      - name: Install core
+        if: matrix.package != 'core'
+        working-directory: packages/core
+        run: npm ci
+      - name: Install server
+        if: matrix.package == 'cli'
+        working-directory: packages/server
+        run: npm ci
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - name: Build
+        if: matrix.package == 'web'
+        run: npm run build
