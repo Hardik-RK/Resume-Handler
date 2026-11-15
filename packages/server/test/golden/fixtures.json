@@ -1,0 +1,1877 @@
+{
+ "NOW": 1800000000,
+ "AUDIENCE": "resume-intake",
+ "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAD9V8L0L+38+YwDurjKtFB3KfPISuN5TQvLd2vpwcpGI=\n-----END PUBLIC KEY-----\n",
+ "tokens": [
+  {
+   "name": "valid",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoib3BlcmF0b3JAZXhhbXBsZS50ZXN0Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzk5OTk5OTkwLCJleHAiOjE4MDAwMDA5MDB9.yMYC73lLhjc34NSbzvI7-7z3JM_X7OWmMIJwEAiSQ5OFT7x5Wxcpd5siSqtVhujozjdkNSAThW1m2l2fTWpQDQ",
+   "claims": {
+    "aud": "resume-intake",
+    "sub": "operator@example.test",
+    "role": "admin",
+    "iat": 1799999990,
+    "exp": 1800000900
+   }
+  },
+  {
+   "name": "valid_unicode_raw",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoiSm9zw6kgTcO8bGxlciIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc5OTk5OTk5MCwiZXhwIjoxODAwMDAwOTAwfQ.UcSNEHqgKfBN4rdHozuZb2rgmRrU6XWAdhvbEOEhqaYoliFBb1gxVVb6u4EAeOcqD-r3vzMwhXTPgvk5Q1aLCw",
+   "claims": {
+    "aud": "resume-intake",
+    "sub": "Jos\u00e9 M\u00fcller",
+    "role": "admin",
+    "iat": 1799999990,
+    "exp": 1800000900
+   }
+  },
+  {
+   "name": "valid_unicode_escaped",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoiSm9zXHUwMGU5IE1cdTAwZmNsbGVyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzk5OTk5OTkwLCJleHAiOjE4MDAwMDA5MDB9.4v-yuJrAYGjwCbzKyNUM1Q-DRMBzKmhnd-DHZ_f52OGvTpVwNkurmJx_DrVOI3QfX3DEp2a0zOLahmC0QBEGAw",
+   "claims": {
+    "aud": "resume-intake",
+    "sub": "Jos\u00e9 M\u00fcller",
+    "role": "admin",
+    "iat": 1799999990,
+    "exp": 1800000900
+   }
+  },
+  {
+   "name": "valid_extra_claims",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoib3BlcmF0b3JAZXhhbXBsZS50ZXN0Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzk5OTk5OTkwLCJleHAiOjE4MDAwMDA5MDAsInNjb3BlIjpbImEiLCJiIl0sIm4iOjEuNX0.UNoebXXJ4ZCJ0xDlNnENpEYhwKWZ-WE3XTmR4xQ2cPPsxBgwEPQx5lxZ8OlQkVlR2XMmrD0Fc6EszReBNCUODA",
+   "claims": {
+    "aud": "resume-intake",
+    "sub": "operator@example.test",
+    "role": "admin",
+    "iat": 1799999990,
+    "exp": 1800000900,
+    "scope": [
+     "a",
+     "b"
+    ],
+    "n": 1.5
+   }
+  },
+  {
+   "name": "exp_equals_now",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoib3BlcmF0b3JAZXhhbXBsZS50ZXN0Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzk5OTk5OTkwLCJleHAiOjE4MDAwMDAwMDB9.XWbSdxPfsN9A7mBjK0S6nzu8bN9jOC9b7JCtBiosHpMcxn1oyUrxMiy_-Ys1F3iRJ28UoLPpDWinvSDLXlJmBg",
+   "claims": {
+    "aud": "resume-intake",
+    "sub": "operator@example.test",
+    "role": "admin",
+    "iat": 1799999990,
+    "exp": 1800000000
+   }
+  },
+  {
+   "name": "exp_one_second_ago",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoib3BlcmF0b3JAZXhhbXBsZS50ZXN0Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzk5OTk5OTkwLCJleHAiOjE3OTk5OTk5OTl9.KU2oGjXHdrWGZcJc-Jm4B4fvDltyFqzK_pUKaIVC7o-6V6BJh-5L06CHnpb1aptz9aKi9xCyZvkBSBMVmL8ZBQ",
+   "claims": null
+  },
+  {
+   "name": "exp_float_future",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoib3BlcmF0b3JAZXhhbXBsZS50ZXN0Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzk5OTk5OTkwLCJleHAiOjE4MDAwMDAwMDAuNX0.4ROOn96v47zgpbfZUPCK0zFXbKzEiwrmj6g6LE5QM1QS1YMR4l9CFAzR6epyER3KAF-5vVZaavPaPOrPMKBsCA",
+   "claims": {
+    "aud": "resume-intake",
+    "sub": "operator@example.test",
+    "role": "admin",
+    "iat": 1799999990,
+    "exp": 1800000000.5
+   }
+  },
+  {
+   "name": "exp_missing",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoib3BlcmF0b3JAZXhhbXBsZS50ZXN0Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzk5OTk5OTkwfQ.L8_JuIXWzyi8LT5gBkbbcprkCE7H2c5HqY0kuGMiLsr6ylhiDKPca2Rt928w8FBWxkb44JYe9wYqykRoWV6_DQ",
+   "claims": null
+  },
+  {
+   "name": "exp_true",
+   "token": "eyJhdWQiOiAicmVzdW1lLWludGFrZSIsICJzdWIiOiAib3BlcmF0b3JAZXhhbXBsZS50ZXN0IiwgInJvbGUiOiAiYWRtaW4iLCAiaWF0IjogMTc5OTk5OTk5MCwgImV4cCI6IHRydWV9.MrVZLbeMa6xRTD2VaeWmdMUxk2IUghINa9MmD-SU6Niava5_pKjEXysl54mddC5pYNfEqyO22E7atKEAubfADg",
+   "claims": null
+  },
+  {
+   "name": "exp_string",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoib3BlcmF0b3JAZXhhbXBsZS50ZXN0Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzk5OTk5OTkwLCJleHAiOiIxODAwMDAwOTAwIn0.181QFtJnANPUtt63bHaiaBEs_m3b4mit2beHtazBca2CYo2FzxtPwoTIWhUCdr25_zhsx5lLAEIUD5CZBl4KBA",
+   "claims": null
+  },
+  {
+   "name": "exp_null",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoib3BlcmF0b3JAZXhhbXBsZS50ZXN0Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzk5OTk5OTkwLCJleHAiOm51bGx9.-xps7zzPOUik7MfkZnHwC9sBhgV5G5UoU_EEIcJO012AHCkGr76JUSrWFZtqBCj_4iY2PQydiZ8PShF4lUZ6Dg",
+   "claims": null
+  },
+  {
+   "name": "wrong_role",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoib3BlcmF0b3JAZXhhbXBsZS50ZXN0Iiwicm9sZSI6InZpZXdlciIsImlhdCI6MTc5OTk5OTk5MCwiZXhwIjoxODAwMDAwOTAwfQ.-IbbWT_nY96uLzhGMPcI7xnJw47BjYSKzM-G4gaw3dvmFisrZLMTJI0APcWKWR_xlHgcPeufSd9EML6BrEHtBg",
+   "claims": null
+  },
+  {
+   "name": "role_missing",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoib3BlcmF0b3JAZXhhbXBsZS50ZXN0IiwiaWF0IjoxNzk5OTk5OTkwLCJleHAiOjE4MDAwMDA5MDB9.A9zinZOMMV4Q91uNvOWU-casUt2y1dwHvhyRv1XKiigghvYgQFXr4kKasJdEFcJkijVpm6jdIhqpSEf6vEiyAw",
+   "claims": null
+  },
+  {
+   "name": "wrong_audience",
+   "token": "eyJhdWQiOiJhbm90aGVyLWFwcCIsInN1YiI6Im9wZXJhdG9yQGV4YW1wbGUudGVzdCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc5OTk5OTk5MCwiZXhwIjoxODAwMDAwOTAwfQ.3pUwehoNJh0TRGK7D95ULTzpYIUiAhwspejFd2sB0pfHmPnmdOPjaRhSG2adsKR9RjdEhRUXpo1_XxGSkhapDA",
+   "claims": null
+  },
+  {
+   "name": "audience_missing",
+   "token": "eyJzdWIiOiJvcGVyYXRvckBleGFtcGxlLnRlc3QiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3OTk5OTk5OTAsImV4cCI6MTgwMDAwMDkwMH0.AI3SjyWqvYQY1-Hb11sP2bBOov3kvxj4dJDS9gmQkgApZ55lFlkpA7xtTt7-02T_HRRQyDibpWkOpCrbCoAwCA",
+   "claims": null
+  },
+  {
+   "name": "claims_is_list",
+   "token": "WzEsMiwzXQ.59qe6Px2WoWN8DBfHcokCDV9WZ18SIvt4rkc6TWpI1Da5u7dxhxYW57sLjVht6WRduvW1oxnprle0R9vffSXDQ",
+   "claims": null
+  },
+  {
+   "name": "claims_is_string",
+   "token": "ImFkbWluIg.Xx-PKlV1U2QbG-s8N3i5-Gez1mn61JWAY4ATik0hNq4Bd32BWgmLc-0H-H8zPECYB0q7Xp6JV4SpmSj46mU_Aw",
+   "claims": null
+  },
+  {
+   "name": "payload_not_json",
+   "token": "bm90IGpzb24gYXQgYWxs.I8h4IjXldFRMnuNX0Xk4oYVUzs-O4jZbpZNvKpyIe87AaizqNrWA_X1LJKdHPN5_CWLduYm7whE-A2T9F-HiBg",
+   "claims": null
+  },
+  {
+   "name": "payload_invalid_utf8",
+   "token": "__57.rduY12if1nR1Zp9GG8r9JejBlg6uSIqGEAEehCMRGGmu5nccz4WwkrK_NUseFodKlRo5JpPkGx4zS9XK26OQCw",
+   "claims": null
+  },
+  {
+   "name": "signed_by_other_key",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoib3BlcmF0b3JAZXhhbXBsZS50ZXN0Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzk5OTk5OTkwLCJleHAiOjE4MDAwMDA5MDB9.0bLXRjwonKqjaDxBQCfwa6wOqln74PfsrYq3e7spRh_j6Yx2r6c-KQNpkbYZdufFhavTtKX2gVUPOXqfQgURDw",
+   "claims": null
+  },
+  {
+   "name": "tampered_payload",
+   "token": "eyJhdWQiOiAicmVzdW1lLWludGFrZSIsICJzdWIiOiAic29tZW9uZUBlbHNlLmV4YW1wbGUiLCAicm9sZSI6ICJhZG1pbiIsICJpYXQiOiAxNzk5OTk5OTkwLCAiZXhwIjogMTgwMDAwMDkwMH0.yMYC73lLhjc34NSbzvI7-7z3JM_X7OWmMIJwEAiSQ5OFT7x5Wxcpd5siSqtVhujozjdkNSAThW1m2l2fTWpQDQ",
+   "claims": null
+  },
+  {
+   "name": "signature_truncated",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoib3BlcmF0b3JAZXhhbXBsZS50ZXN0Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzk5OTk5OTkwLCJleHAiOjE4MDAwMDA5MDB9.yMYC73lLhjc34NSbzvI7-7z3JM_X7OWmMIJwEAiSQ5OFT7x5Wxcpd5siSqtVhujozjdkNSAThW1m2l2fTW",
+   "claims": null
+  },
+  {
+   "name": "signature_padded",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoib3BlcmF0b3JAZXhhbXBsZS50ZXN0Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzk5OTk5OTkwLCJleHAiOjE4MDAwMDA5MDB9.yMYC73lLhjc34NSbzvI7-7z3JM_X7OWmMIJwEAiSQ5OFT7x5Wxcpd5siSqtVhujozjdkNSAThW1m2l2fTWpQDQ==",
+   "claims": null
+  },
+  {
+   "name": "signature_length_mod4_is_1",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoib3BlcmF0b3JAZXhhbXBsZS50ZXN0Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzk5OTk5OTkwLCJleHAiOjE4MDAwMDA5MDB9.AAAAA",
+   "claims": null
+  },
+  {
+   "name": "signature_empty",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoib3BlcmF0b3JAZXhhbXBsZS50ZXN0Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzk5OTk5OTkwLCJleHAiOjE4MDAwMDA5MDB9.",
+   "claims": null
+  },
+  {
+   "name": "signature_not_base64url",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoib3BlcmF0b3JAZXhhbXBsZS50ZXN0Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzk5OTk5OTkwLCJleHAiOjE4MDAwMDA5MDB9.%%%%",
+   "claims": null
+  },
+  {
+   "name": "payload_only",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoib3BlcmF0b3JAZXhhbXBsZS50ZXN0Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzk5OTk5OTkwLCJleHAiOjE4MDAwMDA5MDB9",
+   "claims": null
+  },
+  {
+   "name": "three_segments",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoib3BlcmF0b3JAZXhhbXBsZS50ZXN0Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzk5OTk5OTkwLCJleHAiOjE4MDAwMDA5MDB9.yMYC73lLhjc34NSbzvI7-7z3JM_X7OWmMIJwEAiSQ5OFT7x5Wxcpd5siSqtVhujozjdkNSAThW1m2l2fTWpQDQ.yMYC73lLhjc34NSbzvI7-7z3JM_X7OWmMIJwEAiSQ5OFT7x5Wxcpd5siSqtVhujozjdkNSAThW1m2l2fTWpQDQ",
+   "claims": null
+  },
+  {
+   "name": "empty",
+   "token": "",
+   "claims": null
+  },
+  {
+   "name": "dots_only",
+   "token": "....",
+   "claims": null
+  },
+  {
+   "name": "garbage",
+   "token": "garbage",
+   "claims": null
+  },
+  {
+   "name": "payload_with_padding",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoib3BlcmF0b3JAZXhhbXBsZS50ZXN0Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzk5OTk5OTkwLCJleHAiOjE4MDAwMDA5MDB9=.yMYC73lLhjc34NSbzvI7-7z3JM_X7OWmMIJwEAiSQ5OFT7x5Wxcpd5siSqtVhujozjdkNSAThW1m2l2fTWpQDQ",
+   "claims": null
+  },
+  {
+   "name": "payload_with_space",
+   "token": "eyJhdWQiOiJyZXN1bWUtaW50YWtlIiwic3ViIjoib3BlcmF0b3JAZXhhbXBsZS50ZXN0Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzk5OTk5OTkwLCJleHAiOjE4MDAwMDA5MDB9 .yMYC73lLhjc34NSbzvI7-7z3JM_X7OWmMIJwEAiSQ5OFT7x5Wxcpd5siSqtVhujozjdkNSAThW1m2l2fTWpQDQ",
+   "claims": null
+  },
+  {
+   "name": "too_long",
+   "token": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.yMYC73lLhjc34NSbzvI7-7z3JM_X7OWmMIJwEAiSQ5OFT7x5Wxcpd5siSqtVhujozjdkNSAThW1m2l2fTWpQDQ",
+   "claims": null
+  },
+  {
+   "name": "non_ascii",
+   "token": "\u00e9.yMYC73lLhjc34NSbzvI7-7z3JM_X7OWmMIJwEAiSQ5OFT7x5Wxcpd5siSqtVhujozjdkNSAThW1m2l2fTWpQDQ",
+   "claims": null
+  }
+ ],
+ "bearer": [
+  {
+   "header": "Bearer abc",
+   "token": "abc"
+  },
+  {
+   "header": "bearer abc",
+   "token": "abc"
+  },
+  {
+   "header": "BEARER abc",
+   "token": "abc"
+  },
+  {
+   "header": "  Bearer   abc  ",
+   "token": "abc"
+  },
+  {
+   "header": "Bearer",
+   "token": null
+  },
+  {
+   "header": "Bearer ",
+   "token": null
+  },
+  {
+   "header": "Basic abc",
+   "token": null
+  },
+  {
+   "header": "Bearer a b",
+   "token": null
+  },
+  {
+   "header": "Bearerabc",
+   "token": null
+  },
+  {
+   "header": "",
+   "token": null
+  },
+  {
+   "header": "Bearer abc.def-ghi_jkl",
+   "token": "abc.def-ghi_jkl"
+  },
+  {
+   "header": "Bearer\tabc",
+   "token": "abc"
+  },
+  {
+   "header": null,
+   "token": null
+  }
+ ],
+ "origins": [
+  {
+   "origin": null,
+   "allowed": [
+    "https://app.example.test",
+    "http://localhost:5173"
+   ],
+   "status": "absent"
+  },
+  {
+   "origin": "",
+   "allowed": [
+    "https://app.example.test",
+    "http://localhost:5173"
+   ],
+   "status": "denied"
+  },
+  {
+   "origin": "null",
+   "allowed": [
+    "https://app.example.test",
+    "http://localhost:5173"
+   ],
+   "status": "denied"
+  },
+  {
+   "origin": "https://app.example.test",
+   "allowed": [
+    "https://app.example.test",
+    "http://localhost:5173"
+   ],
+   "status": "allowed"
+  },
+  {
+   "origin": "https://app.example.test/",
+   "allowed": [
+    "https://app.example.test",
+    "http://localhost:5173"
+   ],
+   "status": "denied"
+  },
+  {
+   "origin": "https://APP.example.test",
+   "allowed": [
+    "https://app.example.test",
+    "http://localhost:5173"
+   ],
+   "status": "denied"
+  },
+  {
+   "origin": "http://localhost:5173",
+   "allowed": [
+    "https://app.example.test",
+    "http://localhost:5173"
+   ],
+   "status": "allowed"
+  },
+  {
+   "origin": "http://localhost:9999",
+   "allowed": [
+    "https://app.example.test",
+    "http://localhost:5173"
+   ],
+   "status": "denied"
+  },
+  {
+   "origin": "https://app.example.test.evil.test",
+   "allowed": [
+    "https://app.example.test",
+    "http://localhost:5173"
+   ],
+   "status": "denied"
+  }
+ ],
+ "build": {
+  "request": {
+   "enabled": true,
+   "campaignId": 7,
+   "source": "Demo",
+   "stage": "LEAD"
+  },
+  "rows": [
+   {
+    "Lead ID": "L-1",
+    "Name": "  Asha   Rao ",
+    "Email Address": " ASHA@Example.TEST ",
+    "Phone Number": "+91 98765 43210",
+    "Resume": "https://files.example.test/a",
+    "Current Location": "Pune  City",
+    "Graduation": "B.Tech"
+   },
+   {
+    "Lead ID": "L-2",
+    "Name": "Ben Kaur",
+    "Email Address": "",
+    "Phone Number": "(555) 010-2030"
+   },
+   {
+    "Lead ID": "L-3",
+    "Name": "Cy Short",
+    "Email Address": "",
+    "Phone Number": "12345"
+   },
+   {
+    "Lead ID": "L-4",
+    "Name": "No Contact",
+    "Email Address": "",
+    "Phone Number": ""
+   },
+   {
+    "Lead ID": "L-5",
+    "Name": "Not Specified",
+    "Email Address": "ns@example.test",
+    "Phone Number": ""
+   },
+   {
+    "Lead ID": "L-6",
+    "Name": "not specified",
+    "Email Address": "",
+    "Phone Number": "9999999999"
+   },
+   {
+    "Lead ID": "L-7",
+    "Name": "Zoe M\u00fcller",
+    "Email Address": "zoe@example.test",
+    "Phone Number": null
+   },
+   {
+    "Lead ID": "L-\u00e9\ud83d\ude00",
+    "Name": "Emoji Id",
+    "Email Address": "",
+    "Phone Number": "123"
+   },
+   {
+    "Name": "No Lead Id",
+    "Email Address": "",
+    "Phone Number": "1234567"
+   },
+   {
+    "Lead ID": 12,
+    "Name": "Numeric Lead",
+    "Email Address": "num@example.test"
+   },
+   {
+    "Lead ID": "L-8",
+    "Name": "Tab\tSeparated\nName",
+    "Email Address": "tab@example.test"
+   }
+  ],
+  "items": [
+   {
+    "name": "Asha Rao",
+    "source": "Demo",
+    "stage": "LEAD",
+    "campaignId": 7,
+    "email": "asha@example.test",
+    "phone": "+91 98765 43210",
+    "leadId": "L-1",
+    "currentLocation": "Pune City",
+    "graduation": "B.Tech",
+    "resumeUrl": "https://files.example.test/a"
+   },
+   {
+    "name": "Ben Kaur",
+    "source": "Demo",
+    "stage": "LEAD",
+    "campaignId": 7,
+    "phone": "(555) 010-2030",
+    "leadId": "L-2"
+   },
+   {
+    "name": "Cy Short",
+    "source": "Demo",
+    "stage": "LEAD",
+    "campaignId": 7,
+    "phone": "12345",
+    "leadId": "L-3"
+   },
+   {
+    "name": "Zoe M\u00fcller",
+    "source": "Demo",
+    "stage": "LEAD",
+    "campaignId": 7,
+    "email": "zoe@example.test",
+    "leadId": "L-7"
+   },
+   {
+    "name": "Emoji Id",
+    "source": "Demo",
+    "stage": "LEAD",
+    "campaignId": 7,
+    "phone": "123",
+    "leadId": "L-\u00e9\ud83d\ude00"
+   },
+   {
+    "name": "No Lead Id",
+    "source": "Demo",
+    "stage": "LEAD",
+    "campaignId": 7,
+    "phone": "1234567"
+   },
+   {
+    "name": "Numeric Lead",
+    "source": "Demo",
+    "stage": "LEAD",
+    "campaignId": 7,
+    "email": "num@example.test",
+    "leadId": "12"
+   },
+   {
+    "name": "Tab Separated Name",
+    "source": "Demo",
+    "stage": "LEAD",
+    "campaignId": 7,
+    "email": "tab@example.test",
+    "leadId": "L-8"
+   }
+  ],
+  "keys": [
+   "email:asha@example.test",
+   "phone:5550102030",
+   "lead:L-3",
+   "email:zoe@example.test",
+   "lead:L-\u00e9\ud83d\ude00",
+   "phone:1234567",
+   "email:num@example.test",
+   "email:tab@example.test"
+  ],
+  "leftOut": 3
+ },
+ "identities": [
+  {
+   "item": {
+    "email": "A@B.test"
+   },
+   "key": "email:a@b.test"
+  },
+  {
+   "item": {
+    "email": "",
+    "phone": "+1 (555) 123-4567"
+   },
+   "key": "phone:15551234567"
+  },
+  {
+   "item": {
+    "phone": "12345"
+   },
+   "key": "lead:"
+  },
+  {
+   "item": {
+    "phone": "123456",
+    "leadId": "X"
+   },
+   "key": "lead:X"
+  },
+  {
+   "item": {
+    "leadId": "L-9"
+   },
+   "key": "lead:L-9"
+  },
+  {
+   "item": {},
+   "key": "lead:"
+  },
+  {
+   "item": {
+    "phone": "\u0661\u0662\u0663\u0664\u0665\u0666\u0667"
+   },
+   "key": "phone:\u0661\u0662\u0663\u0664\u0665\u0666\u0667"
+  }
+ ],
+ "idempotency": [
+  {
+   "keys": [
+    "email:a@x.test",
+    "phone:9876543210"
+   ],
+   "campaignId": 7,
+   "key": "uploader-fcce749899b90782888be9a40066fcd8"
+  },
+  {
+   "keys": [
+    "phone:9876543210",
+    "email:a@x.test"
+   ],
+   "campaignId": 7,
+   "key": "uploader-fcce749899b90782888be9a40066fcd8"
+  },
+  {
+   "keys": [
+    "email:a@x.test",
+    "phone:9876543210"
+   ],
+   "campaignId": 8,
+   "key": "uploader-4cb63734e0362c3d9bedbde14a018d05"
+  },
+  {
+   "keys": [],
+   "campaignId": 1,
+   "key": "uploader-95e256e201e5faee98bfeed7fec42d1a"
+  },
+  {
+   "keys": [
+    "lead:\u00e9",
+    "lead:z",
+    "lead:\ud83d\ude00",
+    "lead:\uffff",
+    "lead:A"
+   ],
+   "campaignId": 2147483647,
+   "key": "uploader-103bc2e431063ad4c50047a1a28c9348"
+  }
+ ],
+ "parseRequest": [
+  {
+   "input": null,
+   "ok": null
+  },
+  {
+   "input": {},
+   "ok": {
+    "enabled": false,
+    "campaignId": null,
+    "source": "Resume intake",
+    "stage": "LEAD"
+   }
+  },
+  {
+   "input": {
+    "enabled": false
+   },
+   "ok": {
+    "enabled": false,
+    "campaignId": null,
+    "source": "Resume intake",
+    "stage": "LEAD"
+   }
+  },
+  {
+   "input": {
+    "enabled": true
+   },
+   "error": "commit.campaignId must be the id of a campaign (a positive whole number)."
+  },
+  {
+   "input": {
+    "enabled": true,
+    "campaignId": 7
+   },
+   "ok": {
+    "enabled": true,
+    "campaignId": 7,
+    "source": "Resume intake",
+    "stage": "LEAD"
+   }
+  },
+  {
+   "input": {
+    "enabled": true,
+    "campaignId": true
+   },
+   "error": "commit.campaignId must be the id of a campaign (a positive whole number)."
+  },
+  {
+   "input": {
+    "enabled": true,
+    "campaignId": 0
+   },
+   "error": "commit.campaignId must be the id of a campaign (a positive whole number)."
+  },
+  {
+   "input": {
+    "enabled": true,
+    "campaignId": "7"
+   },
+   "error": "commit.campaignId must be the id of a campaign (a positive whole number)."
+  },
+  {
+   "input": {
+    "enabled": true,
+    "campaignId": 2147483648
+   },
+   "error": "commit.campaignId must be the id of a campaign (a positive whole number)."
+  },
+  {
+   "input": {
+    "enabled": true,
+    "campaignId": 2147483647,
+    "source": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+   },
+   "ok": {
+    "enabled": true,
+    "campaignId": 2147483647,
+    "source": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "stage": "LEAD"
+   }
+  },
+  {
+   "input": {
+    "enabled": true,
+    "campaignId": 7,
+    "source": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+   },
+   "error": "commit.source must be text of up to 120 characters."
+  },
+  {
+   "input": {
+    "enabled": true,
+    "campaignId": 7,
+    "source": "   "
+   },
+   "ok": {
+    "enabled": true,
+    "campaignId": 7,
+    "source": "Resume intake",
+    "stage": "LEAD"
+   }
+  },
+  {
+   "input": {
+    "enabled": true,
+    "campaignId": 7,
+    "source": 5
+   },
+   "error": "commit.source must be text of up to 120 characters."
+  },
+  {
+   "input": {
+    "enabled": true,
+    "campaignId": 7,
+    "stage": "bad stage!"
+   },
+   "error": "commit.stage must be a CRM stage name such as LEAD."
+  },
+  {
+   "input": {
+    "enabled": true,
+    "campaignId": 7,
+    "stage": " Won_Lead "
+   },
+   "ok": {
+    "enabled": true,
+    "campaignId": 7,
+    "source": "Resume intake",
+    "stage": "WON_LEAD"
+   }
+  },
+  {
+   "input": {
+    "enabled": true,
+    "campaignId": 7,
+    "stage": "1ABC"
+   },
+   "error": "commit.stage must be a CRM stage name such as LEAD."
+  },
+  {
+   "input": {
+    "enabled": true,
+    "campaignId": 7,
+    "stage": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+   },
+   "error": "commit.stage must be a CRM stage name such as LEAD."
+  },
+  {
+   "input": {
+    "enabled": true,
+    "campaignId": 7,
+    "stage": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+   },
+   "ok": {
+    "enabled": true,
+    "campaignId": 7,
+    "source": "Resume intake",
+    "stage": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+   }
+  },
+  {
+   "input": {
+    "enabled": true,
+    "campaignId": 7,
+    "stage": null
+   },
+   "error": "commit.stage must be a CRM stage name such as LEAD."
+  },
+  {
+   "input": {
+    "enabled": "yes",
+    "campaignId": 7
+   },
+   "error": "commit.enabled must be true or false."
+  },
+  {
+   "input": "x",
+   "error": "commit must be an object."
+  },
+  {
+   "input": [
+    1
+   ],
+   "error": "commit must be an object."
+  },
+  {
+   "input": 5,
+   "error": "commit must be an object."
+  },
+  {
+   "input": {
+    "enabled": false,
+    "campaignId": 7,
+    "source": "ignored"
+   },
+   "ok": {
+    "enabled": false,
+    "campaignId": null,
+    "source": "Resume intake",
+    "stage": "LEAD"
+   }
+  }
+ ],
+ "sinkUrls": [
+  {
+   "input": "https://app.example.test",
+   "ok": "https://app.example.test"
+  },
+  {
+   "input": "https://app.example.test/",
+   "ok": "https://app.example.test"
+  },
+  {
+   "input": "  https://app.example.test  ",
+   "ok": "https://app.example.test"
+  },
+  {
+   "input": "HTTPS://App.Example.Test:8443",
+   "ok": "https://App.Example.Test:8443"
+  },
+  {
+   "input": "http://127.0.0.1:5400",
+   "ok": "http://127.0.0.1:5400"
+  },
+  {
+   "input": "http://localhost:5400",
+   "ok": "http://localhost:5400"
+  },
+  {
+   "input": "http://LOCALHOST",
+   "ok": "http://LOCALHOST"
+  },
+  {
+   "input": "http://[::1]:5400",
+   "error": "crmBaseUrl must use https (plain http is allowed only for 127.0.0.1 or localhost)."
+  },
+  {
+   "input": "http://app.example.test",
+   "error": "crmBaseUrl must use https (plain http is allowed only for 127.0.0.1 or localhost)."
+  },
+  {
+   "input": "ftp://app.example.test",
+   "error": "crmBaseUrl must use https (plain http is allowed only for 127.0.0.1 or localhost)."
+  },
+  {
+   "input": "https://app.example.test/api",
+   "error": "crmBaseUrl must be the CRM origin only (no path)."
+  },
+  {
+   "input": "https://user:pw@app.example.test",
+   "error": "crmBaseUrl must not contain a user name, a query or a fragment."
+  },
+  {
+   "input": "https://user@app.example.test",
+   "error": "crmBaseUrl must not contain a user name, a query or a fragment."
+  },
+  {
+   "input": "https://app.example.test?x=1",
+   "error": "crmBaseUrl must not contain a user name, a query or a fragment."
+  },
+  {
+   "input": "https://app.example.test#frag",
+   "error": "crmBaseUrl must not contain a user name, a query or a fragment."
+  },
+  {
+   "input": "https://app.example.test?",
+   "ok": "https://app.example.test"
+  },
+  {
+   "input": "https://app.example.test:99999",
+   "error": "crmBaseUrl is not a valid address."
+  },
+  {
+   "input": "https://app.example.test:abc",
+   "error": "crmBaseUrl is not a valid address."
+  },
+  {
+   "input": "https://app.example.test:",
+   "ok": "https://app.example.test:"
+  },
+  {
+   "input": "https://:443",
+   "error": "crmBaseUrl must not contain a user name, a query or a fragment."
+  },
+  {
+   "input": "https://",
+   "error": "crmBaseUrl must not contain a user name, a query or a fragment."
+  },
+  {
+   "input": "app.example.test",
+   "error": "crmBaseUrl must not contain a user name, a query or a fragment."
+  },
+  {
+   "input": "//app.example.test",
+   "error": "crmBaseUrl must use https (plain http is allowed only for 127.0.0.1 or localhost)."
+  },
+  {
+   "input": "",
+   "error": "crmBaseUrl must be a web address."
+  },
+  {
+   "input": "   ",
+   "error": "crmBaseUrl must be a web address."
+  },
+  {
+   "input": null,
+   "error": "crmBaseUrl must be a web address."
+  },
+  {
+   "input": 12,
+   "error": "crmBaseUrl must be a web address."
+  },
+  {
+   "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+   "error": "crmBaseUrl must be a web address."
+  },
+  {
+   "input": "https://openrouter.ai/api/v1",
+   "error": "crmBaseUrl must be the CRM origin only (no path)."
+  },
+  {
+   "input": "https://openrouter.ai",
+   "ok": "https://openrouter.ai"
+  },
+  {
+   "input": "https://openrouter.ai/",
+   "ok": "https://openrouter.ai"
+  },
+  {
+   "input": "https://openrouter.ai:443/api/v1",
+   "error": "crmBaseUrl must be the CRM origin only (no path)."
+  },
+  {
+   "input": "https://openrouter.ai:8443/api/v1",
+   "error": "crmBaseUrl must be the CRM origin only (no path)."
+  },
+  {
+   "input": "http://openrouter.ai/api/v1",
+   "error": "crmBaseUrl must be the CRM origin only (no path)."
+  },
+  {
+   "input": "https://openrouter.ai.evil.test/api/v1",
+   "error": "crmBaseUrl must be the CRM origin only (no path)."
+  },
+  {
+   "input": "https://user@openrouter.ai/api/v1",
+   "error": "crmBaseUrl must not contain a user name, a query or a fragment."
+  },
+  {
+   "input": "http://127.0.0.1:9999/api/v1",
+   "error": "crmBaseUrl must be the CRM origin only (no path)."
+  },
+  {
+   "input": "http://127.0.0.1:9999/api/v1/",
+   "error": "crmBaseUrl must be the CRM origin only (no path)."
+  },
+  {
+   "input": "http://localhost:9999/api/v1",
+   "error": "crmBaseUrl must be the CRM origin only (no path)."
+  },
+  {
+   "input": "https://example.test/api/v1",
+   "error": "crmBaseUrl must be the CRM origin only (no path)."
+  },
+  {
+   "input": "https://app.example.test/\t",
+   "ok": "https://app.example.test"
+  },
+  {
+   "input": "ht\ttps://app.example.test",
+   "ok": "https://app.example.test"
+  },
+  {
+   "input": "https://app.example.test\n",
+   "ok": "https://app.example.test"
+  }
+ ],
+ "llmUrls": [
+  {
+   "input": "https://app.example.test",
+   "error": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports)."
+  },
+  {
+   "input": "https://app.example.test/",
+   "error": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports)."
+  },
+  {
+   "input": "  https://app.example.test  ",
+   "error": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports)."
+  },
+  {
+   "input": "HTTPS://App.Example.Test:8443",
+   "error": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports)."
+  },
+  {
+   "input": "http://127.0.0.1:5400",
+   "ok": "http://127.0.0.1:5400"
+  },
+  {
+   "input": "http://localhost:5400",
+   "error": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports)."
+  },
+  {
+   "input": "http://LOCALHOST",
+   "error": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports)."
+  },
+  {
+   "input": "http://[::1]:5400",
+   "error": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports)."
+  },
+  {
+   "input": "http://app.example.test",
+   "error": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports)."
+  },
+  {
+   "input": "ftp://app.example.test",
+   "error": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports)."
+  },
+  {
+   "input": "https://app.example.test/api",
+   "error": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports)."
+  },
+  {
+   "input": "https://user:pw@app.example.test",
+   "error": "llmBaseUrl must not contain a user name, a query or a fragment."
+  },
+  {
+   "input": "https://user@app.example.test",
+   "error": "llmBaseUrl must not contain a user name, a query or a fragment."
+  },
+  {
+   "input": "https://app.example.test?x=1",
+   "error": "llmBaseUrl must not contain a user name, a query or a fragment."
+  },
+  {
+   "input": "https://app.example.test#frag",
+   "error": "llmBaseUrl must not contain a user name, a query or a fragment."
+  },
+  {
+   "input": "https://app.example.test?",
+   "error": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports)."
+  },
+  {
+   "input": "https://app.example.test:99999",
+   "error": "llmBaseUrl is not a valid address."
+  },
+  {
+   "input": "https://app.example.test:abc",
+   "error": "llmBaseUrl is not a valid address."
+  },
+  {
+   "input": "https://app.example.test:",
+   "error": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports)."
+  },
+  {
+   "input": "https://:443",
+   "error": "llmBaseUrl must not contain a user name, a query or a fragment."
+  },
+  {
+   "input": "https://",
+   "error": "llmBaseUrl must not contain a user name, a query or a fragment."
+  },
+  {
+   "input": "app.example.test",
+   "error": "llmBaseUrl must not contain a user name, a query or a fragment."
+  },
+  {
+   "input": "//app.example.test",
+   "error": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports)."
+  },
+  {
+   "input": "",
+   "error": "llmBaseUrl must be a web address."
+  },
+  {
+   "input": "   ",
+   "error": "llmBaseUrl must be a web address."
+  },
+  {
+   "input": null,
+   "error": "llmBaseUrl must be a web address."
+  },
+  {
+   "input": 12,
+   "error": "llmBaseUrl must be a web address."
+  },
+  {
+   "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+   "error": "llmBaseUrl must be a web address."
+  },
+  {
+   "input": "https://openrouter.ai/api/v1",
+   "ok": "https://openrouter.ai/api/v1"
+  },
+  {
+   "input": "https://openrouter.ai",
+   "ok": "https://openrouter.ai"
+  },
+  {
+   "input": "https://openrouter.ai/",
+   "ok": "https://openrouter.ai"
+  },
+  {
+   "input": "https://openrouter.ai:443/api/v1",
+   "ok": "https://openrouter.ai:443/api/v1"
+  },
+  {
+   "input": "https://openrouter.ai:8443/api/v1",
+   "error": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports)."
+  },
+  {
+   "input": "http://openrouter.ai/api/v1",
+   "error": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports)."
+  },
+  {
+   "input": "https://openrouter.ai.evil.test/api/v1",
+   "error": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports)."
+  },
+  {
+   "input": "https://user@openrouter.ai/api/v1",
+   "error": "llmBaseUrl must not contain a user name, a query or a fragment."
+  },
+  {
+   "input": "http://127.0.0.1:9999/api/v1",
+   "ok": "http://127.0.0.1:9999/api/v1"
+  },
+  {
+   "input": "http://127.0.0.1:9999/api/v1/",
+   "ok": "http://127.0.0.1:9999/api/v1"
+  },
+  {
+   "input": "http://localhost:9999/api/v1",
+   "error": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports)."
+  },
+  {
+   "input": "https://example.test/api/v1",
+   "error": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports)."
+  },
+  {
+   "input": "https://app.example.test/\t",
+   "error": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports)."
+  },
+  {
+   "input": "ht\ttps://app.example.test",
+   "error": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports)."
+  },
+  {
+   "input": "https://app.example.test\n",
+   "error": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports)."
+  }
+ ],
+ "secretsNormalise": [
+  {
+   "name": "openrouterApiKey",
+   "value": "sk-or-v1-0123456789abcdef",
+   "ok": "sk-or-v1-0123456789abcdef"
+  },
+  {
+   "name": "openrouterApiKey",
+   "value": "short",
+   "error": "The OpenRouter key looks invalid."
+  },
+  {
+   "name": "openrouterApiKey",
+   "value": "has space in it",
+   "error": "The OpenRouter key looks invalid."
+  },
+  {
+   "name": "openrouterApiKey",
+   "value": "12345678",
+   "ok": "12345678"
+  },
+  {
+   "name": "openrouterApiKey",
+   "value": "",
+   "ok": null
+  },
+  {
+   "name": "openrouterApiKey",
+   "value": null,
+   "ok": null
+  },
+  {
+   "name": "openrouterApiKey",
+   "value": 12345678,
+   "error": "openrouterApiKey has an unsupported type."
+  },
+  {
+   "name": "openrouterApiKey",
+   "value": true,
+   "error": "openrouterApiKey has an unsupported type."
+  },
+  {
+   "name": "ingestionToken",
+   "value": "xxxxxxxxxxxxxxx",
+   "error": "The ingestion token looks invalid."
+  },
+  {
+   "name": "ingestionToken",
+   "value": "xxxxxxxxxxxxxxxx",
+   "ok": "xxxxxxxxxxxxxxxx"
+  },
+  {
+   "name": "ingestionToken",
+   "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+   "ok": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  {
+   "name": "ingestionToken",
+   "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+   "error": "The ingestion token looks invalid."
+  },
+  {
+   "name": "ingestionToken",
+   "value": "has space in the middle of it",
+   "error": "The ingestion token looks invalid."
+  },
+  {
+   "name": "googleTokenJson",
+   "value": "{\"refresh_token\": \"r\"}",
+   "ok": "{\"refresh_token\": \"r\"}"
+  },
+  {
+   "name": "googleTokenJson",
+   "value": {
+    "refresh_token": "r",
+    "n": [
+     1,
+     2
+    ]
+   },
+   "ok": "{\"refresh_token\":\"r\",\"n\":[1,2]}"
+  },
+  {
+   "name": "googleTokenJson",
+   "value": "{not json",
+   "error": "googleTokenJson must be valid JSON."
+  },
+  {
+   "name": "googleTokenJson",
+   "value": [
+    "a"
+   ],
+   "ok": "[\"a\"]"
+  },
+  {
+   "name": "googleClientSecrets",
+   "value": "{\"installed\": {\"client_id\": \"c\"}}",
+   "ok": "{\"installed\": {\"client_id\": \"c\"}}"
+  },
+  {
+   "name": "googleClientSecrets",
+   "value": "plain text",
+   "error": "googleClientSecrets must be valid JSON."
+  },
+  {
+   "name": "googleClientSecrets",
+   "value": 5,
+   "error": "googleClientSecrets has an unsupported type."
+  }
+ ],
+ "applySteps": [
+  {
+   "step": {
+    "config": {
+     "llmBaseUrl": "https://openrouter.ai/api/v1",
+     "maxConcurrency": 4
+    }
+   },
+   "status": {
+    "settingsLoaded": true,
+    "secrets": {
+     "openrouterApiKey": false,
+     "googleClientSecrets": false,
+     "googleTokenJson": false,
+     "ingestionToken": false
+    },
+    "configError": null,
+    "warnings": []
+   },
+   "settings": {
+    "llmBaseUrl": "https://openrouter.ai/api/v1",
+    "maxConcurrency": 4
+   },
+   "secretPresence": {
+    "openrouterApiKey": false,
+    "googleClientSecrets": false,
+    "googleTokenJson": false,
+    "ingestionToken": false
+   }
+  },
+  {
+   "step": {
+    "config": {
+     "crmBaseUrl": "https://app.example.test"
+    },
+    "secrets": {
+     "ingestionToken": "ingest-token-0123456789abcdef"
+    }
+   },
+   "status": {
+    "settingsLoaded": true,
+    "secrets": {
+     "openrouterApiKey": false,
+     "googleClientSecrets": false,
+     "googleTokenJson": false,
+     "ingestionToken": true
+    },
+    "configError": null,
+    "warnings": []
+   },
+   "settings": {
+    "llmBaseUrl": "https://openrouter.ai/api/v1",
+    "maxConcurrency": 4,
+    "crmBaseUrl": "https://app.example.test"
+   },
+   "secretPresence": {
+    "openrouterApiKey": false,
+    "googleClientSecrets": false,
+    "googleTokenJson": false,
+    "ingestionToken": true
+   }
+  },
+  {
+   "step": {
+    "secrets": {
+     "openrouterApiKey": "sk-or-v1-0123456789abcdef",
+     "googleTokenJson": "{\"refresh_token\":\"r\"}"
+    }
+   },
+   "status": {
+    "settingsLoaded": true,
+    "secrets": {
+     "openrouterApiKey": true,
+     "googleClientSecrets": false,
+     "googleTokenJson": true,
+     "ingestionToken": true
+    },
+    "configError": null,
+    "warnings": []
+   },
+   "settings": {
+    "llmBaseUrl": "https://openrouter.ai/api/v1",
+    "maxConcurrency": 4,
+    "crmBaseUrl": "https://app.example.test"
+   },
+   "secretPresence": {
+    "openrouterApiKey": true,
+    "googleClientSecrets": false,
+    "googleTokenJson": true,
+    "ingestionToken": true
+   }
+  },
+  {
+   "step": {
+    "config": {
+     "crmBaseUrl": null
+    }
+   },
+   "status": {
+    "settingsLoaded": true,
+    "secrets": {
+     "openrouterApiKey": true,
+     "googleClientSecrets": false,
+     "googleTokenJson": true,
+     "ingestionToken": true
+    },
+    "configError": null,
+    "warnings": []
+   },
+   "settings": {
+    "llmBaseUrl": "https://openrouter.ai/api/v1",
+    "maxConcurrency": 4
+   },
+   "secretPresence": {
+    "openrouterApiKey": true,
+    "googleClientSecrets": false,
+    "googleTokenJson": true,
+    "ingestionToken": true
+   }
+  },
+  {
+   "step": {
+    "config": {
+     "maxConcurrency": null,
+     "openrouterApiKey": "must-not-persist"
+    }
+   },
+   "status": {
+    "settingsLoaded": true,
+    "secrets": {
+     "openrouterApiKey": true,
+     "googleClientSecrets": false,
+     "googleTokenJson": true,
+     "ingestionToken": true
+    },
+    "configError": null,
+    "warnings": []
+   },
+   "settings": {
+    "llmBaseUrl": "https://openrouter.ai/api/v1"
+   },
+   "secretPresence": {
+    "openrouterApiKey": true,
+    "googleClientSecrets": false,
+    "googleTokenJson": true,
+    "ingestionToken": true
+   }
+  },
+  {
+   "step": {
+    "secrets": {
+     "openrouterApiKey": null
+    }
+   },
+   "status": {
+    "settingsLoaded": true,
+    "secrets": {
+     "openrouterApiKey": false,
+     "googleClientSecrets": false,
+     "googleTokenJson": true,
+     "ingestionToken": true
+    },
+    "configError": null,
+    "warnings": []
+   },
+   "settings": {
+    "llmBaseUrl": "https://openrouter.ai/api/v1"
+   },
+   "secretPresence": {
+    "openrouterApiKey": false,
+    "googleClientSecrets": false,
+    "googleTokenJson": true,
+    "ingestionToken": true
+   }
+  },
+  {
+   "step": {
+    "config": {
+     "llmBaseUrl": "https://example.test/api/v1"
+    }
+   },
+   "rejected": "llmBaseUrl is not allowed: use https://openrouter.ai/api/v1 (the only LLM provider the uploader supports).",
+   "settings": {
+    "llmBaseUrl": "https://openrouter.ai/api/v1"
+   },
+   "secretPresence": {
+    "openrouterApiKey": false,
+    "googleClientSecrets": false,
+    "googleTokenJson": true,
+    "ingestionToken": true
+   }
+  },
+  {
+   "step": {
+    "config": {
+     "crmBaseUrl": "http://app.example.test"
+    },
+    "secrets": {
+     "ingestionToken": "ingest-token-9999999999999999"
+    }
+   },
+   "rejected": "crmBaseUrl must use https (plain http is allowed only for 127.0.0.1 or localhost).",
+   "settings": {
+    "llmBaseUrl": "https://openrouter.ai/api/v1"
+   },
+   "secretPresence": {
+    "openrouterApiKey": false,
+    "googleClientSecrets": false,
+    "googleTokenJson": true,
+    "ingestionToken": true
+   }
+  },
+  {
+   "step": {
+    "secrets": {
+     "somethingElse": "x",
+     "other": "y"
+    }
+   },
+   "invalid": "Unknown secret: other, somethingElse.",
+   "settings": {
+    "llmBaseUrl": "https://openrouter.ai/api/v1"
+   },
+   "secretPresence": {
+    "openrouterApiKey": false,
+    "googleClientSecrets": false,
+    "googleTokenJson": true,
+    "ingestionToken": true
+   }
+  },
+  {
+   "step": {
+    "secrets": {
+     "openrouterApiKey": "short"
+    }
+   },
+   "invalid": "The OpenRouter key looks invalid.",
+   "settings": {
+    "llmBaseUrl": "https://openrouter.ai/api/v1"
+   },
+   "secretPresence": {
+    "openrouterApiKey": false,
+    "googleClientSecrets": false,
+    "googleTokenJson": true,
+    "ingestionToken": true
+   }
+  },
+  {
+   "step": {
+    "config": [
+     "nope"
+    ]
+   },
+   "invalid": "config must be an object.",
+   "settings": {
+    "llmBaseUrl": "https://openrouter.ai/api/v1"
+   },
+   "secretPresence": {
+    "openrouterApiKey": false,
+    "googleClientSecrets": false,
+    "googleTokenJson": true,
+    "ingestionToken": true
+   }
+  },
+  {
+   "step": {
+    "secrets": "nope"
+   },
+   "invalid": "secrets must be an object.",
+   "settings": {
+    "llmBaseUrl": "https://openrouter.ai/api/v1"
+   },
+   "secretPresence": {
+    "openrouterApiKey": false,
+    "googleClientSecrets": false,
+    "googleTokenJson": true,
+    "ingestionToken": true
+   }
+  },
+  {
+   "step": {},
+   "invalid": "Nothing to save: send config and/or secrets.",
+   "settings": {
+    "llmBaseUrl": "https://openrouter.ai/api/v1"
+   },
+   "secretPresence": {
+    "openrouterApiKey": false,
+    "googleClientSecrets": false,
+    "googleTokenJson": true,
+    "ingestionToken": true
+   }
+  },
+  {
+   "step": {
+    "config": {
+     "crmBaseUrl": ""
+    }
+   },
+   "status": {
+    "settingsLoaded": true,
+    "secrets": {
+     "openrouterApiKey": false,
+     "googleClientSecrets": false,
+     "googleTokenJson": true,
+     "ingestionToken": true
+    },
+    "configError": null,
+    "warnings": []
+   },
+   "settings": {
+    "llmBaseUrl": "https://openrouter.ai/api/v1",
+    "crmBaseUrl": ""
+   },
+   "secretPresence": {
+    "openrouterApiKey": false,
+    "googleClientSecrets": false,
+    "googleTokenJson": true,
+    "ingestionToken": true
+   }
+  },
+  {
+   "step": {
+    "config": {
+     "x": 1
+    },
+    "secrets": {
+     "ingestionToken": ""
+    }
+   },
+   "status": {
+    "settingsLoaded": true,
+    "secrets": {
+     "openrouterApiKey": false,
+     "googleClientSecrets": false,
+     "googleTokenJson": true,
+     "ingestionToken": false
+    },
+    "configError": null,
+    "warnings": []
+   },
+   "settings": {
+    "llmBaseUrl": "https://openrouter.ai/api/v1",
+    "crmBaseUrl": "",
+    "x": 1
+   },
+   "secretPresence": {
+    "openrouterApiKey": false,
+    "googleClientSecrets": false,
+    "googleTokenJson": true,
+    "ingestionToken": false
+   }
+  }
+ ],
+ "uploadNames": [
+  {
+   "input": "Asha Rao.pdf",
+   "stem": "Asha Rao",
+   "ext": ".pdf"
+  },
+  {
+   "input": "../../evil.pdf",
+   "stem": "evil",
+   "ext": ".pdf"
+  },
+  {
+   "input": "..\\..\\windows\\evil.CSV",
+   "stem": "evil",
+   "ext": ".csv"
+  },
+  {
+   "input": "C:\\temp\\roster.xlsx",
+   "stem": "roster",
+   "ext": ".xlsx"
+  },
+  {
+   "input": "con.pdf",
+   "stem": "_con",
+   "ext": ".pdf"
+  },
+  {
+   "input": "COM1.zip",
+   "stem": "_COM1",
+   "ext": ".zip"
+  },
+  {
+   "input": "lpt9.csv",
+   "stem": "_lpt9",
+   "ext": ".csv"
+  },
+  {
+   "input": "bad<>name?.zip",
+   "stem": "bad__name_",
+   "ext": ".zip"
+  },
+  {
+   "input": "trailing.dots...pdf",
+   "stem": "trailing.dots",
+   "ext": ".pdf"
+  },
+  {
+   "input": "r\u00e9sum\u00e9-\u00df.pdf",
+   "stem": "r\u00e9sum\u00e9-\u00df",
+   "ext": ".pdf"
+  },
+  {
+   "input": "e\u0301.pdf",
+   "stem": "\u00e9",
+   "ext": ".pdf"
+  },
+  {
+   "input": "malware.exe",
+   "error": "Only PDF, ZIP, XLSX and CSV files can be added."
+  },
+  {
+   "input": "noextension",
+   "error": "Only PDF, ZIP, XLSX and CSV files can be added."
+  },
+  {
+   "input": ".pdf",
+   "error": "Only PDF, ZIP, XLSX and CSV files can be added."
+  },
+  {
+   "input": "",
+   "error": "The file has no name."
+  },
+  {
+   "input": "   ",
+   "error": "The file has no name."
+  },
+  {
+   "input": "archive.tar.gz",
+   "error": "Only PDF, ZIP, XLSX and CSV files can be added."
+  },
+  {
+   "input": "..",
+   "error": "Only PDF, ZIP, XLSX and CSV files can be added."
+  },
+  {
+   "input": null,
+   "error": "The file has no name."
+  },
+  {
+   "input": 5,
+   "error": "The file has no name."
+  },
+  {
+   "input": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.pdf",
+   "stem": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "ext": ".pdf"
+  },
+  {
+   "input": "\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9.pdf",
+   "stem": "\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9\u00e9",
+   "ext": ".pdf"
+  },
+  {
+   "input": " . lead.PDF ",
+   "stem": "lead",
+   "ext": ".pdf"
+  },
+  {
+   "input": "a/b/c.zip",
+   "stem": "c",
+   "ext": ".zip"
+  },
+  {
+   "input": "x.PdF",
+   "stem": "x",
+   "ext": ".pdf"
+  },
+  {
+   "input": "tab\tname.pdf",
+   "stem": "tab_name",
+   "ext": ".pdf"
+  },
+  {
+   "input": "colon:name.pdf",
+   "stem": "colon_name",
+   "ext": ".pdf"
+  },
+  {
+   "input": "\u0000.pdf",
+   "stem": "_",
+   "ext": ".pdf"
+  },
+  {
+   "input": "...pdf",
+   "error": "Only PDF, ZIP, XLSX and CSV files can be added."
+  },
+  {
+   "input": "a..pdf",
+   "stem": "a",
+   "ext": ".pdf"
+  },
+  {
+   "input": "name.",
+   "error": "Only PDF, ZIP, XLSX and CSV files can be added."
+  },
+  {
+   "input": "name .pdf",
+   "stem": "name",
+   "ext": ".pdf"
+  },
+  {
+   "input": "UPPER.XLSX",
+   "stem": "UPPER",
+   "ext": ".xlsx"
+  },
+  {
+   "input": "dir/",
+   "error": "Only PDF, ZIP, XLSX and CSV files can be added."
+  },
+  {
+   "input": "a.b.c.csv",
+   "stem": "a.b.c",
+   "ext": ".csv"
+  }
+ ],
+ "registeredSecrets": [
+  "hunter-two-secret-value",
+  "another-registered-value-xyz",
+  "short",
+  "abcdef"
+ ],
+ "redactions": [
+  {
+   "input": "key sk-or-v1-abcdef0123456789xyz and AIzaSyD-example-google-key-0123456789 Bearer abc.def-token ; token=abc123def password: hunter2 hunter-two-secret-value",
+   "output": "key sk-or-v1-[redacted]0123456789xyz and [redacted-key] Bearer [redacted] ; token=[redacted] password: [redacted] [redacted]"
+  },
+  {
+   "input": "Processed 12 files for Asha Rao, 3 tokens used, cost 0.02 USD",
+   "output": "Processed 12 files for Asha Rao, 3 tokens used, cost 0.02 USD"
+  },
+  {
+   "input": "Authorization: bearer aaaa.bbbb",
+   "output": "Authorization: Bearer [redacted]"
+  },
+  {
+   "input": "{\"api_key\": \"value123\", \"client_secret\":\"zzz\", \"keep\": \"me\"}",
+   "output": "{\"api_key\": \"[redacted]\", \"client_secret\":\"[redacted]\", \"keep\": \"me\"}"
+  },
+  {
+   "input": "a1b2c3d4e5f6g7h8.i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6 trailing",
+   "output": "[redacted-token] trailing"
+  },
+  {
+   "input": "xxxxxxxxxxxxxxx.yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy short pair",
+   "output": "xxxxxxxxxxxxxxx.yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy short pair"
+  },
+  {
+   "input": "secret = spaced ; password=  ; token:x,next",
+   "output": "secret = [redacted] ; password=  ; token:[redacted],next"
+  },
+  {
+   "input": "contains abcdef inside and another-registered-value-xyz twice another-registered-value-xyz",
+   "output": "contains [redacted] inside and [redacted] twice [redacted]"
+  },
+  {
+   "input": "hunter-two-secret-value-extended hunter-two-secret-value",
+   "output": "[redacted]-extended [redacted]"
+  },
+  {
+   "input": "refresh_token=1//0gAbCdEf private-key: -----BEGIN",
+   "output": "refresh_token=[redacted] private-key: [redacted]"
+  },
+  {
+   "input": "ACCESS-TOKEN: t0k3n\nid_token=abc",
+   "output": "ACCESS-TOKEN: [redacted]\nid_token=[redacted]"
+  },
+  {
+   "input": null,
+   "output": ""
+  },
+  {
+   "input": 12,
+   "output": "12"
+  },
+  {
+   "input": "",
+   "output": ""
+  }
+ ],
+ "scrub": {
+  "input": {
+   "message": "using sk-live-abcdefgh123",
+   "nested": {
+    "key": "sk-live-zzzzzzzz9",
+    "list": [
+     "Bearer qq.ww",
+     1,
+     true,
+     null,
+     2.5
+    ]
+   },
+   "n": 3,
+   "tuple": [
+    "a",
+    "hunter-two-secret-value"
+   ]
+  },
+  "output": {
+   "message": "using sk-live-[redacted]gh123",
+   "nested": {
+    "key": "[redacted-key]",
+    "list": [
+     "Bearer [redacted]",
+     1,
+     true,
+     null,
+     2.5
+    ]
+   },
+   "n": 3,
+   "tuple": [
+    "a",
+    "[redacted]"
+   ]
+  }
+ }
+}
