@@ -270,6 +270,8 @@ const handlers: Record<HandlerName, Handler> = {
     const length = contentLength(ctx, maxRequestBytes(e.limits));
     const result: UploadResult = { added: [], rejected: [] };
     const sinks: UploadSink[] = [];
+    // The folder may have been removed while the engine was idle (cleaned up by hand): make it again instead of failing the upload.
+    fs.mkdirSync(e.dirs.input, { recursive: true });
     const present = visibleFiles(e.dirs.input);
     const budget = new Budget(present.length, present.reduce((sum, file) => sum + sizeOf(file), 0), e.limits);
 

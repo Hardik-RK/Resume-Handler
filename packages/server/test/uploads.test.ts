@@ -51,6 +51,14 @@ describe("HTTP intake", () => {
     expect(listed[0].modified).toMatch(/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d\+00:00$/);
   });
 
+  it("an input folder that was removed while idle is made again (it was an internal error)", async () => {
+    const s = await startServer();
+    fs.rmSync(s.inputDir, { recursive: true, force: true });
+    const res = await upload(s, [["files", "Asha Rao.pdf", PDF]]);
+    expect(res.status).toBe(200);
+    expect(listing(s)).toEqual(["Asha Rao.pdf"]);
+  });
+
   it("duplicates get numeric suffixes and never overwrite", async () => {
     const s = await startServer();
     await upload(s, [["files", "cv.pdf", "first"]]);
