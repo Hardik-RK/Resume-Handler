@@ -76,6 +76,16 @@ on http://127.0.0.1:47900. Run it again and every row is reported as a duplicate
 | ![Settings](docs/img/07-settings.png) | ![Dark theme](docs/img/09-dark.png) |
 | ![History](docs/img/08-history.png) | ![The mock CRM page with the committed candidates](docs/img/11-mock-crm.png) |
 
+When something goes wrong the activity entry says why, in plain words and never with file content: a refused model key (HTTP 401), unreadable or
+password-protected PDFs, a PDF over the 25 MB upload limit, an input folder that was deleted, an engine that stopped mid-run (the entry ends as Failed),
+or a tab closed mid-run (the server keeps going, the rows are committed and repeating the upload is safe). Cancel also aborts a model request that is
+already in flight.
+
+| | |
+| --- | --- |
+| ![All files failed: the model key was refused](docs/img/13-key-refused.png) | ![A file over 25 MB and an unreadable PDF are listed](docs/img/14-files-left-out.png) |
+| ![The top bar at 375 px wide](docs/img/12-phone-header.png) | |
+
 ### Web, on its own
 
 ```bash
@@ -119,8 +129,8 @@ Secrets entered in Settings (model key, ingestion token, Drive credentials) are 
 The Python original is the reference implementation. For each module, small synthetic inputs were run through the Python code to produce
 **golden fixtures** (`packages/core/test/golden`, `packages/server/test/golden`, with the generator scripts alongside), and the TypeScript output is
 asserted equal: default settings, prompts and request bodies, name heuristics, CSV bytes and lead ids, phone normalisation, safe-unzip limits,
-settings validation, auth, ingestion idempotency keys. The relevant pytest cases of the original were ported to vitest. The result is about 1,240
-tests across the five packages, plus one end-to-end test that drives the CLI against the mock CRM. Deliberate deviations (for example the PDF
+settings validation, auth, ingestion idempotency keys. The relevant pytest cases of the original were ported to vitest. The result is about 1,250
+tests across the five packages (core 598, server 517, cli 58, web 53, mock-crm 25), plus one end-to-end test that drives the CLI against the mock CRM. Deliberate deviations (for example the PDF
 text library) are recorded in each `PORTING-NOTES.md`.
 
 The page itself was also run in a real browser (Edge through Playwright) against the real server in `signed` mode: sign-in, upload, commit,
@@ -129,9 +139,9 @@ with no console errors.
 
 ## Limitations
 
-- **Real Google Drive and real model calls are not verified end to end.** Everything exercised so far used the fake model and the in-memory Drive.
-  The request bodies and flows are pinned by golden tests against the Python reference, but nobody has run a real OpenRouter or Drive session
-  with this port.
+- **Real Google Drive is not verified end to end.** Drive was only exercised through the in-memory fake. The model path was also run by hand against
+  OpenRouter with a few synthetic résumés (that run found the placeholder-email bug fixed in `sink-commit.ts`), but not at volume; request bodies and
+  flows are otherwise pinned by golden tests against the Python reference.
 - PDF text comes from `unpdf` (pdf.js) and page rendering from `@napi-rs/canvas`, not PyMuPDF, so raw text length differs by a few characters
   from the reference; routing between text and vision agreed on every fixture.
 - The mock CRM is a demo stand-in: in-memory store, a throwaway key pair per start, open CORS, an unauthenticated token endpoint. Do not expose it.
