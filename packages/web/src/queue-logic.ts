@@ -45,7 +45,7 @@ export function parseStored(text: string | null, now: number = Date.now()): Batc
     ...(b as Batch),
     rows: [], csv: '',
     ...(b.status === 'running'
-      ? { status: 'failed' as const, finishedAt: b.finishedAt || now, error: 'The page was closed while this upload was running. Check the results in the output folder, or run it again.' }
+      ? { status: 'failed' as const, finishedAt: b.finishedAt || now, error: 'The page was closed or reloaded while this upload was running. The server keeps going and adds the rows by itself, so this is not necessarily a failure: check History and the results before running it again (a repeat is safe, duplicates are skipped).' }
       : {}),
   }));
 }

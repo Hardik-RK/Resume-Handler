@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { EMPTY_RUN, LOG_LIMIT, commitLineFor, normaliseCommit, reduceRun } from '../src/run-state';
+import { EMPTY_RUN, LOG_LIMIT, LOST_RUN_TICKS, commitLineFor, engineLostRun, normaliseCommit, plainReason, problemLines, reduceRun } from '../src/run-state';
 import type { EngineEvent, RunState } from '../src/lib/types';
 
 const NOW = 1_700_000_000_000;
@@ -65,5 +65,41 @@ describe('reduceRun', () => {
   it('returns the same object for events that do not change the run', () => {
     expect(reduceRun(EMPTY_RUN, { type: 'state' })).toBe(EMPTY_RUN);
     expect(reduceRun(EMPTY_RUN, { type: 'notice', code: 'x' })).toBe(EMPTY_RUN);
+  });
+});
+
+describe('engineLostRun', () => {
+  it('is true when the engine is idle and never finished the run (it restarted mid-run)', () => {
+    expect(engineLostRun({ phase: 'idle' }, false)).toBe(true);
+    expect(engineLostRun({ phase: '' }, false)).toBe(true);
+    expect(LOST_RUN_TICKS).toBeGreaterThanOrEqual(2); // one idle poll between phases must not end a run
+  });
+  it('is false while the engine runs, once the run finished, and when the engine does not answer', () => {
+    expect(engineLostRun({ phase: 'parsing' }, false)).toBe(false);
+    expect(engineLostRun({ phase: 'uploading' }, false)).toBe(false);
+    expect(engineLostRun({ phase: 'idle' }, true)).toBe(false);
+    expect(engineLostRun(null, false)).toBe(false);
+  });
+});
+
+describe('problemLines', () => {
+  it('says why files were left out, grouped, most common first', () => {
+    const files = {
+      'a.pdf': { status: 'quarantined', detail: 'RuntimeError: HTTP 401' },
+      'b.pdf': { status: 'quarantined', detail: 'RuntimeError: HTTP 401' },
+      'c.pdf': { status: 'quarantined', detail: 'ValueError: no extractable text and could not render page image (corrupt PDF?)' },
+      'd.pdf': { status: 'parsed', detail: '' },
+    };
+    expect(problemLines(files)).toEqual([
+      '2 files: the model provider refused the key (HTTP 401): check the model key in Settings',
+      '1 file: an empty, damaged or password-protected PDF',
+    ]);
+    expect(problemLines({})).toEqual([]);
+    expect(problemLines(undefined)).toEqual([]);
+  });
+  it('shortens an unknown reason and strips the exception class', () => {
+    expect(plainReason('RuntimeError: boom')).toBe('boom');
+    expect(plainReason('x'.repeat(300)).length).toBe(120);
+    expect(plainReason('')).toBe('');
   });
 });

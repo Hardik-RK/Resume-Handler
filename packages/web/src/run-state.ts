@@ -66,3 +66,35 @@ export function reduceRun(run: RunState, event: EngineEvent, now: number = Date.
       return run;
   }
 }
+
+/** Polls in a row that find the engine idle, with no finished run, before the page gives up on a run it started. */
+export const LOST_RUN_TICKS = 3;
+
+/**
+ * True when the engine answers but is idle and has no finished run since this page started one: it was stopped and started
+ * again (or crashed) mid-run, so no end event will ever come. `finished` says a terminal run newer than the start exists.
+ */
+export function engineLostRun(info: { phase?: string } | null | undefined, finished: boolean): boolean {
+  return Boolean(info) && !finished && !RUNNING.has(String(info?.phase ?? ''));
+}
+
+/** A server reason for a file the run could not read, in words a recruiter can act on. Never includes file content. */
+export function plainReason(detail: string): string {
+  const d = String(detail || '').replace(/^[A-Za-z]*(Error|Exception):\s*/, '').trim();
+  if (/HTTP 40[13]/.test(d)) return 'the model provider refused the key (HTTP ' + (/40[13]/.exec(d)?.[0] ?? '401') + '): check the model key in Settings';
+  if (/HTTP 429/.test(d)) return 'the model provider is rate limiting: lower "Your parallel requests" in Settings';
+  if (/not JSON/i.test(d)) return 'the model gave an answer that could not be read';
+  if (/no extractable text and could not render/i.test(d)) return 'an empty, damaged or password-protected PDF';
+  return d.length > 120 ? `${d.slice(0, 117)}...` : d;
+}
+
+/** Why files were left out of a finished run: "3 files: <reason>" lines, most common first, at most three. */
+export function problemLines(files: Record<string, { status?: string; detail?: string }> | null | undefined): string[] {
+  const counts = new Map<string, number>();
+  for (const f of Object.values(files || {})) {
+    if (f.status !== 'quarantined' && f.status !== 'skipped') continue;
+    const why = plainReason(f.detail ?? '') || 'could not be read';
+    counts.set(why, (counts.get(why) || 0) + 1);
+  }
+  return [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3).map(([why, n]) => `${n} file${n === 1 ? '' : 's'}: ${why}`);
+}

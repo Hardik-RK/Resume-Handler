@@ -232,6 +232,8 @@ export interface Batch {
   startedAt: number | null;
   finishedAt: number | null;
   error: string;
+  /** Why some files were left out of the finished run (see problemLines). */
+  problems?: string[];
   rows: ResultRow[];
   csv: string;
   files: QueueFile[];

@@ -247,6 +247,11 @@ function Entry({ batch, run, now, open, onToggle, queue, onToast, onRows, isNew,
           </span>
         </p>
       )}
+      {batch.problems && batch.problems.length > 0 && batch.status !== 'failed' && (
+        <ul className="up-entry-line warn" role="alert" style={{ margin: 0, paddingLeft: 16 }}>
+          {batch.problems.map((line) => <li key={line}>{line}</li>)}
+        </ul>
+      )}
       {c && c.uploadFailed > 0 && batch.status !== 'failed' && (
         <p className="up-entry-line warn" role="alert">
           {c.uploadFailed} résumé{c.uploadFailed === 1 ? ' was' : 's were'} not uploaded to Drive, so {c.uploadFailed === 1 ? 'its row has' : 'their rows have'} no résumé link. Check the Google token in Settings, then run {c.uploadFailed === 1 ? 'it' : 'them'} again.

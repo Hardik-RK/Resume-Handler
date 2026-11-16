@@ -507,3 +507,12 @@
 /* Standalone shell: no sidebar, so the content frame sits 8px from the left edge like it does from the other three. */
 :root { --rail: 8px; }
 .tb-left .brand-mark { margin-right: -4px; }
+
+/* A phone: the top bar has no room for the labels next to the title, so the buttons show their icons only (the names stay
+   available to screen readers and as tooltips). */
+@media (max-width: 520px) {
+  .topbar { padding-left: 16px; }
+  .tb-actions .up-tool { font-size: 0; gap: 0; padding: 0 9px; }
+  .tb-actions .up-tool .up-tool-chev { margin-left: 3px; }
+  .page-title { font-size: 1.05rem; }
+}

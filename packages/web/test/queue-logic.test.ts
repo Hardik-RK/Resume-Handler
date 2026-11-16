@@ -84,7 +84,7 @@ describe('what is kept in the browser', () => {
     const list = parseStored(text, 99);
     expect(list).toHaveLength(1);
     expect(list[0]).toMatchObject({ status: 'failed', finishedAt: 99, rows: [], csv: '' });
-    expect(list[0].error).toMatch(/page was closed/);
+    expect(list[0].error).toMatch(/closed or reloaded.*not necessarily a failure/);
     expect(parseStored('not json')).toEqual([]);
     expect(parseStored('{"a":1}')).toEqual([]);
     expect(parseStored(null)).toEqual([]);

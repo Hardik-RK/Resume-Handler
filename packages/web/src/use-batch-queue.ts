@@ -3,6 +3,7 @@ import { ApiError, errorMessage, lastResults, resultsCsv, uploadFile } from './l
 import type { Batch, CommitInfo, ResultRow, SubmitForm } from './lib/types';
 import { addHistory, recordFor } from './history';
 import { readParallel } from './format';
+import { problemLines } from './run-state';
 import {
   FINISHED, entriesFromForm, findOrphans, normaliseCounts, optionsFor, parallelFor, readStoredBatches, retryProblem,
   runnable, writeStoredBatches,
@@ -176,6 +177,7 @@ export function useBatchQueue(engine: ResumeEngine) {
           commitResult: end.commit || null,
           cost: end.cost || { tokens: live.tokens, usd: live.usd },
           error: end.phase === 'failed' ? (end.detail || 'The server stopped this upload.') : '',
+          problems: problemLines(live.files),
           rows, csv,
         });
         engineRef.current.refreshFiles().catch(() => {});

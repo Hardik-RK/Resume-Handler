@@ -6,7 +6,7 @@ import {
 import type {
   EngineEvent, EngineInfo, HelloInfo, InputFile, Notice, ResultRow, RunEnd, RunOptions, RunState, SettingsBody, SettingsInfo, CommitInfo,
 } from './lib/types';
-import { EMPTY_RUN, RUNNING, TERMINAL, normaliseCommit, num, reduceRun } from './run-state';
+import { EMPTY_RUN, LOST_RUN_TICKS, RUNNING, TERMINAL, engineLostRun, normaliseCommit, num, reduceRun } from './run-state';
 
 // One hook owns the server connection for the page: reaching it, the live event stream, the input folder and the current
 // run. The batch queue (use-batch-queue.ts) drives runs through runBatch(), which resolves when the server reports the run's
@@ -197,12 +197,22 @@ export function useResumeEngine() {
       setRun(EMPTY_RUN);
       throw err;
     }
+    let idleTicks = 0;
     const poll = setInterval(async () => {
       const waiter = waiterRef.current;
       if (!waiter) return;
       const info = await engineState().catch(() => null);
       const last = info?.lastRun;
       const finished = last && TERMINAL.has(last.phase) && Date.parse(last.finishedAt || last.at || '') >= waiter.startedAt - 1000;
+      // The engine was stopped and started again (or crashed) while this run was going: it is idle and never finished it, so no
+      // end event will come. Give up instead of showing "Running" for ever.
+      idleTicks = engineLostRun(info, Boolean(finished)) ? idleTicks + 1 : 0;
+      if (idleTicks >= LOST_RUN_TICKS) {
+        waiterRef.current = null;
+        setRun((r) => ({ ...r, status: 'failed', phase: 'failed' }));
+        waiter.resolve({ phase: 'failed', counts: {}, cost: null, detail: 'The engine stopped or restarted while this upload was running. Check History and the CRM before running it again.' });
+        return;
+      }
       if (info && last && !RUNNING.has(info.phase) && finished) {
         waiterRef.current = null;
         setRun((r) => ({ ...r, status: last.phase as RunState['status'], phase: last.phase }));
