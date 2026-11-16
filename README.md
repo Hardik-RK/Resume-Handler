@@ -51,7 +51,7 @@ More detail: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), and a `PORTING-NOTES.
 
 ## Quick start
 
-Node 20 or newer. Each package installs on its own (no root install: they pin different TypeScript and vitest majors), so use the root scripts:
+Node 22 or newer. Each package installs on its own (no root install: they pin different TypeScript and vitest majors), so use the root scripts:
 
 ```bash
 npm run install:all     # npm ci in every package, in dependency order

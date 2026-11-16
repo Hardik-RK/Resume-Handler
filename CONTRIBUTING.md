@@ -11,7 +11,7 @@ npm run build         # builds the web UI
 
 Rules of the road:
 
-- TypeScript, strict, ESM, Node 20 or newer.
+- TypeScript, strict, ESM, Node 22 or newer.
 - Behaviour in `packages/core` and `packages/server` is pinned by golden tests generated from the Python reference implementation
   (`packages/core/scripts/gen-golden.py`). If you change behaviour on purpose, regenerate or edit the golden file in the same commit and say why.
 - Add a test with every bug fix. Keep tests deterministic and offline: use the fake model and fake Drive from `@intake/core`.

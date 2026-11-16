@@ -48,7 +48,7 @@ flowchart LR
 
 ## Rules shared by every package
 
-1. TypeScript, strict mode, ESM, Node 20 or newer. Tests run with vitest, source runs with `tsx`; `core` exports `src/index.ts`.
+1. TypeScript, strict mode, ESM, Node 22 or newer. Tests run with vitest, source runs with `tsx`; `core` exports `src/index.ts`.
 2. Behaviour is translated faithfully from the Python reference implementation (names, defaults, limits, the error messages the UI shows,
    event shapes). Desktop-only parts were dropped on purpose; each package's `PORTING-NOTES.md` lists every drop with a reason.
 3. Synthetic data only. No real names, hosts or credentials anywhere in the repository.

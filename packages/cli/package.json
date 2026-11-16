@@ -11,7 +11,7 @@
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },
-  "engines": { "node": ">=20" },
+  "engines": { "node": ">=22" },
   "dependencies": {
     "@intake/core": "file:../core",
     "@intake/server": "file:../server",
