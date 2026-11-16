@@ -1,122 +1,84 @@
 # Resume-Handler
 
-Web page and CLI that turn a pile of résumé PDFs into candidate rows: unpack, read each résumé with an LLM, write a CSV, and optionally upload the files to Google Drive and commit the rows to a downstream system.
-
-It is a TypeScript port of a Python desktop engine. A deterministic fake model, an in-memory Drive and a mock downstream system are included, so the whole flow runs offline with no keys.
+Web page and CLI that read a batch of résumé PDFs with an LLM and turn them into candidate rows.
 
 ![The page after a run: 33 candidates added to a campaign, 8 duplicates, 1 invalid file](docs/img/05-done.png)
 
 ## What it does
 
-- Accepts PDFs or zips (browser upload, or a folder or zip given to the CLI). Zips are unpacked with size and entry limits.
-- Extracts fields from the PDF text, or from rendered pages (vision) for scans, using an OpenRouter-compatible model.
-- Normalises names and phone numbers, and can score each candidate against a job description.
-- Writes a CSV. Optionally uploads kept files to Google Drive.
-- Optionally commits rows through an ingestion API. Each batch carries an idempotency key, so repeating a run is reported as duplicates instead of creating new rows.
-- Streams progress to the page over server-sent events.
+- Input: PDFs or zips, by browser upload or a folder or zip passed to the CLI; zips capped at 500 entries and 500 MB unpacked
+- Field extraction from PDF text, or from rendered pages for scans, through an OpenRouter-compatible model
+- Name and phone normalisation; optional scoring against a job description file
+- Output: a CSV, optional upload of kept files to Google Drive
+- Optional commit to an ingestion API with an idempotency key per batch, so a repeated run reports duplicates
+- Progress over server-sent events; 25 MB limit per uploaded file
+- Offline mode: fake model, in-memory Drive and mock CRM, no keys
+
+## Quick start
+
+Prerequisites: Node 22 or newer. Packages install separately (different TypeScript and vitest majors); the root scripts handle that.
+
+```bash
+npm run install:all   # npm ci in every package, in dependency order
+npm run build         # build the web UI into packages/web/dist
+npm run demo          # fixture batch, mock CRM on :47900, server on :47831 in signed mode with the fake model
+```
+
+Open http://127.0.0.1:47831, paste the printed token, upload `demo-fixtures/batch-backend-12.zip`, pick *Backend Engineer* and run. Candidates appear on http://127.0.0.1:47900; a second run reports all duplicates. Walkthrough: [docs/DEMO.md](docs/DEMO.md).
+
+## CLI
+
+Run from `packages/cli` as `node bin/intake.mjs <command>`.
+
+- `run <folder-or-zip> --campaign "Backend Engineer"`: read résumés, write a CSV, optionally commit (`--fake` for offline)
+- `serve [--fake]`: start the local server and open the page
+- `app [--serve]`: open the page in an Edge/Chrome app window
+- `fake-llm`, `connect`: offline model endpoint; point a running server at the mock CRM and print a token
+- `help [command]`: full option list
+
+- Real model: set `INTAKE_OPENROUTER_API_KEY` for `run`, or enter the key in the page's Settings for `serve`.
+- Exit codes: 0 success, 1 run failed, 2 bad usage, 3 finished but some files or the commit failed, 130 cancelled.
+- Configuration: `INTAKE_*` environment variables, listed in [.env.example](.env.example) (not loaded automatically).
+- Login (`INTAKE_AUTH`): `none` (loopback only, default), `token` (static bearer), `signed` (Ed25519 tokens from an external issuer, server holds only the public key).
+- Secrets entered in Settings: AES-256-GCM at rest, redacted from logs and events.
 
 ## Architecture
 
 ![Browser page to local server to core pipeline, with LLM, Drive, CSV and an ingestion API](docs/img/architecture.svg)
 
-| Package | What it is |
-| --- | --- |
-| [`packages/core`](packages/core) | The pipeline: discover, safe unzip, parse, LLM extraction, names, CSV, cache, Drive, JD scoring, events, redaction; plus the fake model and fake Drive |
-| [`packages/server`](packages/server) | HTTP API on `node:http`, SSE events, settings and secret store, three auth modes, the ingestion sink, hosts the built web UI |
-| [`packages/web`](packages/web) | The browser UI (Vite, React 18, TypeScript), light and dark |
-| [`packages/cli`](packages/cli) | `intake run` (live terminal UI), `intake serve`, `intake app`, `intake connect`, `intake fake-llm` |
-| [`packages/mock-crm`](packages/mock-crm) | A stand-in downstream system with token issuing and the ingestion API, plus a synthetic résumé generator |
+- `packages/core`: the pipeline (safe unzip, parse, extraction, CSV, cache, Drive, scoring) plus the fake model and fake Drive
+- `packages/server`: HTTP API on `node:http`, SSE, settings and secret store, auth, ingestion sink; serves the built page
+- `packages/web`: Vite + React 18 page, light and dark themes
+- `packages/mock-crm`: stand-in downstream system with token issuing, ingestion API and a synthetic résumé generator
 
-More detail: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), and a `PORTING-NOTES.md` in every package (what was ported, what was dropped and why).
-
-## Quick start
-
-Requires Node 22 or newer (CI runs 22 and 24). Each package installs on its own (no root install: they pin different TypeScript and vitest majors), so use the root scripts:
-
-```bash
-npm run install:all     # npm ci in every package, in dependency order
-npm run build           # builds the web UI into packages/web/dist
-npm test                # all five packages
-```
-
-### Web, with the full offline demo
-
-```bash
-npm run demo
-```
-
-This makes a synthetic fixture batch, starts the mock CRM on port 47900, starts the server in `signed` login mode with the fake model, wires
-them together, and prints the page address (`http://127.0.0.1:47831`) and a session token. Open the page, paste the token, drop
-`demo-fixtures/batch-backend-12.zip`, pick the campaign *Backend Engineer* and a source, leave "Commit rows" on, and run. The candidates appear
-on http://127.0.0.1:47900. Run it again and every row is reported as a duplicate. Step by step: [docs/DEMO.md](docs/DEMO.md).
-
-| | |
-| --- | --- |
-| ![Sign in](docs/img/01-sign-in.png) | ![Running](docs/img/04-running.png) |
-| ![Settings](docs/img/07-settings.png) | ![Dark theme](docs/img/09-dark.png) |
-| ![History](docs/img/08-history.png) | ![The mock CRM page with the committed candidates](docs/img/11-mock-crm.png) |
-
-Failures are reported in the activity entry in plain words, never with file content: a refused model key, unreadable or password-protected PDFs, a file over the 25 MB upload limit, a stopped engine. Closing the tab mid-run does not stop the server, and repeating an upload is safe. Cancel also aborts an in-flight model request.
-
-| | |
-| --- | --- |
-| ![All files failed: the model key was refused](docs/img/13-key-refused.png) | ![A file over 25 MB and an unreadable PDF are listed](docs/img/14-files-left-out.png) |
-| ![The top bar at 375 px wide](docs/img/12-phone-header.png) | |
-
-### Web, on its own
-
-```bash
-cd packages/cli
-node bin/intake.mjs serve --fake      # offline model, no login, opens the browser
-node bin/intake.mjs serve             # real model: set the key in the page's Settings
-```
-
-### CLI
-
-```bash
-cd packages/cli
-node bin/intake.mjs run ../../demo-fixtures/batch-backend-12.zip --fake --campaign "Backend Engineer"   # offline, live display (after `npm run demo` made the batch)
-INTAKE_OPENROUTER_API_KEY=... node bin/intake.mjs run ./resumes --campaign "Backend Engineer"            # real model
-node bin/intake.mjs help
-```
-
-Exit codes: 0 success, 1 run failed, 2 bad usage, 3 finished but some files or the commit failed, 130 cancelled.
-
-### Configuration
-
-All configuration is environment variables; see [.env.example](.env.example) for every `INTAKE_*` variable. Nothing loads that file by itself.
-
-## Signed-session login
-
-The server has three login modes (`INTAKE_AUTH`): `none` (loopback only, the default), `token` (one static bearer token), and `signed`.
-In `signed` mode a separate issuer (the downstream system) signs short-lived session tokens and the server only holds the **public** key:
-
-1. The issuer signs `claims` with an Ed25519 private key and hands the user `base64url(claims) . base64url(signature)`.
-   Claims: `aud` (must be `resume-intake`), `role` (must be `admin`), `sub`, `iat`, `exp`.
-2. The page asks for the token on first load (or reads `#token=...` from the address and removes it from the bar), keeps it in `sessionStorage`,
-   sends it as `Authorization: Bearer` and as `?token=` on the event stream.
-3. The server checks the signature against `INTAKE_PUBLIC_KEY` or `INTAKE_PUBLIC_KEY_FILE`, then audience, role and expiry, and applies origin
-   checks. Only `GET /hello` (which tells the page which mode is on) and the static page itself are open.
-
-Secrets entered in Settings (model key, ingestion token, Drive credentials) are stored encrypted with AES-256-GCM; the key comes from
-`INTAKE_SECRETS_KEY` or a `0600` key file, and secrets are redacted from logs and events.
+Details in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) and each package's `PORTING-NOTES.md`.
 
 ## Tests
 
-Each package has a vitest suite (`npm test` runs all five), plus one end-to-end test that drives the CLI against the mock CRM. Core and server behaviour is checked against golden fixtures generated by running the original Python code on small synthetic inputs (`packages/core/test/golden`, `packages/server/test/golden`). The page was also run in a real browser (Edge through Playwright) against the real server in `signed` mode. Deliberate deviations from the original are listed in each package's `PORTING-NOTES.md`.
+`npm test` runs vitest in all five packages, plus one end-to-end test of the CLI against the mock CRM. Core and server output is compared with golden fixtures made by running the original Python code on synthetic inputs (`packages/{core,server}/test/golden`); deviations are listed in `PORTING-NOTES.md`. The page was also driven in Edge through Playwright against the real server in `signed` mode.
+
+## Layout
+
+```
+packages/        core, server, web, cli, mock-crm
+scripts/         run-all, demo, local start/stop
+sample-resumes/  synthetic résumés and a batch zip
+docs/            architecture, demo walkthrough, screenshots
+```
 
 ## Limitations
 
-- **Real Google Drive is not verified end to end.** Drive was only exercised through the in-memory fake. The model path was also run by hand against
-  OpenRouter with a few synthetic résumés (that run found the placeholder-email bug fixed in `sink-commit.ts`), but not at volume; request bodies and
-  flows are otherwise pinned by golden tests against the Python reference.
-- PDF text comes from `unpdf` (pdf.js) and page rendering from `@napi-rs/canvas`, not PyMuPDF, so raw text length differs by a few characters
-  from the reference; routing between text and vision agreed on every fixture.
-- The mock CRM is a demo stand-in: in-memory store, a throwaway key pair per start, open CORS, an unauthenticated token endpoint. Do not expose it.
-- The page's history is kept in the browser only (last 200 uploads); there are no accounts or roles.
-- One run at a time per server. The scanned-style fixture PDFs render text with the system sans-serif font; a machine with no fonts draws blanks.
-- Some golden test inputs contain placeholder email addresses on reserved or one-letter domains (for example `a@b.co`); changing them would change the
-  golden hashes, which can only be regenerated with the Python reference.
+- Real Google Drive is not verified end to end; Drive was exercised only through the in-memory fake.
+- The model path was run by hand against OpenRouter on a few synthetic résumés, not at volume.
+- PDF text comes from `unpdf` (pdf.js) and page rendering from `@napi-rs/canvas`, not PyMuPDF, so raw text length differs by a few characters from the reference; text-or-vision routing agreed on every fixture.
+- The mock CRM is a demo stand-in: in-memory store, new key pair per start, open CORS, unauthenticated token endpoint. Do not expose it.
+- Page history lives in the browser only (last 200 uploads); no accounts or roles.
+- One run at a time per server. The scanned-style fixture PDFs use the system sans-serif font; a machine with no fonts renders blanks.
+- Some golden inputs use placeholder emails on reserved or one-letter domains (for example `a@b.co`); changing them changes the golden hashes, which only the Python reference can regenerate.
+
+## History
+
+This project succeeds an earlier Python desktop engine. Its behaviour was checked against that engine with golden fixtures generated from the Python code, and it is now the main line.
 
 ## License
 
