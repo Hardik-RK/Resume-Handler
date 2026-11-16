@@ -36,6 +36,8 @@ Run from `packages/cli` as `node bin/intake.mjs <command>`.
 - `fake-llm`, `connect`: offline model endpoint; point a running server at the mock CRM and print a token
 - `help [command]`: full option list
 
+Configuration:
+
 - Real model: set `INTAKE_OPENROUTER_API_KEY` for `run`, or enter the key in the page's Settings for `serve`.
 - Exit codes: 0 success, 1 run failed, 2 bad usage, 3 finished but some files or the commit failed, 130 cancelled.
 - Configuration: `INTAKE_*` environment variables, listed in [.env.example](.env.example) (not loaded automatically).
@@ -68,7 +70,7 @@ docs/            architecture, demo walkthrough, screenshots
 
 ## Limitations
 
-- Real Google Drive is not verified end to end; Drive was exercised only through the in-memory fake.
+- Drive: the upload client was checked by hand against a real Drive folder (upload, list, delete). A full pipeline run with real Drive is not part of the tests, which use the in-memory fake.
 - The model path was run by hand against OpenRouter on a few synthetic résumés, not at volume.
 - PDF text comes from `unpdf` (pdf.js) and page rendering from `@napi-rs/canvas`, not PyMuPDF, so raw text length differs by a few characters from the reference; text-or-vision routing agreed on every fixture.
 - The mock CRM is a demo stand-in: in-memory store, new key pair per start, open CORS, unauthenticated token endpoint. Do not expose it.
