@@ -1,4 +1,4 @@
-# Résumé Intake
+# Resume-Handler
 
 Drop résumé PDFs or zips into a web page (or point the CLI at a folder). The tool unpacks them safely, reads each résumé with an LLM
 (plain text, or vision for scans), normalises names and phone numbers, optionally scores each candidate against a job description,

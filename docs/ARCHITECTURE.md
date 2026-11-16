@@ -1,6 +1,6 @@
 # Architecture
 
-Résumé Intake is a TypeScript port of a Python desktop engine and its web page. An operator drops résumé PDFs or zips into the page.
+Resume-Handler is a TypeScript port of a Python desktop engine and its web page. An operator drops résumé PDFs or zips into the page.
 The server unpacks them safely, reads each résumé (text, or vision for scans) with an LLM, normalises names and phones, optionally
 scores each against a job description, optionally uploads kept files to Google Drive, writes a CSV, and optionally commits the rows
 to a downstream system (the "sink") through an idempotent ingestion API. Progress streams to the page live.
