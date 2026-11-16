@@ -21,6 +21,19 @@ describe("items and keys", () => {
     expect(leftOut).toBe(3);
   });
 
+  it("never sends the placeholder 'Not Specified' as an email or phone (it would merge every candidate without an email)", () => {
+    const { items, keys, leftOut } = buildItems([
+      row("No Email", "Not Specified", "+447700900301"),
+      row("No Phone", "no.phone@example.com", "Not Specified"),
+      row("Neither", "Not Specified", "Not Specified"),
+    ], request);
+    expect(items.map((i) => i.name)).toEqual(["No Email", "No Phone"]);
+    expect(items[0]).not.toHaveProperty("email");
+    expect(items[1]).not.toHaveProperty("phone");
+    expect(keys).toEqual(["phone:447700900301", "email:no.phone@example.com"]);
+    expect(leftOut).toBe(1);
+  });
+
   it("lowercases email, carries optional fields, and builds identities", () => {
     const { items, keys } = buildItems([row("X", "MiXed@Example.com", "", { "Current Location": "Leeds", Resume: "https://example.com/r.pdf" })], request);
     expect(items[0]).toMatchObject({ email: "mixed@example.com", currentLocation: "Leeds", resumeUrl: "https://example.com/r.pdf", campaignId: 1 });

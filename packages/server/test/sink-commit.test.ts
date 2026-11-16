@@ -34,6 +34,17 @@ describe("golden: items, identity and idempotency key", () => {
     expect(got.leftOut).toBe(b.leftOut);
   });
 
+  it("never sends the placeholder 'Not Specified' as an email or phone (it would merge every candidate without an email)", () => {
+    const base = { enabled: true, campaignId: 7, source: "Test", stage: "LEAD" };
+    const row = (name: string, email: string, phone: string): Row => ({ Name: name, "Email Address": email, "Phone Number": phone, "Lead ID": `lead-${name}` });
+    const got = buildItems([row("No Email", "Not Specified", "+447700900301"), row("No Phone", "no.phone@example.com", "Not Specified"), row("Neither", "Not Specified", "Not Specified")], base);
+    expect(got.items.map((i) => i.name)).toEqual(["No Email", "No Phone"]);
+    expect(got.items[0]).not.toHaveProperty("email");
+    expect(got.items[1]).not.toHaveProperty("phone");
+    expect(got.keys).toEqual(["phone:447700900301", "email:no.phone@example.com"]);
+    expect(got.leftOut).toBe(1);
+  });
+
   for (const c of fixtures.identities as Array<{ item: any; key: string }>) {
     it(`identityKey ${JSON.stringify(c.item)}`, () => expect(identityKey(c.item)).toBe(c.key));
   }

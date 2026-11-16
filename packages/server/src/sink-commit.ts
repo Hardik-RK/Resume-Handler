@@ -99,14 +99,19 @@ export function identityKey(item: Partial<IngestionItem>): string {
 }
 
 /** (items, identity keys of the items in the same order, rows left out for lacking a name or a contact). */
+function placeholderToEmpty(value: string): string {
+  return value.toLowerCase() === NOT_SPECIFIED ? "" : value;
+}
+
 export function buildItems(rows: Row[], request: CommitRequest): { items: IngestionItem[]; keys: string[]; leftOut: number } {
   const items: IngestionItem[] = [];
   const keys: string[] = [];
   let leftOut = 0;
   for (const row of rows) {
     const name = text(row["Name"]);
-    const email = text(row["Email Address"]).toLowerCase();
-    const phone = text(row["Phone Number"]);
+    // The CSV writes "Not Specified" where the model found no email; that is a placeholder, never an address.
+    const email = placeholderToEmpty(text(row["Email Address"])).toLowerCase();
+    const phone = placeholderToEmpty(text(row["Phone Number"]));
     if (!name || name.toLowerCase() === NOT_SPECIFIED || !(email || phone)) {
       leftOut += 1;
       continue;
