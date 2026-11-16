@@ -937,6 +937,7 @@ export class Transport {
         body,
         timeoutMs: readTimeoutSeconds * 1000,
         connectTimeoutMs: this.connectTimeout * 1000,
+        signal: this.cancel.signal,
       });
     } finally {
       this.gate?.release();
@@ -961,7 +962,7 @@ export function createFetchClient(): HttpClient {
         method: "POST",
         headers: request.headers,
         body: JSON.stringify(request.body),
-        signal: AbortSignal.timeout(request.timeoutMs),
+        signal: request.signal ? AbortSignal.any([AbortSignal.timeout(request.timeoutMs), request.signal]) : AbortSignal.timeout(request.timeoutMs),
       });
       const headers: Record<string, string> = {};
       res.headers.forEach((value, key) => {
@@ -1027,6 +1028,7 @@ export async function post(
       resp = await tr.send(url, headers, requestBody, tr.readTimeout(attempt, vision));
     } catch (e) {
       if (e instanceof Cancelled) throw e;
+      tr.checkCancel(); // an abort caused by Cancel is a cancel, not a network error to retry
       if (attempt < retryLimit - 1) {
         // A read timeout means the request queued behind something slow; backing off only wastes the retry.
         // Back off briefly for genuine connection failures.

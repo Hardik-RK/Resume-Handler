@@ -162,6 +162,8 @@ export interface HttpRequest {
   /** per-attempt read timeout, milliseconds */
   timeoutMs: number;
   connectTimeoutMs: number;
+  /** Aborts the request when the run is cancelled (a hung provider must not hold a cancel for the whole timeout). */
+  signal?: AbortSignal;
 }
 
 export interface HttpResponse {

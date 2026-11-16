@@ -17,6 +17,11 @@ export class CancelFlag {
     this.own.abort();
   }
 
+  /** Aborts when the flag is set, so an in-flight request can be cut short instead of waiting for its timeout. */
+  get signal(): AbortSignal {
+    return AbortSignal.any([this.own.signal, ...this.external]);
+  }
+
   isSet(): boolean {
     return this.own.signal.aborted || this.external.some((s) => s.aborted);
   }
