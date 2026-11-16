@@ -234,6 +234,8 @@ export interface Batch {
   error: string;
   /** Why some files were left out of the finished run (see problemLines). */
   problems?: string[];
+  /** Files of this entry the server refused when they were copied (too large, wrong type): the run goes on without them. */
+  copyProblems?: string[];
   rows: ResultRow[];
   csv: string;
   files: QueueFile[];

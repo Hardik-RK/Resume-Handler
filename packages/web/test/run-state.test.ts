@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { EMPTY_RUN, LOG_LIMIT, LOST_RUN_TICKS, commitLineFor, engineLostRun, normaliseCommit, plainReason, problemLines, reduceRun } from '../src/run-state';
+import { EMPTY_RUN, LOG_LIMIT, LOST_RUN_TICKS, commitLineFor, engineLostRun, normaliseCommit, copyProblemLine, plainReason, problemLines, reduceRun } from '../src/run-state';
 import type { EngineEvent, RunState } from '../src/lib/types';
 
 const NOW = 1_700_000_000_000;
@@ -79,6 +79,13 @@ describe('engineLostRun', () => {
     expect(engineLostRun({ phase: 'uploading' }, false)).toBe(false);
     expect(engineLostRun({ phase: 'idle' }, true)).toBe(false);
     expect(engineLostRun(null, false)).toBe(false);
+  });
+});
+
+describe('copyProblemLine', () => {
+  it('names the file the server refused and why', () => {
+    expect(copyProblemLine('big.pdf', 'A file is larger than 25 MB.')).toBe('big.pdf was not copied to the server: A file is larger than 25 MB.');
+    expect(copyProblemLine('x.pdf', '')).toBe('x.pdf was not copied to the server: it was refused');
   });
 });
 

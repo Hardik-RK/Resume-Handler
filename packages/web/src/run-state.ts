@@ -88,6 +88,11 @@ export function plainReason(detail: string): string {
   return d.length > 120 ? `${d.slice(0, 117)}...` : d;
 }
 
+/** The line for a file the server refused when it was copied over. */
+export function copyProblemLine(name: string, error: string): string {
+  return `${name} was not copied to the server: ${error || 'it was refused'}`;
+}
+
 /** Why files were left out of a finished run: "3 files: <reason>" lines, most common first, at most three. */
 export function problemLines(files: Record<string, { status?: string; detail?: string }> | null | undefined): string[] {
   const counts = new Map<string, number>();

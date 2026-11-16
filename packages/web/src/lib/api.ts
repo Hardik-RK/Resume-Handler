@@ -148,6 +148,9 @@ export async function resultsCsv(): Promise<string> {
 }
 
 /** Uploads one file with XHR so progress is real. onProgress receives 0..1. */
+/** The server's per-file limit (25 MB, see packages/server/src/uploads.ts). */
+const SERVER_MAX_FILE_BYTES = 25 * 1024 * 1024;
+
 export function uploadFile(file: File, { onProgress }: { onProgress?: (fraction: number) => void } = {}): Promise<UploadAnswer> {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
@@ -167,7 +170,10 @@ export function uploadFile(file: File, { onProgress }: { onProgress?: (fraction:
       const code: ApiErrorCode = xhr.status === 401 ? 'unauthorized' : xhr.status === 409 ? 'busy' : 'server';
       reject(new ApiError(code, message, xhr.status));
     };
-    xhr.onerror = () => reject(new ApiError('unreachable', MESSAGES.unreachable));
+    // The server answers 413 and closes the connection before the body is read, which the browser reports as a network error.
+    xhr.onerror = () => (file.size > SERVER_MAX_FILE_BYTES
+      ? reject(new ApiError('server', 'A file is larger than 25 MB.', 413))
+      : reject(new ApiError('unreachable', MESSAGES.unreachable)));
     xhr.send(form);
   });
 }

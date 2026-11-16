@@ -3,7 +3,7 @@ import { ApiError, errorMessage, lastResults, resultsCsv, uploadFile } from './l
 import type { Batch, CommitInfo, ResultRow, SubmitForm } from './lib/types';
 import { addHistory, recordFor } from './history';
 import { readParallel } from './format';
-import { problemLines } from './run-state';
+import { copyProblemLine, problemLines } from './run-state';
 import {
   FINISHED, entriesFromForm, findOrphans, normaliseCounts, optionsFor, parallelFor, readStoredBatches, retryProblem,
   runnable, writeStoredBatches,
@@ -63,7 +63,8 @@ export function useBatchQueue(engine: ResumeEngine) {
     setBatches((list) => list.map((b) => {
       if (b.id !== id) return b;
       const files = b.files.map((f) => (f.key === key ? { ...f, ...change } : f));
-      const next = { ...b, files };
+      const refused = change.status === 'error' ? b.files.find((f) => f.key === key) : undefined;
+      const next = { ...b, files, ...(refused ? { copyProblems: [...(b.copyProblems || []), copyProblemLine(refused.original || refused.name || 'A file', change.error || '')] } : {}) };
       // Every file of the entry failed to copy: the entry cannot run, say why.
       if (b.status === 'queued' && files.every((f) => f.status === 'error')) {
         return { ...next, status: 'failed' as const, finishedAt: Date.now(), error: `The file could not be copied to the server: ${files[0]?.error || 'unknown error'}` };
@@ -177,7 +178,7 @@ export function useBatchQueue(engine: ResumeEngine) {
           commitResult: end.commit || null,
           cost: end.cost || { tokens: live.tokens, usd: live.usd },
           error: end.phase === 'failed' ? (end.detail || 'The server stopped this upload.') : '',
-          problems: problemLines(live.files),
+          problems: [...(next.copyProblems || []), ...problemLines(live.files)],
           rows, csv,
         });
         engineRef.current.refreshFiles().catch(() => {});
