@@ -1,43 +1,23 @@
 # Resume-Handler
 
-Drop résumé PDFs or zips into a web page (or point the CLI at a folder). The tool unpacks them safely, reads each résumé with an LLM
-(plain text, or vision for scans), normalises names and phone numbers, optionally scores each candidate against a job description,
-optionally uploads the kept files to Google Drive, writes a CSV, and optionally commits the rows to a downstream system through an
-idempotent ingestion API. Progress streams to the page live.
+Web page and CLI that turn a pile of résumé PDFs into candidate rows: unpack, read each résumé with an LLM, write a CSV, and optionally upload the files to Google Drive and commit the rows to a downstream system.
 
-It is a TypeScript port of a Python desktop engine and its web page. Everything runs offline with no keys (a deterministic fake model,
-an in-memory Drive and a mock downstream system are included), so you can try the whole thing in a minute.
+It is a TypeScript port of a Python desktop engine. A deterministic fake model, an in-memory Drive and a mock downstream system are included, so the whole flow runs offline with no keys.
 
 ![The page after a run: 33 candidates added to a campaign, 8 duplicates, 1 invalid file](docs/img/05-done.png)
 
+## What it does
+
+- Accepts PDFs or zips (browser upload, or a folder or zip given to the CLI). Zips are unpacked with size and entry limits.
+- Extracts fields from the PDF text, or from rendered pages (vision) for scans, using an OpenRouter-compatible model.
+- Normalises names and phone numbers, and can score each candidate against a job description.
+- Writes a CSV. Optionally uploads kept files to Google Drive.
+- Optionally commits rows through an ingestion API. Each batch carries an idempotency key, so repeating a run is reported as duplicates instead of creating new rows.
+- Streams progress to the page over server-sent events.
+
 ## Architecture
 
-```mermaid
-flowchart LR
-  subgraph Browser
-    Web["web UI (React)"]
-  end
-  subgraph Server["packages/server"]
-    API["HTTP API + SSE"]
-    Auth["auth: none / token / signed"]
-    Store["settings + AES-GCM secret vault"]
-    Sink["ingestion sink"]
-  end
-  Core["packages/core pipeline"]
-  LLM[("LLM provider or fake")]
-  Drive[("Google Drive or fake")]
-  CRM["downstream system (mock-crm)"]
-  CLI["packages/cli"]
-  Web -- "fetch + EventSource" --> API
-  API --> Auth
-  API --> Store
-  API --> Core
-  Core --> LLM
-  Core --> Drive
-  API --> Sink --> CRM
-  CLI -- "in process" --> Core
-  CLI -- "starts / configures" --> API
-```
+![Browser page to local server to core pipeline, with LLM, Drive, CSV and an ingestion API](docs/img/architecture.svg)
 
 | Package | What it is |
 | --- | --- |
@@ -51,12 +31,12 @@ More detail: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), and a `PORTING-NOTES.
 
 ## Quick start
 
-Node 22 or newer. Each package installs on its own (no root install: they pin different TypeScript and vitest majors), so use the root scripts:
+Requires Node 22 or newer (CI runs 22 and 24). Each package installs on its own (no root install: they pin different TypeScript and vitest majors), so use the root scripts:
 
 ```bash
 npm run install:all     # npm ci in every package, in dependency order
 npm run build           # builds the web UI into packages/web/dist
-npm test                # all five test suites
+npm test                # all five packages
 ```
 
 ### Web, with the full offline demo
@@ -76,10 +56,7 @@ on http://127.0.0.1:47900. Run it again and every row is reported as a duplicate
 | ![Settings](docs/img/07-settings.png) | ![Dark theme](docs/img/09-dark.png) |
 | ![History](docs/img/08-history.png) | ![The mock CRM page with the committed candidates](docs/img/11-mock-crm.png) |
 
-When something goes wrong the activity entry says why, in plain words and never with file content: a refused model key (HTTP 401), unreadable or
-password-protected PDFs, a PDF over the 25 MB upload limit, an input folder that was deleted, an engine that stopped mid-run (the entry ends as Failed),
-or a tab closed mid-run (the server keeps going, the rows are committed and repeating the upload is safe). Cancel also aborts a model request that is
-already in flight.
+Failures are reported in the activity entry in plain words, never with file content: a refused model key, unreadable or password-protected PDFs, a file over the 25 MB upload limit, a stopped engine. Closing the tab mid-run does not stop the server, and repeating an upload is safe. Cancel also aborts an in-flight model request.
 
 | | |
 | --- | --- |
@@ -124,18 +101,9 @@ In `signed` mode a separate issuer (the downstream system) signs short-lived ses
 Secrets entered in Settings (model key, ingestion token, Drive credentials) are stored encrypted with AES-256-GCM; the key comes from
 `INTAKE_SECRETS_KEY` or a `0600` key file, and secrets are redacted from logs and events.
 
-## How it was ported and verified
+## Tests
 
-The Python original is the reference implementation. For each module, small synthetic inputs were run through the Python code to produce
-**golden fixtures** (`packages/core/test/golden`, `packages/server/test/golden`, with the generator scripts alongside), and the TypeScript output is
-asserted equal: default settings, prompts and request bodies, name heuristics, CSV bytes and lead ids, phone normalisation, safe-unzip limits,
-settings validation, auth, ingestion idempotency keys. The relevant pytest cases of the original were ported to vitest. The result is about 1,250
-tests across the five packages (core 598, server 517, cli 58, web 53, mock-crm 25), plus one end-to-end test that drives the CLI against the mock CRM. Deliberate deviations (for example the PDF
-text library) are recorded in each `PORTING-NOTES.md`.
-
-The page itself was also run in a real browser (Edge through Playwright) against the real server in `signed` mode: sign-in, upload, commit,
-duplicate skipping on a re-run, cancelling a run, a failed commit followed by a retry, saving settings and reloading them, light and dark,
-with no console errors.
+Each package has a vitest suite (`npm test` runs all five), plus one end-to-end test that drives the CLI against the mock CRM. Core and server behaviour is checked against golden fixtures generated by running the original Python code on small synthetic inputs (`packages/core/test/golden`, `packages/server/test/golden`). The page was also run in a real browser (Edge through Playwright) against the real server in `signed` mode. Deliberate deviations from the original are listed in each package's `PORTING-NOTES.md`.
 
 ## Limitations
 
@@ -147,7 +115,6 @@ with no console errors.
 - The mock CRM is a demo stand-in: in-memory store, a throwaway key pair per start, open CORS, an unauthenticated token endpoint. Do not expose it.
 - The page's history is kept in the browser only (last 200 uploads); there are no accounts or roles.
 - One run at a time per server. The scanned-style fixture PDFs render text with the system sans-serif font; a machine with no fonts draws blanks.
-- No side-by-side visual comparison with the original web page was done (its test instance needs a sign-in this port cannot provide).
 - Some golden test inputs contain placeholder email addresses on reserved or one-letter domains (for example `a@b.co`); changing them would change the
   golden hashes, which can only be regenerated with the Python reference.
 

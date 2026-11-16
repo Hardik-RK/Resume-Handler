@@ -19,32 +19,7 @@ be clean). Root scripts in `scripts/` run the packages in dependency order.
 | `packages/cli` | `intake run` (terminal UI), `intake serve`, `intake app`, `intake connect`, `intake fake-llm`. |
 | `packages/mock-crm` | A stand-in downstream system: token issuing, `/api/ingestion/preflight` and `/batch`, a candidates page, and a synthetic résumé generator. |
 
-```mermaid
-flowchart LR
-  subgraph Browser
-    Web["web UI (React)"]
-  end
-  subgraph Server["packages/server"]
-    API["HTTP API + SSE"]
-    Auth["auth: none / token / signed"]
-    Store["settings + AES-GCM secret vault"]
-    Sink["ingestion sink"]
-  end
-  Core["packages/core pipeline"]
-  LLM[("LLM provider or fake")]
-  Drive[("Google Drive or fake")]
-  CRM["downstream system (mock-crm)"]
-  CLI["packages/cli"]
-  Web -- "fetch + EventSource" --> API
-  API --> Auth
-  API --> Store
-  API --> Core
-  Core --> LLM
-  Core --> Drive
-  API --> Sink --> CRM
-  CLI -- "in process" --> Core
-  CLI -- "starts / configures" --> API
-```
+![Architecture](img/architecture.svg)
 
 ## Rules shared by every package
 
